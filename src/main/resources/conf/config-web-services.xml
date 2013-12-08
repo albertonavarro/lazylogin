@@ -28,13 +28,13 @@
         implementor="com.navid.login.endpoints.SystemCommandsImpl" 
         address="/admin" /> 
         
- <!--    <jaxrs:server id="services" address="/">
+   <jaxrs:server id="services" address="/">
         <jaxrs:serviceBeans>
-            <bean class="com.navid.deleteme.HelloWorld"/>
+            <bean class="com.navid.login.endpoints.RestValidatorImpl"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
         </jaxrs:providers>
-    </jaxrs:server> -->
+    </jaxrs:server> 
 	  
 </beans>

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.navid.login.domain;
 
 import java.io.Serializable;
@@ -13,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -21,49 +19,47 @@ import javax.persistence.Table;
  * @author alberto
  */
 @Entity
-@Table(name="TOKEN")
+@Table(name = "TOKEN")
 public class Token implements Serializable {
-    
+
     @ManyToOne
     private final User user;
-    
+
     @Id
-    @Column(name="TOKEN_VALUE")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "TOKEN_VALUE")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private final Long value = null;
-    
+
     private Boolean verified = false;
-    
-    private String verificationCode = null;
-    
+
     /**
-     * 
-     * @param user 
+     *
+     * @param user
      */
-    public Token ( User user ) {
+    public Token(User user) {
         this.user = user;
     }
-    
+
     /**
-     * 
+     *
      */
     protected Token() {
         this.user = null;
     }
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
-    public Long getValue(){
+    public Long getValue() {
         return this.value;
     }
-    
+
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
-    public User getUser(){
+    public User getUser() {
         return user;
     }
 
@@ -81,20 +77,4 @@ public class Token implements Serializable {
         this.verified = verified;
     }
 
-    /**
-     * @return the verificationCode
-     */
-    public String getVerificationCode() {
-        return verificationCode;
-    }
-
-    /**
-     * @param verificationCode the verificationCode to set
-     */
-    public void setVerificationCode(String verificationCode) {
-        this.verificationCode = verificationCode;
-    }
-    
-    
-    
 }
