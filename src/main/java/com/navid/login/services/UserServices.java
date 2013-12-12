@@ -9,11 +9,23 @@ import com.navid.login.domain.SsoId;
 import com.navid.login.domain.Token;
 import com.navid.login.domain.User;
 import com.navid.login.domain.ValidationKey;
+import com.navid.login.notifier.EmailNotifier;
 import com.navid.login.persistence.SsoIdRepository;
 import com.navid.login.persistence.TokenRepository;
 import com.navid.login.persistence.UserRepository;
 import com.navid.login.persistence.ValidationKeyRepository;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 
 /**
  *
@@ -33,6 +45,17 @@ public class UserServices {
     @Resource
     private ValidationKeyRepository validationRepo;
 
+    @Resource
+    protected JmsTemplate queue1JMSTemplate;
+
+    public void sendMessage(final String message) throws JMSException {
+        queue1JMSTemplate.send(new MessageCreator() {
+            public Message createMessage(Session session) throws JMSException {
+                return session.createTextMessage(message);
+            }
+        });
+    }
+
     public SsoId createToken(String email) {
 
         User user = userRepo.findOne(email);
@@ -44,6 +67,12 @@ public class UserServices {
         Token token = tokenRepo.save(new Token(user));
         ValidationKey validationKey = new ValidationKey(token, "blabla" + token.getValue());
         validationRepo.save(validationKey);
+
+        try {
+            sendMessage(validationKey.getVerificationCode());
+        } catch (JMSException ex) {
+            Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         return ssoIdRepo.save(new SsoId(token));
     }
@@ -62,11 +91,11 @@ public class UserServices {
 
     public void validateKey(String validationKey) {
         ValidationKey found = validationRepo.findOne(validationKey);
-        
+
         if (found == null) {
             throw new RuntimeException("ValidationKey no existe");
         }
-        
+
         found.getToken().setVerified(Boolean.TRUE);
         tokenRepo.save(found.getToken());
         validationRepo.delete(found);
