@@ -1,11 +1,16 @@
+ 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.navid</groupId>
-    <artifactId>lazylogin</artifactId>
+    
+    <groupId>com.navid.lazylogin</groupId>
+    <artifactId>parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>LazyLogin</name>
+    
+    <packaging>pom</packaging>
+    
+    <name>LazyLogin Parent</name>
+    
     <description>Keep your system simple, password less, and stop bothering your users.</description>
     <properties>
         <jackson.version>1.8.6</jackson.version>
@@ -19,7 +24,8 @@
         <commons-lang.version>2.4</commons-lang.version>
         <amq.version>5.1.0</amq.version>
     </properties>
-    <dependencies>
+    <dependencyManagement>
+        <dependencies>
         <dependency>
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
@@ -134,58 +140,14 @@
             <type>jar</type>
         </dependency>
     </dependencies>
+    </dependencyManagement>
+    
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-codegen-plugin</artifactId>
-                <version>${cfx.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-sources</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <sourceRoot>${basedir}/target/generated-sources</sourceRoot>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/user.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-server</extraarg>
-                                        <extraarg>-verbose</extraarg>
-                                        <extraarg>-impl</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                                <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/system.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-server</extraarg>
-                                        <extraarg>-verbose</extraarg>
-                                        <extraarg>-impl</extraarg>
-                                    </extraargs>
-                                </wsdlOption>
-                            </wsdlOptions>
-                            <server/> 
-                        </configuration>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+    <modules>
+        <module>logic</module>
+        <module>domain</module>
+        <module>persistence-api</module>
+        <module>persistence-hibernate</module>
+    </modules>
 
 </project>

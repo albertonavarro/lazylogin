@@ -1,0 +1,103 @@
+package com.navid.login.persistence.hibernate;
+
+import com.navid.login.domain.SsoId;
+import com.navid.login.domain.Token;
+import com.navid.login.domain.User;
+import com.navid.login.domain.ValidationKey;
+import com.navid.login.persistence.Persistence;
+import com.navid.login.persistence.hibernate.domain.SsoIdHb;
+import com.navid.login.persistence.hibernate.domain.TokenHb;
+import com.navid.login.persistence.hibernate.domain.UserHb;
+import com.navid.login.persistence.hibernate.domain.ValidationKeyHb;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import org.jdto.DTOBinder;
+import org.jdto.DTOBinderFactory;
+import org.springframework.stereotype.Repository;
+
+/**
+ *
+ * @author alberto
+ */
+@Repository
+public class PersistenceImpl implements Persistence {
+    
+
+    @Resource
+    private SsoIdRepository ssoIdRepo;
+
+    @Resource
+    private TokenRepository tokenRepo;
+
+    @Resource
+    private UserRepository userRepo;
+
+    @Resource
+    private ValidationKeyRepository validationRepo;
+
+    @Resource(name = "lazylogin.persistence-hibernate.converter")
+    private DTOBinder binder;
+
+    public User findOneUser(String email) {
+        UserHb userHb = userRepo.findOne(email);
+
+        return binder.extractFromDto(User.class, userHb);
+    }
+
+    public User saveUser(User user) {
+        UserHb userHb = binder.bindFromBusinessObject(UserHb.class, user);
+
+        userHb = userRepo.save(userHb);
+        
+        User result = binder.bindFromBusinessObject(User.class, userHb);
+
+        return result;
+    }
+
+    public Token findOneToken(long parseLong) {
+        TokenHb tokenHb = tokenRepo.findOne(parseLong);
+
+        return binder.extractFromDto(Token.class, tokenHb);
+    }
+
+    public Token saveToken(Token token) {
+        TokenHb tokenHb = binder.bindFromBusinessObject(TokenHb.class, token);
+
+        tokenHb = tokenRepo.save(tokenHb);
+
+        return binder.extractFromDto(Token.class, tokenHb);
+    }
+
+    public SsoId saveSsoId(SsoId ssoId) {
+        SsoIdHb ssoIdHb = binder.bindFromBusinessObject(SsoIdHb.class, ssoId);
+
+        ssoIdHb = ssoIdRepo.save(ssoIdHb);
+
+        return binder.extractFromDto(SsoId.class, ssoIdHb);
+    }
+
+    public ValidationKey saveValidationKey(ValidationKey validationKey) {
+        ValidationKeyHb validationKeyHb = binder.bindFromBusinessObject(ValidationKeyHb.class, validationKey);
+
+        validationKeyHb = validationRepo.save(validationKeyHb);
+
+        return binder.extractFromDto(ValidationKey.class, validationKeyHb);
+    }
+
+    public ValidationKey findOneValidationKey(String validationKey) {
+        ValidationKeyHb validationKeyHb = validationRepo.findOne(validationKey);
+
+        return binder.extractFromDto(ValidationKey.class, validationKeyHb);
+    }
+
+    public void deleteValidationKey(ValidationKey found) {
+        ValidationKeyHb validationKeyHb = binder.bindFromBusinessObject(ValidationKeyHb.class, found);
+
+        validationRepo.delete(validationKeyHb);
+    }
+
+}
