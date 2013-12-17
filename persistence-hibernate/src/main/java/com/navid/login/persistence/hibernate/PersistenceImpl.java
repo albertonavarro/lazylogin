@@ -9,14 +9,8 @@ import com.navid.login.persistence.hibernate.domain.SsoIdHb;
 import com.navid.login.persistence.hibernate.domain.TokenHb;
 import com.navid.login.persistence.hibernate.domain.UserHb;
 import com.navid.login.persistence.hibernate.domain.ValidationKeyHb;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.Resource;
 import org.jdto.DTOBinder;
-import org.jdto.DTOBinderFactory;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -45,7 +39,7 @@ public class PersistenceImpl implements Persistence {
     public User findOneUser(String email) {
         UserHb userHb = userRepo.findOne(email);
 
-        return binder.extractFromDto(User.class, userHb);
+        return binder.bindFromBusinessObject(User.class, userHb);
     }
 
     public User saveUser(User user) {
@@ -61,7 +55,7 @@ public class PersistenceImpl implements Persistence {
     public Token findOneToken(long parseLong) {
         TokenHb tokenHb = tokenRepo.findOne(parseLong);
 
-        return binder.extractFromDto(Token.class, tokenHb);
+        return binder.bindFromBusinessObject(Token.class, tokenHb);
     }
 
     public Token saveToken(Token token) {
@@ -69,7 +63,7 @@ public class PersistenceImpl implements Persistence {
 
         tokenHb = tokenRepo.save(tokenHb);
 
-        return binder.extractFromDto(Token.class, tokenHb);
+        return binder.bindFromBusinessObject(Token.class, tokenHb);
     }
 
     public SsoId saveSsoId(SsoId ssoId) {
@@ -77,7 +71,7 @@ public class PersistenceImpl implements Persistence {
 
         ssoIdHb = ssoIdRepo.save(ssoIdHb);
 
-        return binder.extractFromDto(SsoId.class, ssoIdHb);
+        return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
     }
 
     public ValidationKey saveValidationKey(ValidationKey validationKey) {
@@ -85,13 +79,13 @@ public class PersistenceImpl implements Persistence {
 
         validationKeyHb = validationRepo.save(validationKeyHb);
 
-        return binder.extractFromDto(ValidationKey.class, validationKeyHb);
+        return binder.bindFromBusinessObject(ValidationKey.class, validationKeyHb);
     }
 
     public ValidationKey findOneValidationKey(String validationKey) {
         ValidationKeyHb validationKeyHb = validationRepo.findOne(validationKey);
 
-        return binder.extractFromDto(ValidationKey.class, validationKeyHb);
+        return binder.bindFromBusinessObject(ValidationKey.class, validationKeyHb);
     }
 
     public void deleteValidationKey(ValidationKey found) {

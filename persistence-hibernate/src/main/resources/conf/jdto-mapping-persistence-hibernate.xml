@@ -11,5 +11,44 @@
             <source name="email"/> 
         </field> 
     </dto>
+    <dto type="com.navid.login.domain.Token"> 
+        <immutableConstructor> 
+            <arg order="0" type="com.navid.login.domain.User" cascade="true"> 
+                <source name="user"/> 
+            </arg>
+        </immutableConstructor> 
+    </dto>
+    <dto type="com.navid.login.persistence.hibernate.domain.TokenHb"> 
+        <field name="user" cascade="true"> 
+            <source name="user" /> 
+        </field> 
+    </dto>
+    <dto type="com.navid.login.domain.SsoId"> 
+        <immutableConstructor> 
+            <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
+                <source name="token"/> 
+            </arg>
+        </immutableConstructor> 
+    </dto>
+    <dto type="com.navid.login.persistence.hibernate.domain.SsoIdHb"> 
+        <field name="token" cascade="true"> 
+            <source name="token" /> 
+        </field> 
+    </dto>
+    <dto type="com.navid.login.domain.ValidationKey"> 
+        <immutableConstructor> 
+            <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
+                <source name="token"/> 
+            </arg>
+            <arg order="1" type="java.lang.String" cascade="true"> 
+                <source name="verificationCode"/> 
+            </arg>
+        </immutableConstructor> 
+    </dto>
+    <dto type="com.navid.login.persistence.hibernate.domain.ValidationKeyHb"> 
+        <field name="token" cascade="true"> 
+            <source name="token" /> 
+        </field>
+    </dto>
 
 </dto-mapping>

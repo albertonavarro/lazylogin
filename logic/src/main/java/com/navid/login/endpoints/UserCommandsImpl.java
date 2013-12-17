@@ -36,6 +36,8 @@ public class UserCommandsImpl implements UserCommands {
     private UserServices userServices;
     
     private static final DTOBinder binder = DTOBinderFactory.getBinder();
+    
+    
 
     /* (non-Javadoc)
      * @see com.navid.login.UserCommands#createToken(com.navid.login.CreateTokenRequest  parameters )*

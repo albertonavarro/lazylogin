@@ -10,7 +10,7 @@ public class Token implements Serializable {
 
     private final User user;
 
-    private final Long value = null;
+    private Long value = null;
 
     private Boolean verified = false;
 
@@ -23,19 +23,24 @@ public class Token implements Serializable {
     }
 
     /**
-     *
-     * @return
-     */
-    public Long getValue() {
-        return this.value;
-    }
-
-    /**
-     *
-     * @return
+     * @return the user
      */
     public User getUser() {
         return user;
+    }
+
+    /**
+     * @return the value
+     */
+    public Long getValue() {
+        return value;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(Long value) {
+        this.value = value;
     }
 
     /**

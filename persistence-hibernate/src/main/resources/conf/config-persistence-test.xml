@@ -11,6 +11,11 @@
     <bean id="lazylogin.persistence-hibernate.converter" class="org.jdto.spring.SpringDTOBinder"> 
         <property name="xmlConfig" value="classpath:/conf/jdto-mapping-persistence-hibernate.xml" /> 
     </bean>
+    
+    <bean id="lazylogin.persistence-hibernate.converter-dozer" class="org.dozer.spring.DozerBeanMapperFactoryBean">
+        <property name="mappingFiles" 
+                  value="classpath:/conf/dozer-mappings-persistence-hibernate.xml"/>
+    </bean>
       
     <!-- Database -->
     <jdbc:embedded-database id="datasource" type="H2"></jdbc:embedded-database>
