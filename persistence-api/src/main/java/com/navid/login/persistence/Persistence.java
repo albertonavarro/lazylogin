@@ -26,6 +26,9 @@ public interface Persistence {
     ValidationKey findOneValidationKey(String validationKey);
 
     void deleteValidationKey(ValidationKey found);
+    
+    Token createToken(User user);
 
+    SsoId createSsoId(Token token);
     
 }

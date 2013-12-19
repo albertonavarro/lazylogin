@@ -13,7 +13,7 @@
     <import resource="classpath:META-INF/cxf/cxf.xml" />
     
     <bean id="lazylogin.endpoint.converter" class="org.jdto.spring.SpringDTOBinder"> 
-        <property name="xmlConfig" value="classpath:/conf/jdto-mapping-endpoint.xml" /> 
+        <property name="xmlConfig" value="classpath:conf/jdto-mapping-endpoint.xml" /> 
     </bean>
    
     <jaxws:endpoint 

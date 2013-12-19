@@ -148,6 +148,7 @@
         <module>domain</module>
         <module>persistence-api</module>
         <module>persistence-hibernate</module>
+        <module>warEndpoint</module>
     </modules>
 
 </project>

@@ -12,7 +12,6 @@ import com.navid.login.services.UserServices;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
 import org.jdto.DTOBinder;
-import org.jdto.DTOBinderFactory;
 
 
 @javax.jws.WebService(endpointInterface = "com.navid.login.UserCommands")

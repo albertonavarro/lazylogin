@@ -93,5 +93,28 @@ public class PersistenceImpl implements Persistence {
 
         validationRepo.delete(validationKeyHb);
     }
+    
+    public Token createToken(User user) {
+        UserHb userHb = binder.bindFromBusinessObject(UserHb.class, user);
+        
+        TokenHb tokenHb = new TokenHb();
+        tokenHb.setUser(userHb);
+
+        tokenHb = tokenRepo.save(tokenHb);
+
+        return binder.bindFromBusinessObject(Token.class, tokenHb);
+    }
+
+    public SsoId createSsoId(Token token) {
+        TokenHb tokenHb = binder.bindFromBusinessObject(TokenHb.class, token);
+        
+        SsoIdHb ssoIdHb = new SsoIdHb();
+        ssoIdHb.setToken(tokenHb);
+
+        ssoIdHb = ssoIdRepo.save(ssoIdHb);
+
+        return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+        
+    }
 
 }

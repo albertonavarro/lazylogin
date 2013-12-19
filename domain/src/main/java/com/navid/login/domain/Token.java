@@ -13,15 +13,11 @@ public class Token implements Serializable {
     private Long value;
 
     private Boolean verified = false;
-
-    public Token(User user) {
-        this.user = user;
-        this.value = null;
-    }
     
     /**
-     *
+     * 
      * @param user
+     * @param value 
      */
     public Token(User user, Long value) {
         this.user = user;
