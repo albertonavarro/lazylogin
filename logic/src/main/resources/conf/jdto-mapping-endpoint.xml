@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?> <dto-mapping xmlns="http://jdto.org/jdto/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jdto.org/jdto/1.0 http://jdto.org/jdto-1.0.xsd"> 
+    
+    
+    <dto type="com.navid.login.domain.Token"> 
+        <immutableConstructor> 
+            <arg order="0" type="com.navid.login.domain.User" cascade="true"> 
+                <source name="user"/> 
+            </arg>
+        </immutableConstructor> 
+    </dto>
+    <dto type="com.navid.login.Token"> 
+        <field name="token"> 
+            <source name="value" /> 
+        </field> 
+    </dto>
+    <dto type="com.navid.login.domain.SsoId"> 
+        <immutableConstructor> 
+            <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
+                <source name="token"/> 
+            </arg>
+        </immutableConstructor> 
+    </dto>
+    <dto type="com.navid.login.Sessionid"> 
+        <field name="sessionid"> 
+            <source name="value"/> 
+        </field> 
+    </dto>
+    
+    
+
+</dto-mapping>

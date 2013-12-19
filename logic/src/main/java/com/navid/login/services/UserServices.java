@@ -19,12 +19,14 @@ import javax.jms.Session;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author alberto
  */
 @Service
+@Transactional
 public class UserServices {
 
     @Resource
@@ -59,9 +61,11 @@ public class UserServices {
             Logger.getLogger(UserServices.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return persistence.saveSsoId(new SsoId(token));
+        SsoId result = persistence.saveSsoId(new SsoId(token));
+        return result;
     }
 
+    @Transactional
     public SsoId loginWithToken(String tokenId) {
 
         Token token = persistence.findOneToken(Long.parseLong(tokenId));

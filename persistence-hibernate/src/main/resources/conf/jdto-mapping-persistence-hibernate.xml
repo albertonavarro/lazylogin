@@ -16,6 +16,9 @@
             <arg order="0" type="com.navid.login.domain.User" cascade="true"> 
                 <source name="user"/> 
             </arg>
+            <arg order="1" type="java.lang.Long"> 
+                <source name="value"/> 
+            </arg>
         </immutableConstructor> 
     </dto>
     <dto type="com.navid.login.persistence.hibernate.domain.TokenHb"> 
@@ -28,12 +31,15 @@
             <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
                 <source name="token"/> 
             </arg>
+            <arg order="1" type="java.lang.String"> 
+                <source name="value"/> 
+            </arg>
         </immutableConstructor> 
     </dto>
     <dto type="com.navid.login.persistence.hibernate.domain.SsoIdHb"> 
         <field name="token" cascade="true"> 
             <source name="token" /> 
-        </field> 
+        </field>
     </dto>
     <dto type="com.navid.login.domain.ValidationKey"> 
         <immutableConstructor> 

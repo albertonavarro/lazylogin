@@ -10,16 +10,22 @@ public class Token implements Serializable {
 
     private final User user;
 
-    private Long value = null;
+    private Long value;
 
     private Boolean verified = false;
 
+    public Token(User user) {
+        this.user = user;
+        this.value = null;
+    }
+    
     /**
      *
      * @param user
      */
-    public Token(User user) {
+    public Token(User user, Long value) {
         this.user = user;
+        this.value = value;
     }
 
     /**
