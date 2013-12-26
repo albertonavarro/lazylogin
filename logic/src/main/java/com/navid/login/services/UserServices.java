@@ -20,8 +20,6 @@ public class UserServices {
     @Resource
     private Persistence persistence;
 
-    
-
     public SsoId createToken(String email) {
 
         User user = persistence.findOneUser(email);
@@ -39,7 +37,6 @@ public class UserServices {
         return result;
     }
 
-    @Transactional
     public SsoId loginWithToken(String tokenId) {
 
         Token token = persistence.findOneToken(Long.parseLong(tokenId));

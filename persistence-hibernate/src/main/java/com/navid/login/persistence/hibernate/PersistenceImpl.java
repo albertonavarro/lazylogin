@@ -117,4 +117,9 @@ public class PersistenceImpl implements Persistence {
         
     }
 
+    public SsoId findOneSessionId(String sessionId) {
+        SsoIdHb ssoIdHb = ssoIdRepo.findOne(sessionId);
+        return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+    }
+
 }

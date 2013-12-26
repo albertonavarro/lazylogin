@@ -30,5 +30,7 @@ public interface Persistence {
     Token createToken(User user);
 
     SsoId createSsoId(Token token);
+
+    SsoId findOneSessionId(String sessionId);
     
 }
