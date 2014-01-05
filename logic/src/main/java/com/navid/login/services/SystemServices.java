@@ -7,8 +7,6 @@
 package com.navid.login.services;
 
 import com.navid.login.domain.SsoId;
-import com.navid.login.domain.UserId;
-import com.navid.login.domain.UserInfo;
 import com.navid.login.persistence.Persistence;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -25,13 +23,10 @@ public class SystemServices {
     @Resource
     private Persistence persistence;
     
-    public UserInfo getUserInfo( String sessionId ) {
+    public SsoId getUserInfo( String sessionId ) {
         SsoId ssoId = persistence.findOneSessionId( sessionId );
         
-        UserInfo userInfo = new UserInfo(new UserId("1"), ssoId.getToken().getUser().getEmail());
-        userInfo.setValidated(ssoId.getToken().getVerified());
-        
-        return userInfo;
+        return ssoId;
     }
     
 }

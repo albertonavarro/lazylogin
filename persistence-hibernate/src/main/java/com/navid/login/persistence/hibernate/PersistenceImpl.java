@@ -3,6 +3,7 @@ package com.navid.login.persistence.hibernate;
 import com.navid.login.domain.SsoId;
 import com.navid.login.domain.Token;
 import com.navid.login.domain.User;
+import com.navid.login.domain.UserId;
 import com.navid.login.domain.ValidationKey;
 import com.navid.login.persistence.Persistence;
 import com.navid.login.persistence.hibernate.domain.SsoIdHb;
@@ -32,12 +33,15 @@ public class PersistenceImpl implements Persistence {
 
     @Resource
     private ValidationKeyRepository validationRepo;
+    
+    @Resource
+    private Queries queries;
 
     @Resource(name = "lazylogin.persistence-hibernate.converter")
     private DTOBinder binder;
 
     public User findOneUser(String email) {
-        UserHb userHb = userRepo.findOne(email);
+        UserHb userHb = queries.findSingleUserByEmail(email);
 
         return binder.bindFromBusinessObject(User.class, userHb);
     }
@@ -48,7 +52,7 @@ public class PersistenceImpl implements Persistence {
         userHb = userRepo.save(userHb);
         
         User result = binder.bindFromBusinessObject(User.class, userHb);
-
+        
         return result;
     }
 
@@ -120,6 +124,12 @@ public class PersistenceImpl implements Persistence {
     public SsoId findOneSessionId(String sessionId) {
         SsoIdHb ssoIdHb = ssoIdRepo.findOne(sessionId);
         return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+    }
+
+    public User findOneUserByEmail(String email) {
+        UserHb userHb = queries.findSingleUserByEmail(email);
+        
+        return binder.bindFromBusinessObject(User.class, userHb);
     }
 
 }

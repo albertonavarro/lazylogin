@@ -33,4 +33,6 @@ public interface Persistence {
 
     SsoId findOneSessionId(String sessionId);
     
+    User findOneUserByEmail(String email);
+    
 }

@@ -16,10 +16,9 @@
             </xs:complexType>
             <xs:complexType name="userInfo">
                 <xs:sequence>
-                    <xs:element minOccurs="1" maxOccurs="1" name="userId" type="xs:string"/>
-                    <xs:element minOccurs="1" maxOccurs="1" name="email" type="xs:string"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="username" type="xs:string"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="userid" type="xs:long"/>
                     <xs:element minOccurs="1" maxOccurs="1" name="verified" type="xs:boolean"/>
-                    <xs:element minOccurs="1" maxOccurs="1" name="verifyToken" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
         </xs:schema>

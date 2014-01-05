@@ -25,7 +25,7 @@ public class UserServices {
         User user = persistence.findOneUser(email);
 
         if (user == null) {
-            user = persistence.saveUser(new User(email));
+            user = persistence.saveUser(new User(email, null, null));
         }
         
         Token token = persistence.createToken(user);

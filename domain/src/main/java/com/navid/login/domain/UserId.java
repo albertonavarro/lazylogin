@@ -7,13 +7,13 @@ package com.navid.login.domain;
  */
 public class UserId {
 
-    private final String value;
+    private final Long value;
 
-    public UserId(String value) {
+    public UserId(Long value) {
         this.value = value;
     }
 
-    public String getValue() {
+    public Long getValue() {
         return this.value;
     }
     

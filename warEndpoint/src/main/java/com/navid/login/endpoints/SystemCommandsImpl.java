@@ -30,11 +30,11 @@ public class SystemCommandsImpl implements SystemCommands {
     public UserInfo getUserInfo(String sessionId) { 
         UserInfo userInfo = new UserInfo();
         
-        com.navid.login.domain.UserInfo userInfoDomain = systemServices.getUserInfo(sessionId);
+        com.navid.login.domain.SsoId ssoId = systemServices.getUserInfo(sessionId);
         
-        userInfo.setEmail(userInfoDomain.getEmail());
-        userInfo.setVerified(userInfoDomain.isValidated());
-        userInfo.setUserId(userInfoDomain.getUserId().getValue());
+        userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());
+        userInfo.setVerified(ssoId.getToken().getVerified());
+        userInfo.setUsername(ssoId.getToken().getUser().getName());
         
         return userInfo;
     }

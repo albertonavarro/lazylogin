@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
@@ -23,7 +24,8 @@ public class SsoIdHb implements Serializable {
 
     @Id
     @Column(name = "SSOID_VALUE")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GenericGenerator(name="sessionid_gen", strategy="com.navid.login.persistence.hibernate.SessionIdGenerator")
+    @GeneratedValue(generator = "sessionid_gen")
     private String value = null;
 
     /**

@@ -10,8 +10,14 @@ public class User implements Serializable {
     
     private final String email;
     
-    public User(String email){
+    private final String name;
+    
+    private final UserId userId;
+        
+    public User(String email, String name, UserId userId) {
         this.email = email;
+        this.userId = userId;
+        this.name = name;
     }
 
     /**
@@ -20,5 +26,21 @@ public class User implements Serializable {
     public String getEmail() {
         return email;
     }
+
+    /**
+     * @return the userId
+     */
+    public UserId getUserId() {
+        return userId;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+    
+    
     
 }

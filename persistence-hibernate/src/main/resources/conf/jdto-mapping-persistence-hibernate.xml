@@ -2,13 +2,32 @@
     <dto type="com.navid.login.domain.User"> 
         <immutableConstructor> 
             <arg order="0" type="java.lang.String"> 
+                <source name="email"/> 
+            </arg>
+            <arg order="1" type="java.lang.String"> 
                 <source name="username"/> 
+            </arg>
+            <arg order="2" type="com.navid.login.domain.UserId" cascade="true"> 
+                <source name="userIdWrapper"/> 
             </arg>
         </immutableConstructor> 
     </dto>
+    <dto type="com.navid.login.domain.UserId">
+        <immutableConstructor> 
+            <arg order="0" type="java.lang.Long"> 
+                <source name="userId"/> 
+            </arg> 
+        </immutableConstructor> 
+    </dto>
     <dto type="com.navid.login.persistence.hibernate.domain.UserHb"> 
-        <field name="username"> 
+        <field name="email"> 
             <source name="email"/> 
+        </field> 
+        <field name="username"> 
+            <source name="username"/> 
+        </field> 
+        <field name="userId"> 
+            <source name="userId.value"/> 
         </field> 
     </dto>
     <dto type="com.navid.login.domain.Token"> 

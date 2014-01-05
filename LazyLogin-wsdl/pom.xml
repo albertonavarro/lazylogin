@@ -12,6 +12,6 @@
   <artifactId>wsdl</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>wsdl</name>
+  <name>LazyLogin-ServiceWSDL</name>
   
 </project>
