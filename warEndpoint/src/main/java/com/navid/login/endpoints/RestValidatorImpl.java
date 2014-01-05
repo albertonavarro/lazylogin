@@ -18,7 +18,7 @@ public class RestValidatorImpl {
     @Produces("text/plain")
     public String ping(@PathParam("input") String input) {
         
-        //userServices.validateKey(input);
+        userServices.validateKey(input);
         
         return input + "verified";
     }

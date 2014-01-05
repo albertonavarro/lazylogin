@@ -1,6 +1,6 @@
 package com.navid.login.eventproducer;
 
-import com.navid.login.domain.Token;
+import com.navid.login.domain.ValidationKey;
 
 
 /**
@@ -9,6 +9,6 @@ import com.navid.login.domain.Token;
  */
 public interface EventProducer {
     
-    void validateToken(Token token);
+    void validateToken(ValidationKey token);
     
 }

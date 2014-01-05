@@ -7,10 +7,11 @@
 package com.navid.login.eventproducer;
 
 import com.navid.login.domain.Token;
+import com.navid.login.domain.ValidationKey;
 import javax.annotation.Resource;
 import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.TextMessage;
+import javax.jms.MapMessage;
 import javax.jms.Session;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
@@ -26,11 +27,13 @@ public class AMQEventProducer implements EventProducer {
     @Resource
     private JmsTemplate template;
 
-    public void validateToken(Token token) {
+    public void validateToken(final ValidationKey validationKey) {
         template.send(new MessageCreator() {
                 public Message createMessage(Session session) throws JMSException {
-                    TextMessage message = session.createTextMessage("texto");
-                    message.setIntProperty("messageCount", 1);
+                    MapMessage message = session.createMapMessage();
+
+                    message.setString("email", validationKey.getToken().getUser().getEmail());
+                    message.setString("validationUrl", "http://localhost:8080/rest/validate/" + validationKey.getVerificationCode());
                     
                     return message;
                 }

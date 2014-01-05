@@ -33,12 +33,13 @@ public class UserServices {
         }
         
         Token token = persistence.createToken(user);
+        
         ValidationKey validationKey = new ValidationKey(token, "blabla" + token.getValue());
         persistence.saveValidationKey(validationKey);
 
         SsoId result = persistence.createSsoId(token);
         
-        eventProducer.validateToken(token);
+        eventProducer.validateToken(validationKey);
         
         return result;
     }
