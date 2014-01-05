@@ -4,6 +4,7 @@ import com.navid.login.domain.SsoId;
 import com.navid.login.domain.Token;
 import com.navid.login.domain.User;
 import com.navid.login.domain.ValidationKey;
+import com.navid.login.eventproducer.EventProducer;
 import com.navid.login.persistence.Persistence;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,9 @@ public class UserServices {
 
     @Resource
     private Persistence persistence;
+    
+    @Resource
+    private EventProducer eventProducer;
 
     public SsoId createToken(String email) {
 
@@ -33,6 +37,8 @@ public class UserServices {
         persistence.saveValidationKey(validationKey);
 
         SsoId result = persistence.createSsoId(token);
+        
+        eventProducer.validateToken(token);
         
         return result;
     }

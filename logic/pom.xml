@@ -17,9 +17,16 @@
         <relativePath>../</relativePath>
     </parent>
     <dependencies>
+        
+        <!-- Internal dependencies -->
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.navid.lazylogin</groupId>
+            <artifactId>eventproducer-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -28,6 +35,7 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         
+        <!-- External dependencies -->
         <dependency>
             <groupId>org.apache.xbean</groupId>
             <artifactId>xbean-spring</artifactId>
@@ -41,11 +49,6 @@
             <artifactId>spring-jms</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jdto</groupId>
             <artifactId>jdto</artifactId>
         </dependency>
@@ -57,9 +60,17 @@
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
         </dependency>
+        
+        <!-- Test dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
         
     </dependencies>
