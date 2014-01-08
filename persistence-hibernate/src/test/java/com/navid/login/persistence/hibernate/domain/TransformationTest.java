@@ -20,7 +20,6 @@ public class TransformationTest {
     @BeforeClass
     public void setUp(){
         binder = DTOBinderFactory.buildBinder("/conf/jdto-mapping-persistence-hibernate.xml");
-    
     }
     
     @Test

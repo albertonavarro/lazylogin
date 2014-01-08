@@ -24,7 +24,7 @@
             <source name="email"/> 
         </field> 
         <field name="username"> 
-            <source name="username"/> 
+            <source name="name"/> 
         </field> 
         <field name="userId"> 
             <source name="userId.value"/> 
