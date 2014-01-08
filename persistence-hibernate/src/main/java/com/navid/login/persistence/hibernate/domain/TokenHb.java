@@ -26,7 +26,8 @@ public class TokenHb implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long value = null;
 
-    private Boolean verified = false;
+    @Column(name = "VALIDATED")
+    private Boolean validated = false;
 
     /**
      * @return the user
@@ -57,18 +58,20 @@ public class TokenHb implements Serializable {
     }
 
     /**
-     * @return the verified
+     * @return the validated
      */
-    public Boolean getVerified() {
-        return verified;
+    public Boolean getValidated() {
+        return validated;
     }
 
     /**
-     * @param verified the verified to set
+     * @param validated the validated to set
      */
-    public void setVerified(Boolean verified) {
-        this.verified = verified;
+    public void setValidated(Boolean validated) {
+        this.validated = validated;
     }
+
+    
 
     
 

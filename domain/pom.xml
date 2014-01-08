@@ -2,28 +2,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <groupId>com.navid.lazylogin</groupId>
-    <artifactId>domain</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    
-    <packaging>jar</packaging>
-    
-    <name>LazyLogin-Domain</name>
-    
     <parent>
         <groupId>com.navid.lazylogin</groupId>
         <artifactId>parent</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../</relativePath>
     </parent>
+    
+    <groupId>com.navid.lazylogin</groupId>
+    <artifactId>domain</artifactId>
+    <name>LazyLogin-domain</name>
+    
     <dependencies>
-        
-        
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.jdto</groupId>
             <artifactId>jdto</artifactId>

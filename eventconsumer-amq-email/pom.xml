@@ -10,9 +10,8 @@
   
     <groupId>com.navid.lazylogin</groupId>
     <artifactId>eventconsumer-amq-email</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <name>LazyLogin-EmailNotifier</name>
+    <name>LazyLogin-eventconsumer-amq-email</name>
+    
     <dependencies>
         <dependency>
             <groupId>javax.jms</groupId>

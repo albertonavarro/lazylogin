@@ -38,12 +38,15 @@
             <arg order="1" type="java.lang.Long"> 
                 <source name="value"/> 
             </arg>
-        </immutableConstructor> 
+            <arg order="2" type="java.lang.Boolean"> 
+                <source name="validated"/> 
+            </arg>
+        </immutableConstructor>
     </dto>
     <dto type="com.navid.login.persistence.hibernate.domain.TokenHb"> 
         <field name="user" cascade="true"> 
             <source name="user" /> 
-        </field> 
+        </field>
     </dto>
     <dto type="com.navid.login.domain.SsoId"> 
         <immutableConstructor> 
@@ -65,8 +68,8 @@
             <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
                 <source name="token"/> 
             </arg>
-            <arg order="1" type="java.lang.String" cascade="true"> 
-                <source name="verificationCode"/> 
+            <arg order="1" type="java.lang.String"> 
+                <source name="validationKey"/> 
             </arg>
         </immutableConstructor> 
     </dto>

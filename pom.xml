@@ -14,7 +14,6 @@
     <properties>
         <jackson.version>1.8.6</jackson.version>
         <cfx.version>3.0.0-milestone1</cfx.version>
-        <junit.version>4.11</junit.version>
         <spring.version>3.2.0.RELEASE</spring.version>
         <jdto.version>1.4</jdto.version>
         <slf4j-log4j12.version>1.6.2</slf4j-log4j12.version>
@@ -22,9 +21,58 @@
         <spring-data-jpa.version>1.2.0.RELEASE</spring-data-jpa.version>
         <commons-lang.version>2.4</commons-lang.version>
         <amq.version>5.1.0</amq.version>
+        <testng.version>6.8.7</testng.version>
+        <h2.version>1.3.170</h2.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- Modules -->
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>persistence-hibernate</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>logic</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>eventconsumer-amq-email</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>eventproducer-amq</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>eventproducer-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>war-endpoint</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>wsdl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 3rd party -->
             <dependency>
                 <groupId>commons-pool</groupId>
                 <artifactId>commons-pool</artifactId>
@@ -82,12 +130,6 @@
             </dependency>
        
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.jdto</groupId>
                 <artifactId>jdto</artifactId>
                 <version>${jdto.version}</version>
@@ -117,11 +159,7 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.22</version>
             </dependency>
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>1.3.170</version>
-            </dependency>
+            
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-jpa</artifactId>
@@ -138,6 +176,20 @@
                 <version>1.4</version>
                 <type>jar</type>
             </dependency>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>6.8.7</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- Runtime -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            
         </dependencies>
     </dependencyManagement>
     
@@ -147,11 +199,11 @@
         <module>domain</module>
         <module>persistence-api</module>
         <module>persistence-hibernate</module>
-        <module>warEndpoint</module>
+        <module>war-endpoint</module>
         <module>eventproducer-api</module>
-        <module>LazyLogin-EventProducer-AMQ</module>
-        <module>JMSConsumer-EmailNotifier</module>
-        <module>LazyLogin-wsdl</module>
+        <module>eventproducer-amq</module>
+        <module>eventconsumer-amq-email</module>
+        <module>wsdl</module>
     </modules>
 
 </project>

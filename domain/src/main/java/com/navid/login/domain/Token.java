@@ -10,18 +10,20 @@ public class Token implements Serializable {
 
     private final User user;
 
-    private Long value;
+    private final Long value;
 
-    private Boolean verified = false;
+    private Boolean validated;
     
     /**
      * 
      * @param user
-     * @param value 
+     * @param value
+     * @param validated
      */
-    public Token(User user, Long value) {
+    public Token(User user, Long value, Boolean validated) {
         this.user = user;
         this.value = value;
+        this.validated = validated;
     }
 
     /**
@@ -39,24 +41,19 @@ public class Token implements Serializable {
     }
 
     /**
-     * @param value the value to set
+     * @return the validated
      */
-    public void setValue(Long value) {
-        this.value = value;
+    public Boolean getValidated() {
+        return validated;
     }
 
     /**
-     * @return the verified
+     * @param validated the validated to set
      */
-    public Boolean getVerified() {
-        return verified;
+    public void setValidated(Boolean validated) {
+        this.validated = validated;
     }
 
-    /**
-     * @param verified the verified to set
-     */
-    public void setVerified(Boolean verified) {
-        this.verified = verified;
-    }
+    
 
 }

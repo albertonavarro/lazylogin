@@ -34,8 +34,8 @@ public class UserServices {
         
         Token token = persistence.createToken(user);
         
-        ValidationKey validationKey = new ValidationKey(token, "blabla" + token.getValue());
-        persistence.saveValidationKey(validationKey);
+        ValidationKey validationKey = new ValidationKey(token, null);
+        validationKey = persistence.saveValidationKey(validationKey);
 
         SsoId result = persistence.createSsoId(token);
         
@@ -63,8 +63,8 @@ public class UserServices {
             throw new RuntimeException("ValidationKey no existe");
         }
 
-        found.getToken().setVerified(Boolean.TRUE);
-        persistence.saveToken(found.getToken());
+        found.getToken().setValidated(Boolean.TRUE);
+        Token token = persistence.saveToken(found.getToken());
         persistence.deleteValidationKey(found);
     }
 

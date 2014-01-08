@@ -6,11 +6,10 @@
 
 package com.navid.login.domain;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.io.Serializable;
+import java.security.SecureRandom;
 import java.util.Random;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.stereotype.Component;
+import java.util.UUID;
 
 /**
  *
@@ -22,15 +21,28 @@ public class DomainFactory {
     
     private static final Random RANDOM = new Random();
     
+    private static SecureRandom secureRandom = new SecureRandom();
     
-    public static String sessionIdGenerator ( String userId, Long token ) {
-        String firstComponent = String.valueOf(userId.hashCode()).substring(1, 6);
+    public static boolean sessionIdValidator (String sessionId ) {
+        return true;
+    }
+    
+    public static String sessionIdGenerator ( String userId, Long token ) {  
+        String variable = UUID.randomUUID().toString();
         
-        String secondComponent = String.valueOf(RANDOM.nextInt());
+        int fixed = Math.abs((userId + token).hashCode());
         
-        String thirdComponent = String.valueOf((String.valueOf(token.hashCode())+secondComponent).hashCode()).substring(1,6);
+        return VERSION + "-" + fixed + "-" + variable;
+    }
+
+    public static Serializable validationKeyGenerator(Long value) {
+        String variable = UUID.randomUUID().toString();
         
-        return VERSION + "-" + firstComponent + "-" + secondComponent.substring(1, 6) + "-" + thirdComponent;
+        return VERSION + "-" + variable;
+    }
+    
+    public static boolean validationKeyValidator( String validationKey ) {
+     return true;
     }
     
 }

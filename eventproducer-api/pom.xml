@@ -10,8 +10,7 @@
   
   <groupId>com.navid.lazylogin</groupId>
   <artifactId>eventproducer-api</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>LazyLogin-EventProducer-API</name>
+  <name>LazyLogin-eventproducer-api</name>
   
   <dependencies>
       <dependency>

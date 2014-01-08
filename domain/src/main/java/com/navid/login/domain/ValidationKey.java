@@ -10,11 +10,11 @@ public class ValidationKey implements Serializable {
     
     private final Token token;
     
-    private final String verificationCode;
+    private final String validationKey;
     
-    public ValidationKey(Token token, String verificationCode ) {
+    public ValidationKey(Token token, String validationKey ) {
         this.token = token;
-        this.verificationCode = verificationCode;
+        this.validationKey = validationKey;
     }
 
     /**
@@ -27,8 +27,8 @@ public class ValidationKey implements Serializable {
     /**
      * @return the verificationCode
      */
-    public String getVerificationCode() {
-        return verificationCode;
+    public String getValidationKey() {
+        return validationKey;
     }
     
     

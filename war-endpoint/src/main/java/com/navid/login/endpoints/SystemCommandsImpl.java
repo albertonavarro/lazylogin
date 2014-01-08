@@ -33,7 +33,7 @@ public class SystemCommandsImpl implements SystemCommands {
         com.navid.login.domain.SsoId ssoId = systemServices.getUserInfo(sessionId);
         
         userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());
-        userInfo.setVerified(ssoId.getToken().getVerified());
+        userInfo.setVerified(ssoId.getToken().getValidated());
         userInfo.setUsername(ssoId.getToken().getUser().getName());
         
         return userInfo;

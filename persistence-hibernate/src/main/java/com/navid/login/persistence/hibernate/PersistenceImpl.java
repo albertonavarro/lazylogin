@@ -103,6 +103,7 @@ public class PersistenceImpl implements Persistence {
         
         TokenHb tokenHb = new TokenHb();
         tokenHb.setUser(userHb);
+        tokenHb.setValidated(false);
 
         tokenHb = tokenRepo.save(tokenHb);
 

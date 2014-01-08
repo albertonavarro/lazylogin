@@ -10,8 +10,6 @@
   
   <groupId>com.navid.lazylogin</groupId>
   <artifactId>wsdl</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
-  <name>LazyLogin-ServiceWSDL</name>
+  <name>LazyLogin-wsdl</name>
   
 </project>

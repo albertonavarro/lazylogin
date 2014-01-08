@@ -33,7 +33,7 @@ public class AMQEventProducer implements EventProducer {
                     MapMessage message = session.createMapMessage();
 
                     message.setString("email", validationKey.getToken().getUser().getEmail());
-                    message.setString("validationUrl", "http://localhost:8080/rest/validate/" + validationKey.getVerificationCode());
+                    message.setString("validationUrl", "http://localhost:8080/rest/validate/" + validationKey.getValidationKey());
                     
                     return message;
                 }
