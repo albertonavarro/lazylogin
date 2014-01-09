@@ -56,7 +56,7 @@ public class UserServices {
 
     }
 
-    public void validateKey(String validationKey) {
+    public Token validateKey(String validationKey) {
         ValidationKey found = persistence.findOneValidationKey(validationKey);
 
         if (found == null) {
@@ -66,6 +66,7 @@ public class UserServices {
         found.getToken().setValidated(Boolean.TRUE);
         Token token = persistence.saveToken(found.getToken());
         persistence.deleteValidationKey(found);
+        return found.getToken();
     }
 
 }

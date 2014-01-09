@@ -1,5 +1,6 @@
 package com.navid.login.endpoints;
 
+import com.navid.login.domain.Token;
 import com.navid.login.services.UserServices;
 import javax.annotation.Resource;
 import javax.ws.rs.GET;
@@ -18,8 +19,8 @@ public class RestValidatorImpl {
     @Produces("text/plain")
     public String ping(@PathParam("input") String input) {
         
-        userServices.validateKey(input);
+        Token token = userServices.validateKey(input);
         
-        return input + "verified";
+        return token.getUser().getEmail() + " validated for that device.";
     }
 }
