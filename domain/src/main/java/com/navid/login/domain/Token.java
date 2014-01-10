@@ -10,7 +10,7 @@ public class Token implements Serializable {
 
     private final User user;
 
-    private final Long value;
+    private final String value;
 
     private Boolean validated;
     
@@ -20,7 +20,7 @@ public class Token implements Serializable {
      * @param value
      * @param validated
      */
-    public Token(User user, Long value, Boolean validated) {
+    public Token(User user, String value, Boolean validated) {
         this.user = user;
         this.value = value;
         this.validated = validated;
@@ -36,7 +36,7 @@ public class Token implements Serializable {
     /**
      * @return the value
      */
-    public Long getValue() {
+    public String getValue() {
         return value;
     }
 

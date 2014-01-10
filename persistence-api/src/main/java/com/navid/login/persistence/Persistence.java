@@ -15,7 +15,7 @@ public interface Persistence {
     
     User saveUser(User user);
     
-    Token findOneToken(long parseLong);
+    Token findOneToken(String token);
 
     Token saveToken(Token token);
     

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  *
@@ -23,8 +24,9 @@ public class TokenHb implements Serializable {
 
     @Id
     @Column(name = "TOKEN_VALUE")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long value = null;
+    @GenericGenerator(name="token_gen", strategy="com.navid.login.persistence.hibernate.TokenGenerator")
+    @GeneratedValue(generator = "token_gen")
+    private String value = null;
 
     @Column(name = "VALIDATED")
     private Boolean validated = false;
@@ -46,14 +48,14 @@ public class TokenHb implements Serializable {
     /**
      * @return the value
      */
-    public Long getValue() {
+    public String getValue() {
         return value;
     }
 
     /**
      * @param value the value to set
      */
-    public void setValue(Long value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

@@ -5,7 +5,7 @@
             <arg order="0" type="com.navid.login.domain.User" cascade="true"> 
                 <source name="user"/> 
             </arg>
-            <arg order="1" type="java.lang.Long"> 
+            <arg order="1" type="java.lang.String"> 
                 <source name="value"/> 
             </arg>
             <arg order="2" type="java.lang.Boolean"> 

@@ -46,7 +46,7 @@ public class UserServices {
 
     public SsoId loginWithToken(String tokenId) {
 
-        Token token = persistence.findOneToken(Long.parseLong(tokenId));
+        Token token = persistence.findOneToken(tokenId);
 
         if (token == null) {
             throw new RuntimeException("Login no existe");

@@ -3,7 +3,6 @@ package com.navid.login.persistence.hibernate;
 import com.navid.login.domain.SsoId;
 import com.navid.login.domain.Token;
 import com.navid.login.domain.User;
-import com.navid.login.domain.UserId;
 import com.navid.login.domain.ValidationKey;
 import com.navid.login.persistence.Persistence;
 import com.navid.login.persistence.hibernate.domain.SsoIdHb;
@@ -56,8 +55,8 @@ public class PersistenceImpl implements Persistence {
         return result;
     }
 
-    public Token findOneToken(long parseLong) {
-        TokenHb tokenHb = tokenRepo.findOne(parseLong);
+    public Token findOneToken(String token) {
+        TokenHb tokenHb = tokenRepo.findOne(token);
 
         return binder.bindFromBusinessObject(Token.class, tokenHb);
     }

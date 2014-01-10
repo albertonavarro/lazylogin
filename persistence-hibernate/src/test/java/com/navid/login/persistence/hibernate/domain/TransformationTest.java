@@ -41,22 +41,22 @@ public class TransformationTest {
     
     @Test
     public void shouldTransformToken() {
-        Token originalToken = new Token(new User(null, null, null), 4L, true);
+        Token originalToken = new Token(new User(null, null, null), "tokenvalue", true);
         
         TokenHb tokenHb = binder.bindFromBusinessObject(TokenHb.class, originalToken);
         assertNotNull(tokenHb.getUser());
         assertEquals(tokenHb.getValidated(), (Boolean) true);
-        assertEquals(tokenHb.getValue(), (Long) 4L);
+        assertEquals(tokenHb.getValue(), "tokenvalue");
         
         Token newToken = binder.bindFromBusinessObject(Token.class, tokenHb);
         assertNotNull(newToken.getUser());
         assertEquals(newToken.getValidated(), (Boolean) true);
-        assertEquals(newToken.getValue(), (Long) 4L);
+        assertEquals(newToken.getValue(), "tokenvalue");
     }
     
     @Test
     public void shouldTransformSessionId() {
-        SsoId originalSsoId = new SsoId(new Token(null, Long.MIN_VALUE, Boolean.TRUE), "ssoid-value");
+        SsoId originalSsoId = new SsoId(new Token(null, null, Boolean.TRUE), "ssoid-value");
         
         SsoIdHb ssoIdHb = binder.bindFromBusinessObject(SsoIdHb.class, originalSsoId);
         assertNotNull(ssoIdHb.getToken());
@@ -69,7 +69,7 @@ public class TransformationTest {
     
     @Test
     public void shouldTransformValidationKey(){
-        ValidationKey originalValidationKey = new ValidationKey(new Token(null, Long.MIN_VALUE, Boolean.TRUE), "validationkey-value");
+        ValidationKey originalValidationKey = new ValidationKey(new Token(null, null, Boolean.TRUE), "validationkey-value");
         
         ValidationKeyHb validationKeyHb = binder.bindFromBusinessObject(ValidationKeyHb.class, originalValidationKey);
         assertNotNull(validationKeyHb.getToken());
