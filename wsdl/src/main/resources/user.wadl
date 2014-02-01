@@ -1,0 +1,21 @@
+<application>
+    <grammars/>
+    <resources base="http://localhost:8080/ranking/rest">
+        <resource path="/">
+            <doc>Desc</doc>
+            <resource path="store">
+                <method name="POST">
+                    <doc>Desc2</doc>
+                    <request>
+                        <representation mediaType="application/json">
+                            <doc>Desc2</doc>
+                        </representation>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+    </resources>
+</application>
