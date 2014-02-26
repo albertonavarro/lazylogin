@@ -7,6 +7,8 @@ import com.navid.login.domain.ValidationKey;
 import com.navid.login.eventproducer.EventProducer;
 import com.navid.login.persistence.Persistence;
 import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +19,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class UserServices {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserServices.class);
 
     @Resource
     private Persistence persistence;

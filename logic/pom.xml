@@ -18,17 +18,14 @@
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>domain</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>eventproducer-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>persistence-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         
         <!-- External dependencies -->
@@ -49,12 +46,12 @@
             <artifactId>jdto</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
-        <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
         </dependency>
         
         <!-- Test dependencies -->
