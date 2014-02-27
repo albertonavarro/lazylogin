@@ -10,6 +10,12 @@
     
     <name>LazyLogin Parent</name>
     
+    <scm>
+        <url>https://github.com/albertonavarro/lazylogin</url>
+        <connection>scm:git:ssh://git@github.com/albertonavarro/lazylogin.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+    
     <description>Keep your system simple, password less, and stop bothering your users.</description>
     <properties>
         <jackson.version>1.8.6</jackson.version>
