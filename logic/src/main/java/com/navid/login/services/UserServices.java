@@ -30,18 +30,25 @@ public class UserServices {
 
     public SsoId createToken(String email) {
 
+        logger.info("Creating token for %s", email);
+        
         User user = persistence.findOneUser(email);
 
         if (user == null) {
+            logger.debug("Email not found, creating user: %s", email);
             user = persistence.saveUser(new User(email, null, null));
+            logger.info("User created: %s", user);
         }
         
         Token token = persistence.createToken(user);
+        logger.info("Token created: %s", token);
         
         ValidationKey validationKey = new ValidationKey(token, null);
         validationKey = persistence.saveValidationKey(validationKey);
+        logger.info("ValidationKey created: %s", validationKey);
 
         SsoId result = persistence.createSsoId(token);
+        logger.info("SessionId created: %s", result);
         
         eventProducer.validateToken(validationKey);
         
