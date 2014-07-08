@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://login.navid.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SystemCommandsImplService" targetNamespace="http://login.navid.com/">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://login.navid.com/" elementFormDefault="unqualified" targetNamespace="http://login.navid.com/" version="1.0">
+            <xs:element name="getUserInfo" type="tns:getUserInfo"/>
+            <xs:element name="getUserInfoResponse" type="tns:getUserInfoResponse"/>
+            <xs:complexType name="getUserInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="getUserInfoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="return" type="tns:userInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="userInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="userId" type="xs:string"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="email" type="xs:string"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="verified" type="xs:boolean"/>
+                    <xs:element minOccurs="1" maxOccurs="1" name="verifyToken" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getUserInfo">
+        <wsdl:part element="tns:getUserInfo" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getUserInfoResponse">
+        <wsdl:part element="tns:getUserInfoResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="SystemCommands">
+        <wsdl:operation name="getUserInfo">
+            <wsdl:input message="tns:getUserInfo" name="getUserInfo">
+            </wsdl:input>
+            <wsdl:output message="tns:getUserInfoResponse" name="getUserInfoResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SystemCommandsImplServiceSoapBinding" type="tns:SystemCommands">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getUserInfo">
+            <soap:operation soapAction="" style="document"/>
+            <wsdl:input name="getUserInfo">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getUserInfoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SystemCommandsImplService">
+        <wsdl:port binding="tns:SystemCommandsImplServiceSoapBinding" name="SystemCommandsImplPort">
+            <soap:address location="http://localhost:8080/login/admin"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

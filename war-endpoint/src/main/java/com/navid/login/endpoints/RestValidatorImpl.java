@@ -13,7 +13,7 @@ import org.apache.cxf.jaxrs.model.wadl.DocTarget;
 
 @Path("/rest")
 public class RestValidatorImpl {
-    
+
     @Resource
     private UserServices userServices;
 
@@ -21,16 +21,16 @@ public class RestValidatorImpl {
     @Path("/validate/{input}")
     @Produces("text/plain")
     @Descriptions({
-   @Description(value = "Adds a new book", target = DocTarget.METHOD),
-   @Description(value = "Requested Book", target = DocTarget.RETURN),
-   @Description(value = "Request", target = DocTarget.REQUEST),
-   @Description(value = "Response", target = DocTarget.RESPONSE),
-   @Description(value = "Resource", target = DocTarget.RESOURCE)
-})
-    public String ping(@PathParam("input") String input) {
-        
+        @Description(value = "Validates input", target = DocTarget.METHOD),
+        @Description(value = "Human readable message", target = DocTarget.RETURN),
+        @Description(value = "Request", target = DocTarget.REQUEST),
+        @Description(value = "Response", target = DocTarget.RESPONSE),
+        @Description(value = "Resource", target = DocTarget.RESOURCE)
+    })
+    public String validateInput(@PathParam("input") String input) {
+
         Token token = userServices.validateKey(input);
-        
+
         return token.getUser().getEmail() + " validated for that device.";
     }
 }
