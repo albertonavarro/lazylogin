@@ -74,7 +74,7 @@
             </dependency>
             <dependency>
                 <groupId>com.navid.lazylogin</groupId>
-                <artifactId>wsdl</artifactId>
+                <artifactId>contract</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!-- 3rd party -->
@@ -251,7 +251,7 @@
         <module>eventproducer-amq</module>
         <module>eventconsumer-amq-email</module>
         <module>wsdl</module>
-        <module>chefrecipe</module>
+        <module>jetty-endpoint</module>
     </modules>
 
 </project>

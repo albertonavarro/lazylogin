@@ -20,7 +20,7 @@
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
-            <artifactId>wsdl</artifactId>
+            <artifactId>contract</artifactId>
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
