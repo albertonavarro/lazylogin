@@ -1,6 +1,5 @@
 package com.navid.login.eventproducer;
 
-import com.navid.login.domain.Token;
 import com.navid.login.domain.ValidationKey;
 import javax.annotation.Resource;
 import javax.jms.JMSException;
@@ -17,21 +16,23 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AMQEventProducer implements EventProducer {
-    
+
     @Resource
     private JmsTemplate template;
 
+    @Override
     public void validateToken(final ValidationKey validationKey) {
         template.send(new MessageCreator() {
-                public Message createMessage(Session session) throws JMSException {
-                    MapMessage message = session.createMapMessage();
+            @Override
+            public Message createMessage(Session session) throws JMSException {
+                MapMessage message = session.createMapMessage();
 
-                    message.setString("email", validationKey.getToken().getUser().getEmail());
-                    message.setString("validationUrl", "http://localhost:8080/rest/validate/" + validationKey.getValidationKey());
-                    
-                    return message;
-                }
-            });
+                message.setString("email", validationKey.getToken().getUser().getEmail());
+                message.setString("validationUrl", "http://localhost:8080/rest/validate/" + validationKey.getValidationKey());
+
+                return message;
+            }
+        });
     }
 
 }

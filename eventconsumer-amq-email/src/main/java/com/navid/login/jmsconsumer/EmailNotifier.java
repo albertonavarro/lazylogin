@@ -1,12 +1,10 @@
 package com.navid.login.jmsconsumer;
 
-import java.util.Properties;
 import javax.annotation.Resource;
 import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
-import javax.jms.TextMessage;
 import org.springframework.mail.MailException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -23,6 +21,7 @@ public class EmailNotifier implements MessageListener {
     @Resource
     private SimpleMailMessage templateMessage;
 
+    @Override
     public void onMessage(Message msg) {
         try {
             MapMessage mapMessage = (MapMessage) msg;
