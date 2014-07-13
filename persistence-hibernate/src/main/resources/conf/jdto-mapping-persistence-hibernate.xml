@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?> <dto-mapping xmlns="http://jdto.org/jdto/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jdto.org/jdto/1.0 http://jdto.org/jdto-1.0.xsd"> 
-    <dto type="com.navid.login.domain.User"> 
+    <dto type="com.navid.lazylogin.domain.User"> 
         <immutableConstructor> 
             <arg order="0" type="java.lang.String"> 
                 <source name="email"/> 
@@ -7,19 +7,19 @@
             <arg order="1" type="java.lang.String"> 
                 <source name="username"/> 
             </arg>
-            <arg order="2" type="com.navid.login.domain.UserId" cascade="true"> 
+            <arg order="2" type="com.navid.lazylogin.domain.UserId" cascade="true"> 
                 <source name="userIdWrapper"/> 
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.login.domain.UserId">
+    <dto type="com.navid.lazylogin.domain.UserId">
         <immutableConstructor> 
             <arg order="0" type="java.lang.Long"> 
                 <source name="userId"/> 
             </arg> 
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.login.persistence.hibernate.domain.UserHb"> 
+    <dto type="com.navid.lazylogin.persistence.hibernate.domain.UserHb"> 
         <field name="email"> 
             <source name="email"/> 
         </field> 
@@ -30,9 +30,9 @@
             <source name="userId.value"/> 
         </field> 
     </dto>
-    <dto type="com.navid.login.domain.Token"> 
+    <dto type="com.navid.lazylogin.domain.Token"> 
         <immutableConstructor> 
-            <arg order="0" type="com.navid.login.domain.User" cascade="true"> 
+            <arg order="0" type="com.navid.lazylogin.domain.User" cascade="true"> 
                 <source name="user"/> 
             </arg>
             <arg order="1" type="java.lang.String"> 
@@ -43,14 +43,14 @@
             </arg>
         </immutableConstructor>
     </dto>
-    <dto type="com.navid.login.persistence.hibernate.domain.TokenHb"> 
+    <dto type="com.navid.lazylogin.persistence.hibernate.domain.TokenHb"> 
         <field name="user" cascade="true"> 
             <source name="user" /> 
         </field>
     </dto>
-    <dto type="com.navid.login.domain.SsoId"> 
+    <dto type="com.navid.lazylogin.domain.SsoId"> 
         <immutableConstructor> 
-            <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
+            <arg order="0" type="com.navid.lazylogin.domain.Token" cascade="true"> 
                 <source name="token"/> 
             </arg>
             <arg order="1" type="java.lang.String"> 
@@ -58,14 +58,14 @@
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.login.persistence.hibernate.domain.SsoIdHb"> 
+    <dto type="com.navid.lazylogin.persistence.hibernate.domain.SsoIdHb"> 
         <field name="token" cascade="true"> 
             <source name="token" /> 
         </field>
     </dto>
-    <dto type="com.navid.login.domain.ValidationKey"> 
+    <dto type="com.navid.lazylogin.domain.ValidationKey"> 
         <immutableConstructor> 
-            <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
+            <arg order="0" type="com.navid.lazylogin.domain.Token" cascade="true"> 
                 <source name="token"/> 
             </arg>
             <arg order="1" type="java.lang.String"> 
@@ -73,7 +73,7 @@
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.login.persistence.hibernate.domain.ValidationKeyHb"> 
+    <dto type="com.navid.lazylogin.persistence.hibernate.domain.ValidationKeyHb"> 
         <field name="token" cascade="true"> 
             <source name="token" /> 
         </field>

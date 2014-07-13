@@ -1,6 +1,6 @@
 <application>
     <grammars/>
-    <resources base="http://localhost:8080/ranking/rest">
+    <resources base="http://lazylogin.navid.com/">
         <resource path="/">
             <doc>Desc</doc>
             <resource path="store">
