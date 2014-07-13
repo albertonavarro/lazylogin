@@ -18,6 +18,7 @@
     
     <description>Keep your system simple, password less, and stop bothering your users.</description>
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.version>1.8.6</jackson.version>
         <cfx.version>3.0.0-milestone1</cfx.version>
         <jetty.version>9.2.0.RC0</jetty.version>
@@ -312,7 +313,22 @@
                 <artifactId>guava</artifactId>
                 <version>14.0.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>4.1.9.Final</version>
+                <scope>compile</scope>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <version>1.0.1.Final</version>
+                <scope>compile</scope>
+                <type>jar</type>
+            </dependency>
         </dependencies>
+        
     </dependencyManagement>
     
     <modules>
@@ -320,7 +336,7 @@
         <module>domain</module>
         <module>persistence-api</module>
         <module>persistence-hibernate</module>
-        <module>war-endpoint</module>
+        <!--<module>war-endpoint</module>-->
         <module>eventproducer-api</module>
         <module>eventproducer-amq</module>
         <module>eventconsumer-amq-email</module>
