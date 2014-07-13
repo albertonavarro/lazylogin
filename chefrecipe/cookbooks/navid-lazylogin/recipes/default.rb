@@ -61,7 +61,7 @@ simple_iptables_rule "ajp" do
 end
 
 remote_file "/root/jetty-deployable.jar" do
-   source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/record-server/jetty-endpoint/${project.version}/jetty-endpoint-${project.version}.jar"
+   source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/jetty-endpoint/${project.version}/jetty-endpoint-${project.version}.jar"
 end
 
 directory "/root/navidconfig" do
@@ -88,7 +88,7 @@ end
 # setup the service (based on the script above),
 # start it, and make it start at boot
 cookbook_file '/etc/init.d/lazylogin' do
-    source 'RecordServerService'
+    source 'LazyLoginService'
     mode 0755
     owner "root"
     group "root"
