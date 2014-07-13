@@ -18,17 +18,17 @@
    
     <jaxws:endpoint 
         id="userCommands" 
-        implementor="com.navid.login.endpoints.UserCommandsImpl" 
+        implementor="com.navid.lazylogin.endpoints.UserCommandsImpl" 
         address="/user" />
         
    <jaxws:endpoint 
         id="systemCommands" 
-        implementor="com.navid.login.endpoints.SystemCommandsImpl" 
+        implementor="com.navid.lazylogin.endpoints.SystemCommandsImpl" 
         address="/system" /> 
         
    <jaxrs:server id="services" address="/">
         <jaxrs:serviceBeans>
-            <bean class="com.navid.login.endpoints.RestValidatorImpl"/>
+            <bean class="com.navid.lazylogin.endpoints.RestValidatorImpl"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>

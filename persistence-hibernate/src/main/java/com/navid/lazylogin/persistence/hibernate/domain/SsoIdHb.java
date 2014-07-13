@@ -24,7 +24,7 @@ public class SsoIdHb implements Serializable {
 
     @Id
     @Column(name = "SSOID_VALUE")
-    @GenericGenerator(name="sessionid_gen", strategy="com.navid.login.persistence.hibernate.SessionIdGenerator")
+    @GenericGenerator(name="sessionid_gen", strategy="com.navid.lazylogin.persistence.hibernate.SessionIdGenerator")
     @GeneratedValue(generator = "sessionid_gen")
     private String value = null;
 

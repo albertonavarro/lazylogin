@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 import org.jdto.DTOBinder;
 
 
-@javax.jws.WebService(endpointInterface = "com.navid.login.UserCommands")
+@javax.jws.WebService(endpointInterface = "com.navid.lazylogin.UserCommands")
 public class UserCommandsImpl implements UserCommands {
 
     private static final Logger LOG = Logger.getLogger(UserCommandsImpl.class.getName());
@@ -27,7 +27,7 @@ public class UserCommandsImpl implements UserCommands {
     
 
     /* (non-Javadoc)
-     * @see com.navid.login.UserCommands#createToken(com.navid.login.CreateTokenRequest  parameters )*
+     * @see com.navid.lazylogin.UserCommands#createToken(com.navid.lazylogin.CreateTokenRequest  parameters )*
      */
     @Override
     public com.navid.lazylogin.CreateTokenResponse createToken(CreateTokenRequest parameters) { 
@@ -47,7 +47,7 @@ public class UserCommandsImpl implements UserCommands {
     }
 
     /* (non-Javadoc)
-     * @see com.navid.login.UserCommands#loginWithToken(com.navid.login.LoginWithTokenRequest  parameters )*
+     * @see com.navid.lazylogin.UserCommands#loginWithToken(com.navid.lazylogin.LoginWithTokenRequest  parameters )*
      */
     @Override
     public com.navid.lazylogin.LoginWithTokenResponse loginWithToken(LoginWithTokenRequest parameters) { 

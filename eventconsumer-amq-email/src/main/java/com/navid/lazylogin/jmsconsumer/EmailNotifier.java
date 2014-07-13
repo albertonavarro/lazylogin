@@ -1,4 +1,4 @@
-package com.navid.login.jmsconsumer;
+package com.navid.lazylogin.jmsconsumer;
 
 import javax.annotation.Resource;
 import javax.jms.JMSException;

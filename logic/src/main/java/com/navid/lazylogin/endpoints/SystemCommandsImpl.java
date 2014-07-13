@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 import org.jdto.DTOBinder;
 
 
-@javax.jws.WebService(endpointInterface = "com.navid.login.SystemCommands")
+@javax.jws.WebService(endpointInterface = "com.navid.lazylogin.SystemCommands")
                       
 public class SystemCommandsImpl implements SystemCommands {
 

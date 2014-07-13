@@ -24,7 +24,7 @@ public class TokenHb implements Serializable {
 
     @Id
     @Column(name = "TOKEN_VALUE")
-    @GenericGenerator(name="token_gen", strategy="com.navid.login.persistence.hibernate.TokenGenerator")
+    @GenericGenerator(name="token_gen", strategy="com.navid.lazylogin.persistence.hibernate.TokenGenerator")
     @GeneratedValue(generator = "token_gen")
     private String value = null;
 

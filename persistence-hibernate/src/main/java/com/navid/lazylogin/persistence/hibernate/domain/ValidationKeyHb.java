@@ -22,7 +22,7 @@ public class ValidationKeyHb implements Serializable {
     
     @Id
     @Column(name="VALIDATION_KEY")
-    @GenericGenerator(name="validationkey_gen", strategy="com.navid.login.persistence.hibernate.ValidationKeyGenerator")
+    @GenericGenerator(name="validationkey_gen", strategy="com.navid.lazylogin.persistence.hibernate.ValidationKeyGenerator")
     @GeneratedValue(generator = "validationkey_gen")
     private String validationKey;
 

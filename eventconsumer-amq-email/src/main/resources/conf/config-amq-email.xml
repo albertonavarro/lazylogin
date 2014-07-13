@@ -32,7 +32,7 @@ http://www.springframework.org/schema/jms http://www.springframework.org/schema/
         <property name="subject" value="${email.subject}"/>
     </bean>
     
-    <bean id="emailNotifier" class="com.navid.login.jmsconsumer.EmailNotifier"/>
+    <bean id="emailNotifier" class="com.navid.lazylogin.jmsconsumer.EmailNotifier"/>
     
     <bean id="destination" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg value="jmsExample" />

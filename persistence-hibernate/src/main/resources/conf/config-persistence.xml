@@ -27,5 +27,5 @@
 	</bean>
 
 	<!-- Jpa Repositories -->
-	<jpa:repositories base-package="com.navid.login.persistence.hibernate"></jpa:repositories>
+	<jpa:repositories base-package="com.navid.lazylogin.persistence.hibernate"></jpa:repositories>
 </beans>

@@ -25,7 +25,7 @@
     </bean>
     
     <!-- Jpa Repositories -->
-    <jpa:repositories base-package="com.navid.login.persistence.hibernate" transaction-manager-ref="transactionManager"></jpa:repositories>
+    <jpa:repositories base-package="com.navid.lazylogin.persistence.hibernate" transaction-manager-ref="transactionManager"></jpa:repositories>
     
     <!-- Database -->
     <jdbc:embedded-database id="datasource" type="H2"></jdbc:embedded-database>

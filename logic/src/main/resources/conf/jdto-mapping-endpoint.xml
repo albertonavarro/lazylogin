@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?> <dto-mapping xmlns="http://jdto.org/jdto/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jdto.org/jdto/1.0 http://jdto.org/jdto-1.0.xsd"> 
     
-    <dto type="com.navid.login.domain.Token"> 
+    <dto type="com.navid.lazylogin.domain.Token"> 
         <immutableConstructor> 
-            <arg order="0" type="com.navid.login.domain.User" cascade="true"> 
+            <arg order="0" type="com.navid.lazylogin.domain.User" cascade="true"> 
                 <source name="user"/> 
             </arg>
             <arg order="1" type="java.lang.String"> 
@@ -13,14 +13,14 @@
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.login.Token"> 
+    <dto type="com.navid.lazylogin.Token"> 
         <field name="token"> 
             <source name="value" /> 
         </field> 
     </dto>
-    <dto type="com.navid.login.domain.SsoId"> 
+    <dto type="com.navid.lazylogin.domain.SsoId"> 
         <immutableConstructor> 
-            <arg order="0" type="com.navid.login.domain.Token" cascade="true"> 
+            <arg order="0" type="com.navid.lazylogin.domain.Token" cascade="true"> 
                 <source name="token"/> 
             </arg>
             <arg order="1" type="java.lang.String" cascade="true"> 
@@ -28,7 +28,7 @@
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.login.Sessionid"> 
+    <dto type="com.navid.lazylogin.Sessionid"> 
         <field name="sessionid"> 
             <source name="value"/> 
         </field> 
