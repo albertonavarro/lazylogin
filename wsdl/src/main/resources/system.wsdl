@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://login.navid.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SystemCommandsImplService" targetNamespace="http://login.navid.com/">
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://lazylogin.navid.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SystemCommandsImplService" targetNamespace="http://lazylogin.navid.com/">
     <wsdl:types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://login.navid.com/" elementFormDefault="unqualified" targetNamespace="http://login.navid.com/" version="1.0">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://lazylogin.navid.com/" elementFormDefault="unqualified" targetNamespace="http://lazylogin.navid.com/" version="1.0">
             <xs:element name="getUserInfo" type="tns:getUserInfo"/>
             <xs:element name="getUserInfoResponse" type="tns:getUserInfoResponse"/>
             <xs:complexType name="getUserInfo">

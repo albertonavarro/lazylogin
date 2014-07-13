@@ -6,8 +6,8 @@
 
 package com.navid.login.endpoints;
 
-import com.navid.login.SystemCommands;
-import com.navid.login.UserInfo;
+import com.navid.lazylogin.SystemCommands;
+import com.navid.lazylogin.UserInfo;
 import com.navid.login.services.SystemServices;
 import java.util.logging.Logger;
 import javax.annotation.Resource;

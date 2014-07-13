@@ -127,7 +127,11 @@
                 <artifactId>cxf-rt-rs-service-description</artifactId>
                 <version>${cfx.version}</version>
             </dependency>
-            
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-core</artifactId>
+                <version>${cfx.version}</version>
+            </dependency>
             <!-- Spring -->
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -303,6 +307,11 @@
                 <artifactId>javax.annotation-api</artifactId>
                 <version>1.2</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>14.0.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
@@ -319,6 +328,7 @@
         <module>jetty-endpoint</module>
         <module>component-test</module>
         <module>LazyLogin-common-context</module>
+        <module>client</module>
     </modules>
 
     <build>

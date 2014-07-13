@@ -2,7 +2,8 @@
  */
 package com.navid.lazylogin.context.interceptors;
 
-import com.navid.login.SystemCommands;
+import com.navid.lazylogin.SystemCommands;
+import com.navid.lazylogin.UserInfo;
 import com.navid.lazylogin.context.RequestContextContainer;
 import java.io.IOException;
 import javax.annotation.Resource;
@@ -20,7 +21,7 @@ public class AuthorisationFilter implements ContainerRequestFilter {
     @Override
     public void filter(final ContainerRequestContext requestContext) throws IOException {
 
-        final com.navid.login.UserInfo userInfo = systemCommands.getUserInfo(requestContextContainer.get().getRequestId());
+        final UserInfo userInfo = systemCommands.getUserInfo(requestContextContainer.get().getRequestId());
         requestContextContainer.get().setUserId(userInfo.getUsername());
 
     }
