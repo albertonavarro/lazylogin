@@ -106,7 +106,12 @@
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
         </dependency>
-        
+        <dependency>
+            <groupId>com.navid.lazylogin</groupId>
+            <artifactId>contract</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
         
         
     </dependencies>
@@ -149,13 +154,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.navid.lazylogin</groupId>
-                        <artifactId>contract</artifactId>
-                        <version>${project.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
         
