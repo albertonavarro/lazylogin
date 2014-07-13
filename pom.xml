@@ -343,7 +343,7 @@
         <module>wsdl</module>
         <module>jetty-endpoint</module>
         <module>component-test</module>
-        <module>LazyLogin-common-context</module>
+        <module>common-context</module>
         <module>client</module>
     </modules>
 
