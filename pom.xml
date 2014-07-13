@@ -35,6 +35,11 @@
             <!-- Modules -->
             <dependency>
                 <groupId>com.navid.lazylogin</groupId>
+                <artifactId>jetty-endpoint</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
                 <artifactId>persistence-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -46,6 +51,11 @@
             <dependency>
                 <groupId>com.navid.lazylogin</groupId>
                 <artifactId>domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -307,6 +317,8 @@
         <module>eventconsumer-amq-email</module>
         <module>wsdl</module>
         <module>jetty-endpoint</module>
+        <module>component-test</module>
+        <module>LazyLogin-common-context</module>
     </modules>
 
     <build>
