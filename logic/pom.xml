@@ -109,15 +109,11 @@
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>contract</artifactId>
-            <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
-        
-        
     </dependencies>
 
     <build>
-        
         <plugins>
             <plugin>
                 <groupId>org.apache.cxf</groupId>

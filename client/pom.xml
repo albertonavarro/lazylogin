@@ -22,13 +22,34 @@
                 <version>${cfx.version}</version>
                 <executions>
                     <execution>
-                        <id>generate-sources</id>
+                        <id>generate-system</id>
                         <phase>generate-sources</phase>
                         <configuration>
                             <sourceRoot>${basedir}/target/generated-sources</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>classpath:system.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-client</extraarg>
+                                        <extraarg>-verbose</extraarg>
+                                        <extraarg>-impl</extraarg>
+                                    </extraargs>
+                                </wsdlOption>
+                            </wsdlOptions>
+                            <server/> 
+                        </configuration>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>generate-user</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <sourceRoot>${basedir}/target/generated-sources</sourceRoot>
+                            <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>classpath:user.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-client</extraarg>
                                         <extraarg>-verbose</extraarg>
