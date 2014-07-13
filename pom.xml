@@ -89,6 +89,11 @@
                 <artifactId>contract</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>common-context</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             
             <!-- Jetty -->
             <dependency>

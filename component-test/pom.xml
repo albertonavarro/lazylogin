@@ -33,10 +33,8 @@
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
-            <artifactId>LazyLogin-common-context</artifactId>
-            <version>1.1.0</version>
+            <artifactId>common-context</artifactId>
             <scope>test</scope>
-            <type>jar</type>
         </dependency>
     </dependencies>
     
