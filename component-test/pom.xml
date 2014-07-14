@@ -14,7 +14,6 @@
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>jetty-endpoint</artifactId>
-            <scope>test</scope>
         </dependency>
         
         <!-- Test dependencies -->
