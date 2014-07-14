@@ -1,3 +1,4 @@
 target/
 lazylogin-war-endpoint/nb-configurations.xml
 /jetty-endpoint/activemq-data/
+/component-test/activemq-data/

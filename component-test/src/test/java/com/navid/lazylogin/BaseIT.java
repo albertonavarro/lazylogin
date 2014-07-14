@@ -25,30 +25,34 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseIT.class);
 
-    private final String newDatabaseName = "recordsure-" + System.nanoTime();
-    
+    @Value("${lazylogin.port}")
+    private int lazyLoginPort;
+
+    @Resource
+    protected UserCommands userCommands;
+
+    @Resource
+    protected SystemCommands systemCommands;
+
     @Resource
     protected RequestContextContainer requestContextContainer;
-    
-    @Value("${recordserver.port}")
-    private int recordServerPort;
-    
+
     @BeforeMethod
     public void beforeTest() {
         requestContextContainer.create();
     }
-    
+
     @AfterMethod
     public void afterTest() {
         requestContextContainer.delete();
     }
-    
+
     @BeforeClass
     public void init() throws Exception {
         //helping recordserver to choose what config file should use.
         System.setProperty("env", "-ct");
-        
-        WebApplicationContext context = EmbeddedJetty.runServer(recordServerPort);
+
+        WebApplicationContext context = EmbeddedJetty.runServer(lazyLoginPort);
     }
 
     @AfterClass
