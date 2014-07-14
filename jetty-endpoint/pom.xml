@@ -9,6 +9,7 @@
 
     <artifactId>jetty-endpoint</artifactId>
     <name>LazyLogin-jetty-endpoint</name>
+    <packaging>jar</packaging>
    
     <dependencies>
         <dependency>
