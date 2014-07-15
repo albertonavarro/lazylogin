@@ -1,0 +1,2 @@
+lazylogin.port=6789
+lazylogin.url=http://localhost:${lazylogin.port}
