@@ -6,6 +6,7 @@
 
 package com.navid.lazylogin;
 
+import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -22,7 +23,8 @@ public class CreateTokenIT extends BaseIT {
         
         CreateTokenResponse ctresp = userCommands.createToken(ctreq);
     
-        
+        Assert.notNull(ctresp.getSessionid());
+        Assert.notNull(ctresp.getToken());
     }
     
 }
