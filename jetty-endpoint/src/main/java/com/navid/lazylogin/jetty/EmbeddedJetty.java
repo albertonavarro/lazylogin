@@ -13,7 +13,7 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 
 public class EmbeddedJetty {
 
-    private static final int DEFAULT_PORT = 8082;
+    private static final int DEFAULT_PORT = 8080;
     private static final String CONTEXT_PATH = "/";
     private static final String CONFIG_LOCATION = "classpath:conf/config-root.xml";
     private static final String MAPPING_URL = "/*";
