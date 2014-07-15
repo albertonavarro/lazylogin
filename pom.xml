@@ -349,7 +349,6 @@
         <module>component-test</module>
         <module>common-context</module>
         <module>client</module>
-        <module>integration-test</module>
     </modules>
 
     <build>
