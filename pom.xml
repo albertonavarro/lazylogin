@@ -46,7 +46,7 @@
         <profile>
             <id>ci</id>
             <properties>
-                <revision>${PROVIDED_REVISION}</revision>
+                <revision>${providedRevision}</revision>
             </properties>
         </profile>
     </profiles>
