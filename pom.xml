@@ -4,7 +4,7 @@
     
     <groupId>com.navid.lazylogin</groupId>
     <artifactId>parent</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1.${revision}</version>
     
     <packaging>pom</packaging>
     
@@ -349,6 +349,7 @@
         <module>component-test</module>
         <module>common-context</module>
         <module>client</module>
+        <module>chefrecipe</module>
     </modules>
 
     <build>
