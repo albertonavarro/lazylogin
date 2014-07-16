@@ -46,7 +46,7 @@
         <profile>
             <id>ci</id>
             <properties>
-                <revision>${BUILD_NUMBER}</revision>
+                <revision>${PROVIDED_REVISION}</revision>
             </properties>
         </profile>
     </profiles>
@@ -369,7 +369,6 @@
         <module>component-test</module>
         <module>common-context</module>
         <module>client</module>
-        <module>chefrecipe</module>
     </modules>
 
     <build>
