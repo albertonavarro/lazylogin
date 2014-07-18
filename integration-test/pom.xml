@@ -10,7 +10,7 @@
     <artifactId>integration-test</artifactId>
     <name>LazyLogin-integration-test</name>
 
-    <dependencies>
+    <dependencies> 
         
         <!-- Test dependencies -->
         <dependency>
