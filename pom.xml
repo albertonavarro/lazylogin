@@ -18,7 +18,7 @@
     
     <description>Keep your system simple, password less, and stop bothering your users.</description>
     <properties>
-        <productVersion>${project.version}</productVersion>
+        <PRODUCT_VERSION>${project.version}</PRODUCT_VERSION>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jackson.version>1.8.6</jackson.version>
         <cfx.version>3.0.0-milestone1</cfx.version>
