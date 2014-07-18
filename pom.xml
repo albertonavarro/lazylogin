@@ -421,7 +421,7 @@
                         </goals>
                         <configuration>
                             <outputFile>
-                                ${project.build.outputDirectory}/app.properties
+                                ${project.build.directory}/app.properties
                             </outputFile>
                         </configuration>
                     </execution>
