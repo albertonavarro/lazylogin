@@ -6,6 +6,7 @@
         <artifactId>parent</artifactId>
         <version>1.1.${revision}</version>
     </parent>
+    
     <artifactId>chefrecipe</artifactId>
     <name>LazyLogin-chefrecipe</name>
 
