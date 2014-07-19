@@ -49,6 +49,32 @@
                 <revision>${providedRevision}</revision>
             </properties>
         </profile>
+        <profile>
+            <id>build</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>logic</module>
+                <module>contract</module>
+                <module>domain</module>
+                <module>persistence-api</module>
+                <module>persistence-hibernate</module>
+                <module>eventproducer-api</module>
+                <module>eventproducer-amq</module>
+                <module>eventconsumer-amq-email</module>
+                <module>jetty-endpoint</module>
+                <module>component-test</module>
+                <module>common-context</module>
+                <module>client</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>integration-test</id>
+            <modules>
+                <module>integration-test</module>
+            </modules>
+        </profile>
     </profiles>
     
     <dependencyManagement>
@@ -356,20 +382,7 @@
         
     </dependencyManagement>
     
-    <modules>
-        <module>logic</module>
-        <module>contract</module>
-        <module>domain</module>
-        <module>persistence-api</module>
-        <module>persistence-hibernate</module>
-        <module>eventproducer-api</module>
-        <module>eventproducer-amq</module>
-        <module>eventconsumer-amq-email</module>
-        <module>jetty-endpoint</module>
-        <module>component-test</module>
-        <module>common-context</module>
-        <module>client</module>
-    </modules>
+    
 
     <build>
         <plugins>
