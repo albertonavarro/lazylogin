@@ -17,7 +17,6 @@
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>domain</artifactId>
         </dependency>
-        
     </dependencies>
   
 </project>
