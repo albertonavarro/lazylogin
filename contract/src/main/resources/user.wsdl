@@ -7,7 +7,15 @@
             <xs:element name="loginWithTokenResponse" type="tns:loginWithTokenResponse"/>
             <xs:element name="createTokenRequest" type="tns:createTokenRequest"/>
             <xs:element name="createTokenResponse" type="tns:createTokenResponse"/>
-            
+            <xs:element name="getInfoRequest" type="tns:getInfoRequest"/>
+            <xs:element name="getInfoResponse" type="tns:getInfoResponse"/>
+            <xs:simpleType name="status">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="VERIFIED"/>
+                    <xs:enumeration value="UNVERIFIED"/>
+                    <xs:enumeration value="REJECTED"/>
+                </xs:restriction>
+            </xs:simpleType>
             <xs:complexType name="sessionid">
                 <xs:sequence>
                     <xs:element minOccurs="1" name="sessionid" type="xs:string"/>
@@ -40,6 +48,17 @@
                     <xs:element minOccurs="1" name="token" type="tns:token"/>
                 </xs:sequence>               
             </xs:complexType>
+            <xs:complexType name="getInfoRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="1" name="sessionid" type="xs:string"/>
+                </xs:sequence>               
+            </xs:complexType>
+            <xs:complexType name="getInfoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="1" name="status" type="tns:status"/>
+                    <xs:element minOccurs="1" name="name" type="xs:string"/>
+                </xs:sequence>               
+            </xs:complexType>
         </xs:schema>
     </wsdl:types>
     
@@ -59,6 +78,14 @@
         <wsdl:part element="tns:createTokenResponse" name="parameters">
         </wsdl:part>
     </wsdl:message>
+    <wsdl:message name="getInfoRequest">
+        <wsdl:part element="tns:getInfoRequest" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getInfoResponse">
+        <wsdl:part element="tns:getInfoResponse" name="parameters">
+        </wsdl:part>
+    </wsdl:message>
     
     <wsdl:portType name="UserCommands">
         <wsdl:operation name="loginWithToken">
@@ -73,6 +100,12 @@
             <wsdl:output message="tns:createTokenResponse" name="createTokenResponse">
             </wsdl:output>
         </wsdl:operation>
+        <wsdl:operation name="getInfo">
+            <wsdl:input message="tns:getInfoRequest" name="getInfoRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:getInfoResponse" name="getInfoResponse">
+            </wsdl:output>
+        </wsdl:operation>
     </wsdl:portType>
     
     <wsdl:binding name="UserCommandsImplServiceSoapBinding" type="tns:UserCommands">
@@ -81,7 +114,7 @@
     
     <wsdl:service name="UserCommandsImplService">
         <wsdl:port binding="tns:UserCommandsImplServiceSoapBinding" name="UserCommandsImplPort">
-            <soap:address location="http://localhost:8080/login/user"/>
+            <soap:address location="http://lazylogin.navid.com/"/>
         </wsdl:port>
     </wsdl:service>
     
