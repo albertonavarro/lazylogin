@@ -7,9 +7,11 @@ import com.navid.lazylogin.GetInfoResponse;
 import com.navid.lazylogin.LoginWithTokenRequest;
 import com.navid.lazylogin.LoginWithTokenResponse;
 import com.navid.lazylogin.Sessionid;
+import com.navid.lazylogin.Status;
 import com.navid.lazylogin.Token;
 import com.navid.lazylogin.UserCommands;
 import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.services.SystemServices;
 import com.navid.lazylogin.services.UserServices;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
@@ -23,6 +25,9 @@ public class UserCommandsImpl implements UserCommands {
     
     @Resource
     private UserServices userServices;
+    
+    @Resource
+    private SystemServices systemServices;
     
     @Resource(name = "lazylogin.endpoint.converter")
     private DTOBinder binder;
@@ -73,14 +78,16 @@ public class UserCommandsImpl implements UserCommands {
         try {
             GetInfoResponse _return = new GetInfoResponse();
             
-            //SsoId ssoId = userServices.loginWithToken(parameters.getSessionid());
+            SsoId ssoId = systemServices.getUserInfo(parameters.getSessionid());
 
-            //_return.setResponse(binder.bindFromBusinessObject(Sessionid.class, ssoId));
+            _return.setStatus(Status.UNVERIFIED);
             
-            return null;
+            
+            
+            return _return;
         } catch (java.lang.Exception ex) {
             throw new RuntimeException(ex);
-        }
+        } 
     }
 
 }

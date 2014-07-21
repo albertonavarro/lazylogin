@@ -16,15 +16,41 @@ import org.testng.annotations.Test;
 public class CreateTokenIT extends BaseIT {
     
     @Test
-    public void smokeTest() {
+    public void shouldCreateUnverifiedToken() {
         
         CreateTokenRequest ctreq = new CreateTokenRequest();
-        ctreq.setEmail("someEmail@someDomain");
+        ctreq.setEmail("shouldCreateUnverifiedToken@someDomain");
         
         CreateTokenResponse ctresp = userCommands.createToken(ctreq);
     
         Assert.notNull(ctresp.getSessionid());
         Assert.notNull(ctresp.getToken());
+        
+        GetInfoRequest gireq = new GetInfoRequest();
+        gireq.setSessionid(ctresp.getSessionid().getSessionid());
+        GetInfoResponse giresp = userCommands.getInfo(gireq);
+        
+        Assert.notNull(giresp);
+        Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
+    }
+    
+    @Test
+    public void shouldCreateVerifiedToken() {
+        
+        CreateTokenRequest ctreq = new CreateTokenRequest();
+        ctreq.setEmail("shouldCreateVerifiedToken@someDomain");
+        
+        CreateTokenResponse ctresp = userCommands.createToken(ctreq);
+    
+        Assert.notNull(ctresp.getSessionid());
+        Assert.notNull(ctresp.getToken());
+        
+        GetInfoRequest gireq = new GetInfoRequest();
+        gireq.setSessionid(ctresp.getSessionid().getSessionid());
+        GetInfoResponse giresp = userCommands.getInfo(gireq);
+        
+        Assert.notNull(giresp);
+        Assert.isTrue(giresp.getStatus() == Status.VERIFIED);
     }
     
 }
