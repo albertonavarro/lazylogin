@@ -109,7 +109,7 @@
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
             <artifactId>contract</artifactId>
-            <scope>runtime</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

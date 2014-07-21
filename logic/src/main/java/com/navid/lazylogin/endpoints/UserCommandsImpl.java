@@ -2,6 +2,8 @@ package com.navid.lazylogin.endpoints;
 
 import com.navid.lazylogin.CreateTokenRequest;
 import com.navid.lazylogin.CreateTokenResponse;
+import com.navid.lazylogin.GetInfoRequest;
+import com.navid.lazylogin.GetInfoResponse;
 import com.navid.lazylogin.LoginWithTokenRequest;
 import com.navid.lazylogin.LoginWithTokenResponse;
 import com.navid.lazylogin.Sessionid;
@@ -60,6 +62,22 @@ public class UserCommandsImpl implements UserCommands {
             _return.setResponse(binder.bindFromBusinessObject(Sessionid.class, ssoId));
             
             return _return;
+        } catch (java.lang.Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    @Override
+    public GetInfoResponse getInfo(GetInfoRequest parameters) {
+        LOG.info("Executing operation getInfo");
+        try {
+            GetInfoResponse _return = new GetInfoResponse();
+            
+            //SsoId ssoId = userServices.loginWithToken(parameters.getSessionid());
+
+            //_return.setResponse(binder.bindFromBusinessObject(Sessionid.class, ssoId));
+            
+            return null;
         } catch (java.lang.Exception ex) {
             throw new RuntimeException(ex);
         }
