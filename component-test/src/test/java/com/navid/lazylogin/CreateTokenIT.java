@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.navid.lazylogin;
 
+import java.io.IOException;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.Response;
+import org.eclipse.jetty.http.HttpStatus;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 
@@ -14,43 +20,71 @@ import org.testng.annotations.Test;
  * @author alberto
  */
 public class CreateTokenIT extends BaseIT {
-    
+
     @Test
     public void shouldCreateUnverifiedToken() {
-        
+
         CreateTokenRequest ctreq = new CreateTokenRequest();
         ctreq.setEmail("shouldCreateUnverifiedToken@someDomain");
-        
+
         CreateTokenResponse ctresp = userCommands.createToken(ctreq);
-    
+
         Assert.notNull(ctresp.getSessionid());
         Assert.notNull(ctresp.getToken());
-        
+
         GetInfoRequest gireq = new GetInfoRequest();
         gireq.setSessionid(ctresp.getSessionid().getSessionid());
         GetInfoResponse giresp = userCommands.getInfo(gireq);
-        
+
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
     }
-    
+
     @Test
-    public void shouldCreateVerifiedToken() {
-        
+    public void shouldVerifyToken() throws Exception {
+
+        int emailPreviousIndex = greenMail.getReceivedMessages().length;
+
         CreateTokenRequest ctreq = new CreateTokenRequest();
-        ctreq.setEmail("shouldCreateVerifiedToken@someDomain");
-        
+        ctreq.setEmail("shouldVerifyToken@someDomain");
+
         CreateTokenResponse ctresp = userCommands.createToken(ctreq);
-    
+
         Assert.notNull(ctresp.getSessionid());
         Assert.notNull(ctresp.getToken());
-        
+
         GetInfoRequest gireq = new GetInfoRequest();
         gireq.setSessionid(ctresp.getSessionid().getSessionid());
         GetInfoResponse giresp = userCommands.getInfo(gireq);
-        
+
         Assert.notNull(giresp);
-        Assert.isTrue(giresp.getStatus() == Status.VERIFIED);
+        Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
+
+        Thread.sleep(1000L);
+
+        MimeMessage[] mmmsg = greenMail.getReceivedMessages();
+        Assert.notEmpty(mmmsg);
+
+        String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
+
+        verifyUrl(url);
+        
+        GetInfoResponse giresp2 = userCommands.getInfo(gireq);
+
+        Assert.notNull(giresp2);
+        Assert.isTrue(giresp2.getStatus() == Status.VERIFIED);
+    }
+
+    private String extractUrlFromEmail(MimeMessage content) throws IOException, MessagingException {
+        String urlContent = content.getContent().toString();
+        String url = urlContent.substring(0, urlContent.length() -2);
+        return url;
     }
     
+    private void verifyUrl(String url) {
+        Client client = ClientBuilder.newBuilder().build();
+        Response response = client.target(url).request().get();
+        Assert.isTrue(HttpStatus.isSuccess(response.getStatus()));
+    }
+
 }

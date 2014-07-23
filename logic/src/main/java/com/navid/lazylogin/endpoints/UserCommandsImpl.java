@@ -80,9 +80,7 @@ public class UserCommandsImpl implements UserCommands {
             
             SsoId ssoId = systemServices.getUserInfo(parameters.getSessionid());
 
-            _return.setStatus(Status.UNVERIFIED);
-            
-            
+            _return.setStatus(ssoId.getToken().getValidated()? Status.VERIFIED : Status.UNVERIFIED);
             
             return _return;
         } catch (java.lang.Exception ex) {

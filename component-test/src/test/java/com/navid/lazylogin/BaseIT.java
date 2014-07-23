@@ -1,5 +1,7 @@
 package com.navid.lazylogin;
 
+import com.icegreen.greenmail.util.GreenMail;
+import com.icegreen.greenmail.util.ServerSetup;
 import com.navid.lazylogin.context.RequestContextContainer;
 import com.navid.lazylogin.jetty.EmbeddedJetty;
 import javax.annotation.Resource;
@@ -24,6 +26,9 @@ import org.testng.annotations.Test;
 public class BaseIT extends AbstractTestNGSpringContextTests {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseIT.class);
+    
+    @Resource
+    protected GreenMail greenMail; //uses test ports by default
 
     @Value("${lazylogin.port}")
     private int lazyLoginPort;
@@ -40,18 +45,22 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
     @BeforeMethod
     public void beforeTest() {
         requestContextContainer.create();
+        
     }
 
     @AfterMethod
     public void afterTest() {
         requestContextContainer.delete();
+        
     }
 
     @BeforeClass
-    public void init() throws Exception {
+    public void init() throws Exception {        
         //helping recordserver to choose what config file should use.
         System.setProperty("env", "-ct");
 
+        greenMail.start();
+        
         WebApplicationContext context = EmbeddedJetty.runServer(lazyLoginPort);
     }
 
@@ -59,7 +68,8 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
     public void tearDown() throws Exception {
 
         EmbeddedJetty.stopServer();
-
+        
+        greenMail.stop();
     }
 
 }
