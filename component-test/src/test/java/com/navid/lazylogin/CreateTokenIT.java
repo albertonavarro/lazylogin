@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
 public class CreateTokenIT extends BaseIT {
 
     @Test
-    public void shouldCreateUnverifiedToken() {
+    public void shouldCreateUnverifiedToken() throws Exception {
 
         CreateTokenRequest ctreq = new CreateTokenRequest();
         ctreq.setEmail("shouldCreateUnverifiedToken@someDomain");
@@ -38,6 +38,8 @@ public class CreateTokenIT extends BaseIT {
 
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
+        
+        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
     }
 
     @Test
@@ -60,15 +62,12 @@ public class CreateTokenIT extends BaseIT {
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
 
-        Thread.sleep(1000L);
-
-        MimeMessage[] mmmsg = greenMail.getReceivedMessages();
-        Assert.notEmpty(mmmsg);
+        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
 
         verifyUrl(url);
-        
+                
         GetInfoResponse giresp2 = userCommands.getInfo(gireq);
 
         Assert.notNull(giresp2);

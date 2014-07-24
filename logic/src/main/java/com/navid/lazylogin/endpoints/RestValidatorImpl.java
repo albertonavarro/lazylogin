@@ -10,9 +10,13 @@ import javax.ws.rs.Produces;
 import org.apache.cxf.jaxrs.model.wadl.Description;
 import org.apache.cxf.jaxrs.model.wadl.Descriptions;
 import org.apache.cxf.jaxrs.model.wadl.DocTarget;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/rest")
 public class RestValidatorImpl {
+    
+    private final static Logger LOGGER = LoggerFactory.getLogger(RestValidatorImpl.class);
 
     @Resource
     private UserServices userServices;
@@ -29,6 +33,8 @@ public class RestValidatorImpl {
     })
     public String validateInput(@PathParam("input") String input) {
 
+        LOGGER.info("Verifying with input {}", input);
+        
         Token token = userServices.validateKey(input);
 
         return token.getUser().getEmail() + " validated for that device.";

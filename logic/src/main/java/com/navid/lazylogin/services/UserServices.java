@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserServices {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserServices.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServices.class);
 
     @Resource
     private Persistence persistence;
@@ -30,25 +30,25 @@ public class UserServices {
 
     public SsoId createToken(String email) {
 
-        logger.info("Creating token for %s", email);
+        LOGGER.info("Creating token for {}", email);
         
         User user = persistence.findOneUser(email);
 
         if (user == null) {
-            logger.debug("Email not found, creating user: %s", email);
+            LOGGER.debug("Email not found, creating user: {}", email);
             user = persistence.saveUser(new User(email, null, null));
-            logger.info("User created: %s", user);
+            LOGGER.info("User created: {}", user);
         }
         
         Token token = persistence.createToken(user);
-        logger.info("Token created: %s", token);
+        LOGGER.info("Token created: {}", token);
         
         ValidationKey validationKey = new ValidationKey(token, null);
         validationKey = persistence.saveValidationKey(validationKey);
-        logger.info("ValidationKey created: %s", validationKey);
+        LOGGER.info("ValidationKey created: {}", validationKey);
 
         SsoId result = persistence.createSsoId(token);
-        logger.info("SessionId created: %s", result);
+        LOGGER.info("SessionId created: {}", result);
         
         eventProducer.validateToken(validationKey);
         
@@ -56,15 +56,20 @@ public class UserServices {
     }
 
     public SsoId loginWithToken(String tokenId) {
-
+        LOGGER.info("Logging with token: {}", tokenId);
+        
         Token token = persistence.findOneToken(tokenId);
 
         if (token == null) {
+            LOGGER.info("Token not found: {}", tokenId);
             throw new RuntimeException("Login no existe");
         }
 
-        return persistence.createSsoId(token);
-
+        
+        SsoId result = persistence.createSsoId(token);
+        LOGGER.info("Ssoid {} created for token {}", result, token);
+        
+        return result;
     }
 
     public Token validateKey(String validationKey) {
