@@ -61,7 +61,6 @@ public class CreateTokenIT extends BaseIT {
 
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
-
         Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
