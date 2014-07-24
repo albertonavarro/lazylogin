@@ -1,7 +1,5 @@
 package com.navid.lazylogin.jetty;
 
-
-
 import java.io.IOException;
 import org.apache.cxf.transport.servlet.CXFServlet;
 import org.eclipse.jetty.server.Server;
