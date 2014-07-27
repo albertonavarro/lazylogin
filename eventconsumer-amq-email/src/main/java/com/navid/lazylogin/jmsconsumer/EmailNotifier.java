@@ -5,6 +5,8 @@ import javax.jms.JMSException;
 import javax.jms.MapMessage;
 import javax.jms.Message;
 import javax.jms.MessageListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.mail.MailException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -14,6 +16,8 @@ import org.springframework.mail.SimpleMailMessage;
  * @author alberto
  */
 public class EmailNotifier implements MessageListener {
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmailNotifier.class);
 
     @Resource
     private MailSender mailSender;
@@ -24,13 +28,18 @@ public class EmailNotifier implements MessageListener {
     @Override
     public void onMessage(Message msg) {
         try {
+            LOGGER.info("Ready to send message with following parameters: {}", msg);
+            
             MapMessage mapMessage = (MapMessage) msg;
+            
             String email = mapMessage.getString("email");
             String validationUrl = mapMessage.getString("validationUrl");
             String deviceInfo = mapMessage.getString("deviceInfo");
             sendEmail(email, validationUrl, deviceInfo);
+            
+            LOGGER.info("Email successfully sent");
         } catch (JMSException jmse) {
-            jmse.printStackTrace();
+            LOGGER.error("Error processing message from queue", jmse);
         }
     }
 
@@ -42,8 +51,7 @@ public class EmailNotifier implements MessageListener {
             this.mailSender.send(msg);
         }
         catch(MailException ex) {
-            // simply log it and go on...
-            System.err.println(ex.getMessage());            
+            LOGGER.error("Error sending email", ex);
         }
     }
 
