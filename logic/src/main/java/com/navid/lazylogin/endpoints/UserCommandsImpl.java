@@ -14,40 +14,40 @@ import com.navid.lazylogin.domain.SsoId;
 import com.navid.lazylogin.services.SystemServices;
 import com.navid.lazylogin.services.UserServices;
 import javax.annotation.Resource;
+import javax.ws.rs.NotFoundException;
 import org.jdto.DTOBinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 @javax.jws.WebService(endpointInterface = "com.navid.lazylogin.UserCommands")
 public class UserCommandsImpl implements UserCommands {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserCommandsImpl.class.getName());
-    
+
     @Resource
     private UserServices userServices;
-    
+
     @Resource
     private SystemServices systemServices;
-    
+
     @Resource(name = "lazylogin.endpoint.converter")
     private DTOBinder binder;
-    
+
 
     /* (non-Javadoc)
      * @see com.navid.lazylogin.UserCommands#createToken(com.navid.lazylogin.CreateTokenRequest  parameters )*
      */
     @Override
-    public com.navid.lazylogin.CreateTokenResponse createToken(CreateTokenRequest parameters) { 
+    public com.navid.lazylogin.CreateTokenResponse createToken(CreateTokenRequest parameters) {
         LOG.info("Executing operation createToken");
         try {
             CreateTokenResponse _return = new CreateTokenResponse();
-            
+
             SsoId ssoidCreated = userServices.createToken(parameters.getEmail());
-            
+
             _return.setToken(binder.bindFromBusinessObject(Token.class, ssoidCreated.getToken()));
             _return.setSessionid(binder.bindFromBusinessObject(Sessionid.class, ssoidCreated));
-            
+
             return _return;
         } catch (java.lang.Exception ex) {
             throw new RuntimeException(ex);
@@ -58,15 +58,15 @@ public class UserCommandsImpl implements UserCommands {
      * @see com.navid.lazylogin.UserCommands#loginWithToken(com.navid.lazylogin.LoginWithTokenRequest  parameters )*
      */
     @Override
-    public com.navid.lazylogin.LoginWithTokenResponse loginWithToken(LoginWithTokenRequest parameters) { 
+    public com.navid.lazylogin.LoginWithTokenResponse loginWithToken(LoginWithTokenRequest parameters) {
         LOG.info("Executing operation loginWithToken with parameters");
         try {
             LoginWithTokenResponse _return = new LoginWithTokenResponse();
-            
+
             SsoId ssoId = userServices.loginWithToken(parameters.getToken().getToken());
 
             _return.setResponse(binder.bindFromBusinessObject(Sessionid.class, ssoId));
-            
+
             return _return;
         } catch (java.lang.Exception ex) {
             throw new RuntimeException(ex);
@@ -75,18 +75,21 @@ public class UserCommandsImpl implements UserCommands {
 
     @Override
     public GetInfoResponse getInfo(GetInfoRequest parameters) {
-        LOG.info("Executing operation getInfo with parameters");
-        try {
-            GetInfoResponse _return = new GetInfoResponse();
-            
-            SsoId ssoId = systemServices.getUserInfo(parameters.getSessionid());
+        LOG.info("Executing operation getInfo with sessionId {}", parameters.getSessionid());
 
-            _return.setStatus(ssoId.getToken().getValidated()? Status.VERIFIED : Status.UNVERIFIED);
-            
-            return _return;
-        } catch (java.lang.Exception ex) {
-            throw new RuntimeException(ex);
-        } 
+        GetInfoResponse _return = new GetInfoResponse();
+
+        SsoId ssoId = systemServices.getUserInfo(parameters.getSessionid());
+
+        if (ssoId == null) {
+            LOG.info("SessionId {} not found", parameters.getSessionid());
+            throw new NotFoundException(parameters.getSessionid());
+        }
+
+        _return.setStatus(ssoId.getToken().getValidated() ? Status.VERIFIED : Status.UNVERIFIED);
+
+        return _return;
+
     }
 
 }
