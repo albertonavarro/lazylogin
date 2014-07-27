@@ -49,8 +49,7 @@ public class EmailNotifier implements MessageListener {
         msg.setText(validationUrl);
         try{
             this.mailSender.send(msg);
-        }
-        catch(MailException ex) {
+        } catch(MailException ex) {
             LOGGER.error("Error sending email", ex);
         }
     }
