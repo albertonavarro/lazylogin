@@ -53,7 +53,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
     @Value("${test.imap.password}")
     private String testPassword;
     
-    @Value("${test.imap.address}")
+    @Value("${test.imap.host}")
     private String imapHost;
     
     private final int maxRetries = 10;
@@ -104,7 +104,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         int retries = 0;
         while(retries++ < maxRetries && inbox.getMessageCount() == emailIndex) {
             System.out.println("Email hasn't arrived yet, waiting another second. Retries: " + retries);
-            Thread.sleep(1000L);
+            Thread.sleep(2000L);
         }
         
         if(inbox.getMessageCount() == emailIndex) {
