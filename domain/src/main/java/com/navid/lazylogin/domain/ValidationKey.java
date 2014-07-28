@@ -1,5 +1,6 @@
 package com.navid.lazylogin.domain;
 
+import com.google.common.base.Objects;
 import java.io.Serializable;
 
 /**
@@ -31,5 +32,9 @@ public class ValidationKey implements Serializable {
         return validationKey;
     }
     
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this).add("token", token).add("validationKey", validationKey).toString();
+    }
     
 }

@@ -15,7 +15,7 @@ public class DomainFactory {
 
     private static final Random RANDOM = new Random();
 
-    private static SecureRandom secureRandom = new SecureRandom();
+    private static final SecureRandom secureRandom = new SecureRandom();
 
     public static boolean sessionIdValidator(String sessionId) {
         return true;

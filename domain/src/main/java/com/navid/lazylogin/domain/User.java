@@ -1,5 +1,6 @@
 package com.navid.lazylogin.domain;
 
+import com.google.common.base.Objects;
 import java.io.Serializable;
 
 /**
@@ -7,13 +8,13 @@ import java.io.Serializable;
  * @author alberto
  */
 public class User implements Serializable {
-    
+
     private final String email;
-    
+
     private final String name;
-    
+
     private final UserId userId;
-        
+
     public User(String email, String name, UserId userId) {
         this.email = email;
         this.userId = userId;
@@ -40,7 +41,10 @@ public class User implements Serializable {
     public String getName() {
         return name;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this).add("email", email).add("userId", userId).toString();
+    }
+
 }
