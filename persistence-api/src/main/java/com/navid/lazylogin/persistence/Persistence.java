@@ -1,6 +1,6 @@
 package com.navid.lazylogin.persistence;
 
-import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.domain.Token;
 import com.navid.lazylogin.domain.User;
 import com.navid.lazylogin.domain.ValidationKey;
@@ -19,7 +19,7 @@ public interface Persistence {
 
     Token saveToken(Token token);
     
-    SsoId saveSsoId(SsoId ssoId);
+    SessionId saveSsoId(SessionId ssoId);
 
     ValidationKey saveValidationKey(ValidationKey validationKey);
 
@@ -29,9 +29,9 @@ public interface Persistence {
     
     Token createToken(User user);
 
-    SsoId createSsoId(Token token);
+    SessionId createSsoId(Token token);
 
-    SsoId findOneSessionId(String sessionId);
+    SessionId findOneSessionId(String sessionId);
     
     User findOneUserByEmail(String email);
     

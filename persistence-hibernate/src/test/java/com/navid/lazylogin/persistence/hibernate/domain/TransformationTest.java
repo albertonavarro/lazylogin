@@ -2,9 +2,9 @@ package com.navid.lazylogin.persistence.hibernate.domain;
 
 import com.navid.lazylogin.persistence.hibernate.domain.UserHb;
 import com.navid.lazylogin.persistence.hibernate.domain.TokenHb;
-import com.navid.lazylogin.persistence.hibernate.domain.SsoIdHb;
+import com.navid.lazylogin.persistence.hibernate.domain.SessionIdHb;
 import com.navid.lazylogin.persistence.hibernate.domain.ValidationKeyHb;
-import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.domain.Token;
 import com.navid.lazylogin.domain.User;
 import com.navid.lazylogin.domain.UserId;
@@ -60,13 +60,13 @@ public class TransformationTest {
     
     @Test
     public void shouldTransformSessionId() {
-        SsoId originalSsoId = new SsoId(new Token(null, null, Boolean.TRUE), "ssoid-value");
+        SessionId originalSsoId = new SessionId(new Token(null, null, Boolean.TRUE), "ssoid-value");
         
-        SsoIdHb ssoIdHb = binder.bindFromBusinessObject(SsoIdHb.class, originalSsoId);
+        SessionIdHb ssoIdHb = binder.bindFromBusinessObject(SessionIdHb.class, originalSsoId);
         assertNotNull(ssoIdHb.getToken());
         assertEquals(ssoIdHb.getValue(), "ssoid-value");
         
-        SsoId newSsoId = binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+        SessionId newSsoId = binder.bindFromBusinessObject(SessionId.class, ssoIdHb);
         assertNotNull(newSsoId.getToken());
         assertEquals(newSsoId.getValue(), "ssoid-value");
     }

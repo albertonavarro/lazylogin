@@ -17,7 +17,7 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 @Table(name = "SSOID")
-public class SsoIdHb implements Serializable {
+public class SessionIdHb implements Serializable {
 
     @ManyToOne
     private TokenHb token;

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>parent</artifactId>
     <groupId>com.navid.lazylogin</groupId>
-    <version>1.1.0</version>
+    <version>1.1.${revision}</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>jetty-endpoint</artifactId>
@@ -11,10 +11,11 @@
   <build>
     <resources>
       <resource>
-        <targetPath>/webapp</targetPath>
+        <filtering>true</filtering>
         <directory>src/main/webapp</directory>
       </resource>
       <resource>
+        <filtering>true</filtering>
         <directory>src/main/resources</directory>
       </resource>
     </resources>
@@ -32,7 +33,7 @@
               <createDependencyReducedPom>true</createDependencyReducedPom>
               <transformers>
                 <transformer>
-                  <mainClass>com.navid.recordserver.jetty.EmbeddedJetty</mainClass>
+                  <mainClass>com.navid.lazylogin.jetty.EmbeddedJetty</mainClass>
                 </transformer>
                 <transformer>
                   <resource>META-INF/spring.handlers</resource>

@@ -37,7 +37,7 @@ public class EmailNotifier implements MessageListener {
             String deviceInfo = mapMessage.getString("deviceInfo");
             sendEmail(email, validationUrl, deviceInfo);
             
-            LOGGER.info("Email successfully sent");
+            LOGGER.info("Email successfully sent to {}", email);
         } catch (JMSException jmse) {
             LOGGER.error("Error processing message from queue", jmse);
         }

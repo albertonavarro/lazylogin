@@ -10,7 +10,7 @@ import com.navid.lazylogin.Sessionid;
 import com.navid.lazylogin.Status;
 import com.navid.lazylogin.Token;
 import com.navid.lazylogin.UserCommands;
-import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.services.SystemServices;
 import com.navid.lazylogin.services.UserServices;
 import javax.annotation.Resource;
@@ -43,7 +43,7 @@ public class UserCommandsImpl implements UserCommands {
         try {
             CreateTokenResponse _return = new CreateTokenResponse();
 
-            SsoId ssoidCreated = userServices.createToken(parameters.getEmail());
+            SessionId ssoidCreated = userServices.createToken(parameters.getEmail());
 
             _return.setToken(binder.bindFromBusinessObject(Token.class, ssoidCreated.getToken()));
             _return.setSessionid(binder.bindFromBusinessObject(Sessionid.class, ssoidCreated));
@@ -63,7 +63,7 @@ public class UserCommandsImpl implements UserCommands {
         try {
             LoginWithTokenResponse _return = new LoginWithTokenResponse();
 
-            SsoId ssoId = userServices.loginWithToken(parameters.getToken().getToken());
+            SessionId ssoId = userServices.loginWithToken(parameters.getToken().getToken());
 
             _return.setResponse(binder.bindFromBusinessObject(Sessionid.class, ssoId));
 
@@ -79,7 +79,7 @@ public class UserCommandsImpl implements UserCommands {
 
         GetInfoResponse _return = new GetInfoResponse();
 
-        SsoId ssoId = systemServices.getUserInfo(parameters.getSessionid());
+        SessionId ssoId = systemServices.getUserInfo(parameters.getSessionid());
 
         if (ssoId == null) {
             LOG.info("SessionId {} not found", parameters.getSessionid());

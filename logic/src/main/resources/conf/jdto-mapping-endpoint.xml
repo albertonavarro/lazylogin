@@ -18,7 +18,7 @@
             <source name="value" /> 
         </field> 
     </dto>
-    <dto type="com.navid.lazylogin.domain.SsoId"> 
+    <dto type="com.navid.lazylogin.domain.SessionId"> 
         <immutableConstructor> 
             <arg order="0" type="com.navid.lazylogin.domain.Token" cascade="true"> 
                 <source name="token"/> 

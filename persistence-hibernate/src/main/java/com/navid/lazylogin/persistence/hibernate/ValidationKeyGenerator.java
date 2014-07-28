@@ -1,7 +1,7 @@
 package com.navid.lazylogin.persistence.hibernate;
 
 import com.navid.lazylogin.domain.DomainFactory;
-import com.navid.lazylogin.persistence.hibernate.domain.SsoIdHb;
+import com.navid.lazylogin.persistence.hibernate.domain.SessionIdHb;
 import com.navid.lazylogin.persistence.hibernate.domain.ValidationKeyHb;
 import java.io.Serializable;
 import org.hibernate.HibernateException;

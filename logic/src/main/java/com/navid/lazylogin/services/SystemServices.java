@@ -1,6 +1,6 @@
 package com.navid.lazylogin.services;
 
-import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.persistence.Persistence;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
@@ -17,8 +17,8 @@ public class SystemServices {
     @Resource
     private Persistence persistence;
     
-    public SsoId getUserInfo( String sessionId ) {
-        SsoId ssoId = persistence.findOneSessionId( sessionId );
+    public SessionId getUserInfo( String sessionId ) {
+        SessionId ssoId = persistence.findOneSessionId( sessionId );
         
         return ssoId;
     }

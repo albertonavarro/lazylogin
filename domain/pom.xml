@@ -11,5 +11,12 @@
     <groupId>com.navid.lazylogin</groupId>
     <artifactId>domain</artifactId>
     <name>LazyLogin-domain</name>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
 </project>

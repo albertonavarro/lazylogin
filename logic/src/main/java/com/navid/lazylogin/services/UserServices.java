@@ -1,6 +1,6 @@
 package com.navid.lazylogin.services;
 
-import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.domain.Token;
 import com.navid.lazylogin.domain.User;
 import com.navid.lazylogin.domain.ValidationKey;
@@ -24,14 +24,14 @@ public class UserServices {
 
     @Resource
     private Persistence persistence;
-    
+
     @Resource
     private EventProducer eventProducer;
 
-    public SsoId createToken(String email) {
+    public SessionId createToken(String email) {
 
         LOGGER.info("Creating token for {}", email);
-        
+
         User user = persistence.findOneUser(email);
 
         if (user == null) {
@@ -39,25 +39,25 @@ public class UserServices {
             user = persistence.saveUser(new User(email, null, null));
             LOGGER.info("User created: {}", user);
         }
-        
+
         Token token = persistence.createToken(user);
         LOGGER.info("Token created: {}", token);
-        
+
         ValidationKey validationKey = new ValidationKey(token, null);
         validationKey = persistence.saveValidationKey(validationKey);
         LOGGER.info("ValidationKey created: {}", validationKey);
 
-        SsoId result = persistence.createSsoId(token);
+        SessionId result = persistence.createSsoId(token);
         LOGGER.info("SessionId created: {}", result);
-        
+
         eventProducer.validateToken(validationKey);
-        
+
         return result;
     }
 
-    public SsoId loginWithToken(String tokenId) {
+    public SessionId loginWithToken(String tokenId) {
         LOGGER.info("Logging with token: {}", tokenId);
-        
+
         Token token = persistence.findOneToken(tokenId);
 
         if (token == null) {
@@ -65,10 +65,9 @@ public class UserServices {
             throw new RuntimeException("Login no existe");
         }
 
-        
-        SsoId result = persistence.createSsoId(token);
+        SessionId result = persistence.createSsoId(token);
         LOGGER.info("Ssoid {} created for token {}", result, token);
-        
+
         return result;
     }
 

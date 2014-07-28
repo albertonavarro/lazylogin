@@ -1,11 +1,11 @@
 package com.navid.lazylogin.persistence.hibernate;
 
-import com.navid.lazylogin.domain.SsoId;
+import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.domain.Token;
 import com.navid.lazylogin.domain.User;
 import com.navid.lazylogin.domain.ValidationKey;
 import com.navid.lazylogin.persistence.Persistence;
-import com.navid.lazylogin.persistence.hibernate.domain.SsoIdHb;
+import com.navid.lazylogin.persistence.hibernate.domain.SessionIdHb;
 import com.navid.lazylogin.persistence.hibernate.domain.TokenHb;
 import com.navid.lazylogin.persistence.hibernate.domain.UserHb;
 import com.navid.lazylogin.persistence.hibernate.domain.ValidationKeyHb;
@@ -69,12 +69,12 @@ public class PersistenceImpl implements Persistence {
         return binder.bindFromBusinessObject(Token.class, tokenHb);
     }
 
-    public SsoId saveSsoId(SsoId ssoId) {
-        SsoIdHb ssoIdHb = binder.bindFromBusinessObject(SsoIdHb.class, ssoId);
+    public SessionId saveSsoId(SessionId ssoId) {
+        SessionIdHb ssoIdHb = binder.bindFromBusinessObject(SessionIdHb.class, ssoId);
 
         ssoIdHb = ssoIdRepo.save(ssoIdHb);
 
-        return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+        return binder.bindFromBusinessObject(SessionId.class, ssoIdHb);
     }
 
     public ValidationKey saveValidationKey(ValidationKey validationKey) {
@@ -109,21 +109,21 @@ public class PersistenceImpl implements Persistence {
         return binder.bindFromBusinessObject(Token.class, tokenHb);
     }
 
-    public SsoId createSsoId(Token token) {
+    public SessionId createSsoId(Token token) {
         TokenHb tokenHb = binder.bindFromBusinessObject(TokenHb.class, token);
         
-        SsoIdHb ssoIdHb = new SsoIdHb();
+        SessionIdHb ssoIdHb = new SessionIdHb();
         ssoIdHb.setToken(tokenHb);
 
         ssoIdHb = ssoIdRepo.save(ssoIdHb);
 
-        return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+        return binder.bindFromBusinessObject(SessionId.class, ssoIdHb);
         
     }
 
-    public SsoId findOneSessionId(String sessionId) {
-        SsoIdHb ssoIdHb = ssoIdRepo.findOne(sessionId);
-        return binder.bindFromBusinessObject(SsoId.class, ssoIdHb);
+    public SessionId findOneSessionId(String sessionId) {
+        SessionIdHb ssoIdHb = ssoIdRepo.findOne(sessionId);
+        return binder.bindFromBusinessObject(SessionId.class, ssoIdHb);
     }
 
     public User findOneUserByEmail(String email) {
