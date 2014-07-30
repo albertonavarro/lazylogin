@@ -14,7 +14,7 @@ import org.springframework.util.Assert;
  */
 public class LoginWithTokenIT extends BaseIT {
     
-    public void loginWithUnverifiedToken() {
+    public void loginWithUnverifiedToken() throws Exception {
         
         CreateTokenRequest ctreq = new CreateTokenRequest();
         ctreq.setEmail("loginWithUnverifiedToken@someDomain");
@@ -30,6 +30,8 @@ public class LoginWithTokenIT extends BaseIT {
         LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
         Assert.notNull(loginResp);
         Assert.notNull(loginResp.getResponse());
+        
+        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
     }
     
 }
