@@ -13,8 +13,11 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.web.context.WebApplicationContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 /**
@@ -54,7 +57,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         
     }
 
-    @BeforeClass
+    @BeforeSuite
     public void init() throws Exception {        
         //helping recordserver to choose what config file should use.
         System.setProperty("env", "-ct");
@@ -64,7 +67,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         WebApplicationContext context = EmbeddedJetty.runServer(lazyLoginPort);
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() throws Exception {
 
         EmbeddedJetty.stopServer();
