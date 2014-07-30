@@ -6,10 +6,30 @@
 
 package com.navid.lazylogin;
 
+import org.springframework.util.Assert;
+
 /**
  *
  * @author alberto
  */
 public class LoginWithTokenIT extends BaseIT {
+    
+    public void loginWithUnverifiedToken() {
+        
+        CreateTokenRequest ctreq = new CreateTokenRequest();
+        ctreq.setEmail("loginWithUnverifiedToken@someDomain");
+
+        CreateTokenResponse ctresp = userCommands.createToken(ctreq);
+
+        Assert.notNull(ctresp.getSessionid());
+        Assert.notNull(ctresp.getToken());
+    
+        LoginWithTokenRequest loginReq = new LoginWithTokenRequest();
+        loginReq.setToken(ctresp.getToken());
+        
+        LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
+        Assert.notNull(loginResp);
+        Assert.notNull(loginResp.getResponse());
+    }
     
 }
