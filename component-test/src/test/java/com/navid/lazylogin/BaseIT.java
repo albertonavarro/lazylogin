@@ -58,7 +58,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         
     }
 
-    @BeforeGroups
+    @BeforeClass
     public void init() throws Exception {        
         //helping recordserver to choose what config file should use.
         System.setProperty("env", "-ct");
@@ -68,7 +68,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         WebApplicationContext context = EmbeddedJetty.runServer(lazyLoginPort);
     }
 
-    @AfterGroups
+    @AfterClass
     public void tearDown() throws Exception {
 
         EmbeddedJetty.stopServer();

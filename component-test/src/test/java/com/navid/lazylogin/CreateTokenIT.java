@@ -72,6 +72,27 @@ public class CreateTokenIT extends BaseIT {
         Assert.notNull(giresp2);
         Assert.isTrue(giresp2.getStatus() == Status.VERIFIED);
     }
+    
+    @Test
+    public void loginWithUnverifiedToken() throws Exception {
+        
+        CreateTokenRequest ctreq = new CreateTokenRequest();
+        ctreq.setEmail("loginWithUnverifiedToken@someDomain");
+
+        CreateTokenResponse ctresp = userCommands.createToken(ctreq);
+
+        Assert.notNull(ctresp.getSessionid());
+        Assert.notNull(ctresp.getToken());
+    
+        LoginWithTokenRequest loginReq = new LoginWithTokenRequest();
+        loginReq.setToken(ctresp.getToken());
+        
+        LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
+        Assert.notNull(loginResp);
+        Assert.notNull(loginResp.getResponse());
+        
+        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
+    }
 
     private String extractUrlFromEmail(MimeMessage content) throws IOException, MessagingException {
         String urlContent = content.getContent().toString();
