@@ -6,10 +6,15 @@
 
 package com.navid.lazylogin;
 
+import org.springframework.util.Assert;
+import org.testng.annotations.Test;
+
 /**
  *
  * @author alberto
  */
 public class LoginWithTokenIT extends BaseIT {
+    
+    /**/
     
 }
