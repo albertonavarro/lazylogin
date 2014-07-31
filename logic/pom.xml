@@ -96,19 +96,11 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>classpath:user.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-server</extraarg>
-                                        <extraarg>-verbose</extraarg>
-                                        <extraarg>-impl</extraarg>
-                                    </extraargs>
+                                    
                                 </wsdlOption>
                                 <wsdlOption>
                                     <wsdl>classpath:system.wsdl</wsdl>
-                                    <extraargs>
-                                        <extraarg>-server</extraarg>
-                                        <extraarg>-verbose</extraarg>
-                                        <extraarg>-impl</extraarg>
-                                    </extraargs>
+                                    
                                 </wsdlOption>
                             </wsdlOptions>
                             <server/> 

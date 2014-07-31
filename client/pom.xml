@@ -40,8 +40,6 @@
                                     <wsdl>classpath:system.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-client</extraarg>
-                                        <extraarg>-verbose</extraarg>
-                                        <extraarg>-impl</extraarg>
                                     </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
@@ -61,8 +59,6 @@
                                     <wsdl>classpath:user.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-client</extraarg>
-                                        <extraarg>-verbose</extraarg>
-                                        <extraarg>-impl</extraarg>
                                     </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
