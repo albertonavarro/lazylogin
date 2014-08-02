@@ -34,22 +34,6 @@
     </properties>
     
     <profiles>
-        <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <revision>local</revision>
-            </properties>
-        </profile>
-        
-        <profile>
-            <id>ci</id>
-            <properties>
-                <revision>${providedRevision}</revision>
-            </properties>
-        </profile>
         
         <profile>
             <id>build</id>
