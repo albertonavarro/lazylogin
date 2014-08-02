@@ -19,3 +19,4 @@ lazylogin-war-endpoint/nb-configurations.xml
 /pom.xml.versionsBackup
 /persistence-api/pom.xml.versionsBackup
 /persistence-hibernate/pom.xml.versionsBackup
+/nb-configuration.xml
