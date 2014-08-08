@@ -33,4 +33,8 @@ public class RequestContextCreatorInterceptor extends AbstractPhaseInterceptor<M
     public void handleFault(Message messageParam) {
         requestContextContainer.create();
     }
+    
+    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+        this.requestContextContainer = requestContextContainer;
+    }
 }

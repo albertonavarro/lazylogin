@@ -33,5 +33,9 @@ public class RequestIdHandler implements Handler<MessageContext> {
     public void close(MessageContext mc) {
 
     }
+    
+    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+        this.requestContextContainer = requestContextContainer;
+    }
 
 }

@@ -20,10 +20,16 @@ public class AuthorisationFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(final ContainerRequestContext requestContext) throws IOException {
-
         final UserInfo userInfo = systemCommands.getUserInfo(requestContextContainer.get().getRequestId());
         requestContextContainer.get().setUserId(userInfo.getUsername());
-
+    }
+    
+    public void setSystemCommands( SystemCommands systemCommands ) {
+        this.systemCommands = systemCommands;
+    }
+    
+    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+        this.requestContextContainer = requestContextContainer;
     }
 
 }

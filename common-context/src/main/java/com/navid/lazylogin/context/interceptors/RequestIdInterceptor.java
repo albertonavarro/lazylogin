@@ -26,6 +26,9 @@ public class RequestIdInterceptor extends AbstractPhaseInterceptor<Message> {
                 ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS)).put("RID", singletonList(requestContextContainer.get().getRequestId()));
             
         }
-
+    }
+    
+    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+        this.requestContextContainer = requestContextContainer;
     }
 }
