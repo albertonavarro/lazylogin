@@ -4,7 +4,7 @@
     
     <groupId>com.navid.lazylogin</groupId>
     <artifactId>parent</artifactId>
-    <version>1.1.${revision}</version>
+    <version>1.2</version>
     
     <packaging>pom</packaging>
     
@@ -34,22 +34,6 @@
     </properties>
     
     <profiles>
-        <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <revision>local</revision>
-            </properties>
-        </profile>
-        
-        <profile>
-            <id>ci</id>
-            <properties>
-                <revision>${providedRevision}</revision>
-            </properties>
-        </profile>
         
         <profile>
             <id>build</id>
