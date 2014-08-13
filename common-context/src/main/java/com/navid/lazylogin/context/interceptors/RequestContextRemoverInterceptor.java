@@ -26,5 +26,9 @@ public class RequestContextRemoverInterceptor extends AbstractPhaseInterceptor<M
     public void handleFault(Message messageParam) {
         requestContextContainer.delete();
     }
+    
+    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+        this.requestContextContainer = requestContextContainer;
+    }
 
 }

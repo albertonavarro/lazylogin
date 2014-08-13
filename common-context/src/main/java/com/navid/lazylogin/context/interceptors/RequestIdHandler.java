@@ -10,9 +10,13 @@ import javax.annotation.Resource;
 import javax.xml.ws.handler.Handler;
 import javax.xml.ws.handler.MessageContext;
 import org.apache.cxf.message.Message;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RequestIdHandler implements Handler<MessageContext> {
-    
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(RequestIdHandler.class);
+
     @Resource
     private RequestContextContainer requestContextContainer;
 
@@ -21,6 +25,8 @@ public class RequestIdHandler implements Handler<MessageContext> {
         Map<String, List<String>> headers = (Map<String, List<String>>) message.get(Message.PROTOCOL_HEADERS);
         headers.put("RID", Arrays.asList(new String[]{requestContextContainer.get().getRequestId()}));
 
+        LOGGER.info("Adding RID header with value {}", requestContextContainer.get().getRequestId());
+        
         return true;
     }
 
@@ -32,6 +38,10 @@ public class RequestIdHandler implements Handler<MessageContext> {
     @Override
     public void close(MessageContext mc) {
 
+    }
+
+    public void setRequestContextContainer(RequestContextContainer requestContextContainer) {
+        this.requestContextContainer = requestContextContainer;
     }
 
 }

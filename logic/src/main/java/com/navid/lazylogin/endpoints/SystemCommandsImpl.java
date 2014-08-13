@@ -32,9 +32,9 @@ public class SystemCommandsImpl implements SystemCommands {
         
         com.navid.lazylogin.domain.SessionId ssoId = systemServices.getUserInfo(sessionId);
         
-        userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());
+        //userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());
         userInfo.setVerified(ssoId.getToken().getValidated());
-        userInfo.setUsername(ssoId.getToken().getUser().getName());
+        //userInfo.setUsername(ssoId.getToken().getUser().getName());
         
         return userInfo;
     }
