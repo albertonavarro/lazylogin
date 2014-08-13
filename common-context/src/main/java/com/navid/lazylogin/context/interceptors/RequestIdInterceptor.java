@@ -21,7 +21,7 @@ public class RequestIdInterceptor extends AbstractPhaseInterceptor<Message> {
     private RequestContextContainer requestContextContainer;
 
     public RequestIdInterceptor() {
-        super(Phase.USER_PROTOCOL);
+        super(Phase.POST_LOGICAL);
     }
 
     @Override
