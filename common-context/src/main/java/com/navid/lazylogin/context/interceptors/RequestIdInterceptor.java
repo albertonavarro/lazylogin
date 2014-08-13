@@ -21,7 +21,7 @@ public class RequestIdInterceptor extends AbstractPhaseInterceptor<Message> {
     private RequestContextContainer requestContextContainer;
 
     public RequestIdInterceptor() {
-        super(Phase.SEND);
+        super(Phase.MARSHAL);
     }
 
     @Override
