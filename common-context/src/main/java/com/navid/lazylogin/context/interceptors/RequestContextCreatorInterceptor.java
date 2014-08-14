@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RequestContextCreatorInterceptor extends AbstractPhaseInterceptor<Message> {
-    
+
     private static final Logger LOGGER = LoggerFactory.getLogger(RequestContextCreatorInterceptor.class);
 
     @Resource
@@ -25,26 +25,37 @@ public class RequestContextCreatorInterceptor extends AbstractPhaseInterceptor<M
 
     @Override
     public void handleMessage(Message message) {
-        List<String> ridList = ((Map<String, List<String>>)message.getContextualProperty(Message.PROTOCOL_HEADERS)).get("RID");
-        
-        RequestContext requestContext = requestContextContainer.create();
-        
-        if( ridList != null && ridList.size() > 0) {
-            LOGGER.info("Message intercepted with RID: {}", ridList.get(0));
-            requestContext.setRequestId(ridList.get(0));
+        List<String> corrList = ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS)).get(HeaderConstants.CORRELATION_ID);
+
+        RequestContext requestContext = requestContextContainer.get();
+
+        if (corrList != null && corrList.size() > 0) {
+            LOGGER.info("Message intercepted with Correlation Id: {}", corrList.get(0));
+            requestContext.setCorrelationId(corrList.get(0));
         } else {
             String newUUID = UUID.randomUUID().toString();
-            LOGGER.info("Message intercepted without RID, new one generated with value {}", newUUID);
-            requestContext.setRequestId(newUUID);
+            LOGGER.info("Message intercepted without Correlation Id, new one generated with value {}", newUUID);
+            requestContext.setCorrelationId(newUUID);
+        }
+
+        List<String> sessionList = ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS)).get(HeaderConstants.SESSION_ID);
+
+        if (sessionList != null && sessionList.size() > 0) {
+            LOGGER.info("Message intercepted with Session Id: {}", sessionList.get(0));
+            requestContext.setSessionId(sessionList.get(0));
+        } else {
+            String newUUID = UUID.randomUUID().toString();
+            LOGGER.info("Message intercepted without Session Id, new one generated with value {}", newUUID);
+            requestContext.setSessionId(newUUID);
         }
     }
 
     @Override
     public void handleFault(Message messageParam) {
-        requestContextContainer.create();
+        requestContextContainer.get();
     }
-    
-    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+
+    public void setRequestContextContainer(RequestContextContainer requestContextContainer) {
         this.requestContextContainer = requestContextContainer;
     }
 }

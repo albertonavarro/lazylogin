@@ -10,24 +10,12 @@ public class RequestContext {
 
     private String userName;
 
-    private String requestId;
+    private String correlationId;
+    
+    private String sessionId;
 
     RequestContext() {
 
-    }
-
-    /**
-     * @return the requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    /**
-     * @param requestId the requestId to set
-     */
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
     }
 
     /**
@@ -57,14 +45,42 @@ public class RequestContext {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    
+
+    /**
+     * @return the correlationId
+     */
+    public String getCorrelationId() {
+        return correlationId;
+    }
+
+    /**
+     * @param correlationId the correlationId to set
+     */
+    public void setCorrelationId(String correlationId) {
+        this.correlationId = correlationId;
+    }
+
+    /**
+     * @return the sessionId
+     */
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    /**
+     * @param sessionId the sessionId to set
+     */
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
                 .add("userName", userName)
                 .add("userId", userId)
-                .add("requestId", requestId)
+                .add("sessionId", sessionId)
+                .add("correlationId", correlationId)
                 .toString();
     }
-
 }

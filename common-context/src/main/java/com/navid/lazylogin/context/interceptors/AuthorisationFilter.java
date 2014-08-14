@@ -24,9 +24,9 @@ public class AuthorisationFilter implements ContainerRequestFilter {
 
     @Override
     public void filter(final ContainerRequestContext requestContext) throws IOException {
-        LOGGER.info("Authorisating request for requestId: {}", requestContextContainer.get().getRequestId());
+        LOGGER.info("Authorisating request for sessionId: {}", requestContextContainer.get().getSessionId());
         
-        final UserInfo userInfo = systemCommands.getUserInfo(requestContextContainer.get().getRequestId());
+        final UserInfo userInfo = systemCommands.getUserInfo(requestContextContainer.get().getSessionId());
         
         LOGGER.debug("UserInfo discovered: {}", userInfo);
         requestContextContainer.get().setUserId(userInfo.getUsername());

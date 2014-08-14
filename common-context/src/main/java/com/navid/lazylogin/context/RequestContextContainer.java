@@ -14,7 +14,11 @@ public class RequestContextContainer {
     private final ThreadLocal<RequestContext> requestContext = new ThreadLocal<>();
 
     public RequestContext get() {
-        return requestContext.get();
+        RequestContext context = requestContext.get();
+        if (context == null) {
+            return create();
+        }
+        return context;
     }
 
     public RequestContext delete() {
@@ -24,7 +28,7 @@ public class RequestContextContainer {
         return temp;
     }
 
-    public RequestContext create() {
+    private RequestContext create() {
         RequestContext temp = new RequestContext();
         requestContext.set(temp);
         LOGGER.debug("Request context created: {}", temp);
