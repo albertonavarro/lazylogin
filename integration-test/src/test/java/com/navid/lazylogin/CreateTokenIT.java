@@ -1,6 +1,5 @@
 package com.navid.lazylogin;
 
-import javax.mail.MessagingException;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 

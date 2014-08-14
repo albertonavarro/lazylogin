@@ -64,7 +64,6 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     @BeforeMethod
     public void beforeTest() throws MessagingException {
-        requestContextContainer.create();
         emailIndex = inbox.getMessageCount();
     }
 
