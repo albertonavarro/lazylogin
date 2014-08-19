@@ -30,6 +30,10 @@ public class SystemCommandsImpl implements SystemCommands {
     public UserInfo getUserInfo(String sessionId) { 
         UserInfo userInfo = new UserInfo();
         
+        if (userInfo == null) {
+            
+        }
+        
         com.navid.lazylogin.domain.SessionId ssoId = systemServices.getUserInfo(sessionId);
         
         //userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());

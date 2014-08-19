@@ -2,6 +2,7 @@
  */
 package com.navid.lazylogin.context.interceptors;
 
+import com.navid.lazylogin.GetUserInfoError_Exception;
 import com.navid.lazylogin.SystemCommands;
 import com.navid.lazylogin.UserInfo;
 import com.navid.lazylogin.context.RequestContextContainer;
@@ -37,7 +38,7 @@ public class AuthorisationFilter implements ContainerRequestFilter {
                 final UserInfo userInfo = systemCommands.getUserInfo(sessionId);
                 LOGGER.debug("UserInfo discovered: {}", userInfo);
                 requestContextContainer.get().setUserId(userInfo.getUsername());
-            } catch (RuntimeException e) {
+            } catch (GetUserInfoError_Exception e) {
                 LOGGER.error("Error authenticating with sessionId" + sessionId, e);
                 throw new AuthenticationException("Error authenticating client with sessionId " + sessionId);
             }
