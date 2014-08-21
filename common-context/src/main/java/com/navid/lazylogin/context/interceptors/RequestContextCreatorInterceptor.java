@@ -44,9 +44,7 @@ public class RequestContextCreatorInterceptor extends AbstractPhaseInterceptor<M
             LOGGER.info("Message intercepted with Session Id: {}", sessionList.get(0));
             requestContext.setSessionId(sessionList.get(0));
         } else {
-            String newUUID = UUID.randomUUID().toString();
-            LOGGER.info("Message intercepted without Session Id, new one generated with value {}", newUUID);
-            requestContext.setSessionId(newUUID);
+            LOGGER.info("Message intercepted without SessionId");
         }
     }
 
