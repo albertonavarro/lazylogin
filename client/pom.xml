@@ -27,7 +27,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
-                <version>${cfx.version}</version>
+                <version>${cxf.version}</version>
                 <executions>
                     <execution>
                         <id>generate-system</id>
@@ -37,6 +37,11 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>classpath:system.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-xjc-Xfluent-api</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.lazylogin.client.system.v0</extraarg>
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                             <server/> 
@@ -53,6 +58,11 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>classpath:user.wsdl</wsdl>
+                                    <extraargs>
+                                        <extraarg>-xjc-Xfluent-api</extraarg>
+                                        <extraarg>-p</extraarg>
+                                        <extraarg>com.lazylogin.client.user.v0</extraarg>
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                             <server/> 
@@ -62,7 +72,13 @@
                         </goals>
                     </execution>
                 </executions>
-                
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jvnet.jaxb2_commons</groupId>
+                        <artifactId>jaxb2-fluent-api</artifactId>
+                        <version>3.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

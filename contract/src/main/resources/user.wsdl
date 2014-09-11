@@ -20,6 +20,8 @@
                 <xs:sequence>
                     <xs:element minOccurs="1" name="sessionid" type="xs:string"/>
                     <xs:element minOccurs="1" name="ttl" type="xs:string"/>
+                    <xs:element minOccurs="1" name="status" type="tns:status"/>
+                    <xs:element minOccurs="1" name="name" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:complexType name="token">

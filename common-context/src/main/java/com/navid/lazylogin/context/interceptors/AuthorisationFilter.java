@@ -2,9 +2,9 @@
  */
 package com.navid.lazylogin.context.interceptors;
 
-import com.navid.lazylogin.GetUserInfoError_Exception;
-import com.navid.lazylogin.SystemCommands;
-import com.navid.lazylogin.UserInfo;
+import com.lazylogin.client.system.v0.GetUserInfoError_Exception;
+import com.lazylogin.client.system.v0.SystemCommands;
+import com.lazylogin.client.system.v0.UserInfo;
 import com.navid.lazylogin.context.RequestContextContainer;
 import java.io.IOException;
 import javax.annotation.Resource;
