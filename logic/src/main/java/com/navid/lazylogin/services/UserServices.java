@@ -71,7 +71,7 @@ public class UserServices {
         return result;
     }
 
-    public Token validateKey(String validationKey) {
+    public Token validateKey(String validationKey) throws UsernameNotFoundException {
         ValidationKey found = persistence.findOneValidationKey(validationKey);
 
         if (found == null) {
@@ -82,6 +82,10 @@ public class UserServices {
         Token token = persistence.saveToken(found.getToken());
         persistence.deleteValidationKey(found);
         return found.getToken();
+    }
+
+    public Token validateKey(String input, String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
