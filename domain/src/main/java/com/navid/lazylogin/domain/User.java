@@ -11,14 +11,13 @@ public class User implements Serializable {
 
     private final String email;
 
-    private final String name;
+    private String name;
 
     private final UserId userId;
 
-    public User(String email, String name, UserId userId) {
+    public User(String email, UserId userId) {
         this.email = email;
         this.userId = userId;
-        this.name = name;
     }
 
     /**
@@ -47,4 +46,12 @@ public class User implements Serializable {
         return Objects.toStringHelper(this).add("email", email).add("userId", userId).toString();
     }
 
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
 }

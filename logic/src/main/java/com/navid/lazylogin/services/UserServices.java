@@ -36,7 +36,7 @@ public class UserServices {
 
         if (user == null) {
             LOGGER.debug("Email not found, creating user: {}", email);
-            user = persistence.saveUser(new User(email, null, null));
+            user = persistence.saveUser(new User(email, null));
             LOGGER.info("User created: {}", user);
         }
 
@@ -62,7 +62,7 @@ public class UserServices {
 
         if (token == null) {
             LOGGER.info("Token not found: {}", tokenId);
-            throw new RuntimeException("Login no existe");
+            throw new IllegalArgumentException("Token doesn't exist");
         }
 
         SessionId result = persistence.createSsoId(token);
@@ -75,7 +75,9 @@ public class UserServices {
         ValidationKey found = persistence.findOneValidationKey(validationKey);
 
         if (found == null) {
-            throw new RuntimeException("ValidationKey no existe");
+            throw new IllegalArgumentException("ValidationKey doesn't exist");
+        } else if (found.getToken().getUser().getName() == null) {
+            throw new UsernameNotFoundException();
         }
 
         found.getToken().setValidated(Boolean.TRUE);
@@ -84,8 +86,19 @@ public class UserServices {
         return found.getToken();
     }
 
-    public Token validateKey(String input, String username) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Token validateKey(String validationKey, String username) {
+        ValidationKey found = persistence.findOneValidationKey(validationKey);
+
+        if (found == null) {
+            throw new IllegalArgumentException("ValidationKey doesn't exist");
+        } else if (found.getToken().getUser().getName() != null) {
+            throw new IllegalArgumentException("Username already set");
+        }
+        found.getToken().getUser().setName(username);
+        found.getToken().setValidated(Boolean.TRUE);
+        Token token = persistence.saveToken(found.getToken());
+        persistence.deleteValidationKey(found);
+        return found.getToken();
     }
 
 }
