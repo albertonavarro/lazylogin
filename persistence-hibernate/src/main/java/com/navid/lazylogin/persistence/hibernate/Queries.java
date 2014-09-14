@@ -2,7 +2,6 @@ package com.navid.lazylogin.persistence.hibernate;
 
 import com.navid.lazylogin.persistence.hibernate.domain.UserHb;
 import java.util.List;
-import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;

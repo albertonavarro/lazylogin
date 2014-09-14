@@ -11,7 +11,6 @@ import com.navid.lazylogin.persistence.hibernate.domain.TokenHb;
 import com.navid.lazylogin.persistence.hibernate.domain.UserHb;
 import com.navid.lazylogin.persistence.hibernate.domain.ValidationKeyHb;
 import javax.annotation.Resource;
-import org.jdto.DTOBinder;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -20,6 +19,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class PersistenceImpl implements Persistence {
+    
+    public PersistenceImpl() {
+        
+    }
     
 
     @Resource
@@ -37,15 +40,17 @@ public class PersistenceImpl implements Persistence {
     @Resource
     private Queries queries;
 
-    @Resource
+    @Resource(name = "lazylogin.persistence.jdtoconverter")
     private Converter converter;
 
+    @Override
     public User findOneUser(String email) {
         UserHb userHb = queries.findSingleUserByEmail(email);
 
         return converter.convert(userHb);
     }
 
+    @Override
     public User saveUser(User user) {
         UserHb userHb = converter.convert(user);
 
@@ -56,12 +61,14 @@ public class PersistenceImpl implements Persistence {
         return result;
     }
 
+    @Override
     public Token findOneToken(String token) {
         TokenHb tokenHb = tokenRepo.findOne(token);
 
         return converter.convert(tokenHb);
     }
 
+    @Override
     public Token saveToken(Token token) {
         TokenHb tokenHb = converter.convert(token);
 
@@ -70,6 +77,7 @@ public class PersistenceImpl implements Persistence {
         return converter.convert(tokenHb);
     }
 
+    @Override
     public SessionId saveSsoId(SessionId ssoId) {
         SessionIdHb ssoIdHb = converter.convert(ssoId);
 
@@ -78,6 +86,7 @@ public class PersistenceImpl implements Persistence {
         return converter.convert(ssoIdHb);
     }
 
+    @Override
     public ValidationKey saveValidationKey(ValidationKey validationKey) {
         ValidationKeyHb validationKeyHb = converter.convert(validationKey);
 
@@ -86,6 +95,7 @@ public class PersistenceImpl implements Persistence {
         return converter.convert(validationKeyHb);
     }
 
+    @Override
     public ValidationKey findOneValidationKey(String validationKey) {
         ValidationKeyHb validationKeyHb = validationRepo.findOne(validationKey);
 
@@ -112,6 +122,7 @@ public class PersistenceImpl implements Persistence {
         return converter.convert(tokenHb);
     }
 
+    @Override
     public SessionId createSsoId(Token token) {
         TokenHb tokenHb = converter.convert(token);
         
@@ -124,11 +135,13 @@ public class PersistenceImpl implements Persistence {
         
     }
 
+    @Override
     public SessionId findOneSessionId(String sessionId) {
         SessionIdHb ssoIdHb = ssoIdRepo.findOne(sessionId);
         return converter.convert(ssoIdHb);
     }
 
+    @Override
     public User findOneUserByEmail(String email) {
         UserHb userHb = queries.findSingleUserByEmail(email);
         

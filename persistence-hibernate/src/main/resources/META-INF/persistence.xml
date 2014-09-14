@@ -1,6 +1,6 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
 	version="1.0">
-	<persistence-unit name="tothought-tutorial" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="mysql" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
@@ -8,7 +8,7 @@
 			<property name="hibernate.show_sql" value="true"/>
 		</properties>
 	</persistence-unit>
-	<persistence-unit name="tothought-tutorial-test" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="in-memory" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />

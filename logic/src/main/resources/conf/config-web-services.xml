@@ -26,13 +26,5 @@
         implementor="com.navid.lazylogin.endpoints.SystemCommandsImpl" 
         address="/system" /> 
         
-   <jaxrs:server id="services" address="/">
-        <jaxrs:serviceBeans>
-            <bean class="com.navid.lazylogin.endpoints.RestValidatorImpl"/>
-        </jaxrs:serviceBeans>
-        <jaxrs:providers>
-            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
-        </jaxrs:providers>
-    </jaxrs:server> 
 	  
 </beans>

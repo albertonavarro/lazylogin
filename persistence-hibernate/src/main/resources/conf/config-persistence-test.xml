@@ -14,14 +14,13 @@
     <!-- Transaction Manager -->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
-        
     </bean>
     
     <!-- Entity Manager -->
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="datasource" />
-        <property name="persistenceUnitName" value="tothought-tutorial-test" />
+        <property name="persistenceUnitName" value="in-memory" />
     </bean>
     
     <!-- Jpa Repositories -->
@@ -34,4 +33,7 @@
         <property name="xmlConfig" value="classpath:conf/jdto-mapping-persistence-hibernate.xml" /> 
     </bean>
     
+    <bean id="lazylogin.persistence.jdtoconverter" class="com.navid.lazylogin.persistence.hibernate.converter.JdtoConverter" >
+            
+    </bean>
 </beans>

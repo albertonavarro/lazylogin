@@ -71,7 +71,7 @@ public class UserServices {
         return result;
     }
 
-    public Token validateKey(String validationKey) throws UsernameNotFoundException {
+    public Token verify(String validationKey) throws UsernameNotFoundException {
         ValidationKey found = persistence.findOneValidationKey(validationKey);
 
         if (found == null) {
@@ -86,7 +86,7 @@ public class UserServices {
         return found.getToken();
     }
 
-    public Token validateKey(String validationKey, String username) {
+    public Token verify(String validationKey, String username) {
         ValidationKey found = persistence.findOneValidationKey(validationKey);
 
         if (found == null) {

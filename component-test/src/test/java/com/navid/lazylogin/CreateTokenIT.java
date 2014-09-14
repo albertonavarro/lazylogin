@@ -12,6 +12,7 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import org.eclipse.jetty.http.HttpStatus;
+import org.glassfish.jersey.client.ClientProperties;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 
@@ -65,8 +66,10 @@ public class CreateTokenIT extends BaseIT {
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
 
-        verifyUrl(url);
-                
+        verifyUrl(url, Response.Status.FOUND.getStatusCode());
+          
+        //verifyUrl(url + "&username=user", Response.Status.OK.getStatusCode());
+        
         GetInfoResponse giresp2 = userCommands.getInfo(gireq);
 
         Assert.notNull(giresp2);
@@ -100,10 +103,10 @@ public class CreateTokenIT extends BaseIT {
         return url;
     }
     
-    private void verifyUrl(String url) {
+    private void verifyUrl(String url, int code) {
         Client client = ClientBuilder.newBuilder().build();
-        Response response = client.target(url).request().get();
-        Assert.isTrue(HttpStatus.isSuccess(response.getStatus()));
+        Response response = client.target(url).property(ClientProperties.FOLLOW_REDIRECTS, false).request().get();
+        Assert.isTrue(response.getStatus() == code);
     }
 
 }

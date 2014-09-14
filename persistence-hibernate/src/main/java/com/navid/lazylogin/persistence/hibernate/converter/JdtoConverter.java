@@ -14,8 +14,9 @@ import com.navid.lazylogin.persistence.hibernate.domain.SessionIdHb;
 import com.navid.lazylogin.persistence.hibernate.domain.TokenHb;
 import com.navid.lazylogin.persistence.hibernate.domain.UserHb;
 import com.navid.lazylogin.persistence.hibernate.domain.ValidationKeyHb;
-import javax.annotation.Resource;
 import org.jdto.DTOBinder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
  *
@@ -23,16 +24,19 @@ import org.jdto.DTOBinder;
  */
 public class JdtoConverter implements Converter {
 
-    private DTOBinder binder;
+    private final DTOBinder binder;
     
-    public JdtoConverter(DTOBinder binder){
+    @Autowired
+    public JdtoConverter(@Qualifier(value = "lazylogin.persistence-hibernate.converter") DTOBinder binder){
         this.binder = binder;
     }
 
     @Override
     public User convert(UserHb from) {
         User user = binder.bindFromBusinessObject(User.class, from);
-        user.setName(from.getUsername()); //jdto doesn't allow immutable and fields at the same time
+        if(from!=null){
+            user.setName(from.getUsername()); //jdto doesn't allow immutable and fields at the same time
+        }
         return user;
     }
 
