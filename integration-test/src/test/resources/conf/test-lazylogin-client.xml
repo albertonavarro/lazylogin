@@ -22,10 +22,10 @@ http://cxf.apache.org/jaxrs                 http://cxf.apache.org/schemas/jaxrs.
     
     <import resource="classpath:META-INF/cxf/cxf.xml" />
      
-    <bean id="clientSystem" class="com.navid.lazylogin.SystemCommands" factory-bean="clientSystemFactory" factory-method="create"/>
+    <bean id="clientSystem" class="com.lazylogin.client.system.v0.SystemCommands" factory-bean="clientSystemFactory" factory-method="create"/>
     
     <bean id="clientSystemFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
-        <property name="serviceClass" value="com.navid.lazylogin.SystemCommands"/>
+        <property name="serviceClass" value="com.lazylogin.client.system.v0.SystemCommands"/>
         <property name="address" value="${lazylogin.url}/system"/>
         <property name="handlers">
             <list>
@@ -34,10 +34,10 @@ http://cxf.apache.org/jaxrs                 http://cxf.apache.org/schemas/jaxrs.
         </property>
     </bean>
     
-    <bean id="clientUser" class="com.navid.lazylogin.UserCommands" factory-bean="clientUserFactory" factory-method="create"/>
+    <bean id="clientUser" class="com.lazylogin.client.user.v0.UserCommands" factory-bean="clientUserFactory" factory-method="create"/>
     
     <bean id="clientUserFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
-        <property name="serviceClass" value="com.navid.lazylogin.UserCommands"/>
+        <property name="serviceClass" value="com.lazylogin.client.user.v0.UserCommands"/>
         <property name="address" value="${lazylogin.url}/user"/>
         <property name="handlers">
             <list>
