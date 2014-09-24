@@ -24,10 +24,10 @@ public class UserCommandsImpl implements UserCommands {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserCommandsImpl.class.getName());
 
-    //@Resource
+    @Resource
     private UserServices userServices;
 
-    //@Resource
+    @Resource
     private SystemServices systemServices;
 
     @Resource(name = "lazylogin.endpoint.converter")

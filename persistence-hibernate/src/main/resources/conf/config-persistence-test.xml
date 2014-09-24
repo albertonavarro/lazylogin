@@ -21,6 +21,7 @@
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="datasource" />
         <property name="persistenceUnitName" value="in-memory" />
+        <property name="packagesToScan" value="com.navid.lazylogin.persistence.hibernate.domain" />
     </bean>
     
     <!-- Jpa Repositories -->

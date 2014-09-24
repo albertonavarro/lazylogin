@@ -13,7 +13,7 @@ public class SystemCommandsImpl implements SystemCommands {
 
     private static final Logger LOG = Logger.getLogger(SystemCommandsImpl.class.getName());
     
-    //@Resource
+    @Resource
     private SystemServices systemServices;
     
     @Resource(name = "lazylogin.endpoint.converter")
