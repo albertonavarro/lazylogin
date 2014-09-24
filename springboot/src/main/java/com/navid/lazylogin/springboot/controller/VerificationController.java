@@ -1,11 +1,16 @@
-package com.navid.lazylogin.controller;
+
+package com.navid.lazylogin.springboot.controller;
 
 import com.navid.lazylogin.domain.Token;
 import com.navid.lazylogin.services.UserServices;
 import com.navid.lazylogin.services.UsernameNotFoundException;
+import java.util.Date;
+import java.util.Map;
 import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +19,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class VerificationController {
-    
-    private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
 
-    @Resource
+	@Value("${application.message:Hello World}")
+	private String message = "Hello World";
+
+	@RequestMapping("/")
+	public String welcome(Map<String, Object> model) {
+		model.put("time", new Date());
+		model.put("message", this.message);
+		return "welcome";
+	}
+
+	@RequestMapping("/foo")
+	public String foo(Map<String, Object> model) {
+		throw new RuntimeException("Foo");
+	}
+        
+        private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
+
+    //@Resource
     private UserServices userServices;
 
     @RequestMapping(value="/verify", method = RequestMethod.GET)
@@ -49,4 +69,5 @@ public class VerificationController {
 
         return "validated";
     }
+
 }
