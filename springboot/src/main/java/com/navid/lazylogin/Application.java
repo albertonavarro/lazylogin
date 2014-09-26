@@ -1,4 +1,4 @@
-package com.navid.lazylogin.springboot;
+package com.navid.lazylogin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
