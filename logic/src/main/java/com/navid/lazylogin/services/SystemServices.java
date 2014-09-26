@@ -18,7 +18,7 @@ public class SystemServices {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SystemServices.class);
 
-    //@Resource
+    @Resource
     private Persistence persistence;
 
     public SessionId getUserInfo(String sessionId) {

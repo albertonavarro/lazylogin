@@ -22,7 +22,7 @@ public class UserServices {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServices.class);
 
-    //@Resource
+    @Resource
     private Persistence persistence;
 
     @Resource

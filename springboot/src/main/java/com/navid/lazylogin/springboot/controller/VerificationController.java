@@ -1,4 +1,3 @@
-
 package com.navid.lazylogin.springboot.controller;
 
 import com.navid.lazylogin.domain.Token;
@@ -20,33 +19,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class VerificationController {
 
-	@Value("${application.message:Hello World}")
-	private String message = "Hello World";
+    @Value("${application.message:Hello World}")
+    private String message = "Hello World";
 
-	@RequestMapping("/")
-	public String welcome(Map<String, Object> model) {
-		model.put("time", new Date());
-		model.put("message", this.message);
-		return "welcome";
-	}
+    @RequestMapping("/")
+    public String welcome(Map<String, Object> model) {
+        model.put("time", new Date());
+        model.put("message", this.message);
+        return "welcome";
+    }
 
-	@RequestMapping("/foo")
-	public String foo(Map<String, Object> model) {
-		throw new RuntimeException("Foo");
-	}
-        
-        private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
+    @RequestMapping("/foo")
+    public String foo(Map<String, Object> model) {
+        model.put("time", new Date());
+        model.put("message", this.message);
+        return "welcome";
+    }
 
-    //@Resource
+    private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
+
+    @Resource
     private UserServices userServices;
 
-    @RequestMapping(value="/verify", method = RequestMethod.GET)
+    @RequestMapping(value = "/verify", method = RequestMethod.GET)
     public String verify(
-            @RequestParam(value="verificationKey", required=true) String verificationKey, 
+            @RequestParam(value = "verificationKey", required = true) String verificationKey,
             ModelMap model) {
 
         LOGGER.info("Verifying with verificationKey {}", verificationKey);
-        
+
         Token token;
         try {
             token = userServices.verify(verificationKey);
@@ -56,15 +57,15 @@ public class VerificationController {
 
         return "validated";
     }
-    
-    @RequestMapping(value="/verifyWithUsername", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/verifyWithUsername", method = RequestMethod.GET)
     public String validateInputWithUsername(
-            @RequestParam(value="verificationKey", required=true) String verificationKey, 
-            @RequestParam(value="username", required=true) String username, 
+            @RequestParam(value = "verificationKey", required = true) String verificationKey,
+            @RequestParam(value = "username", required = true) String username,
             ModelMap model) {
 
         LOGGER.info("Verifying with input {}", verificationKey);
-        
+
         Token token = userServices.verify(verificationKey, username);
 
         return "validated";
