@@ -1,5 +1,6 @@
 package com.navid.lazylogin.persistence.jpa.domain;
 
+import com.google.common.base.Objects;
 import com.navid.lazylogin.domain.UserId;
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -74,6 +75,14 @@ public class UserHb implements Serializable {
 
     public UserIdHb getUserIdWrapper() {
         return new UserIdHb(userId);
+    }
+    
+    @Override
+    public String toString() {
+        return Objects.toStringHelper(this)
+                .add("email", email)
+                .add("userId", userId)
+                .add("username", username).toString();
     }
     
 }

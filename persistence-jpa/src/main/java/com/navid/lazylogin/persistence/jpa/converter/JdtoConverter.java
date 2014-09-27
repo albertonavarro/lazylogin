@@ -59,7 +59,11 @@ public class JdtoConverter implements Converter {
 
     @Override
     public Token convert(TokenHb from) {
-        return binder.bindFromBusinessObject(Token.class, from);
+        Token result = binder.bindFromBusinessObject(Token.class, from);
+        if(result!= null && result.getUser() !=null){
+            result.getUser().setName(from.getUser().getUsername()); //jdto doesn't allow immutable and fields at the same time
+        }
+        return result;
     }
 
     @Override

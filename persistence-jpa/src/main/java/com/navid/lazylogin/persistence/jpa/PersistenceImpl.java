@@ -11,6 +11,8 @@ import com.navid.lazylogin.persistence.jpa.domain.TokenHb;
 import com.navid.lazylogin.persistence.jpa.domain.UserHb;
 import com.navid.lazylogin.persistence.jpa.domain.ValidationKeyHb;
 import javax.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -19,6 +21,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class PersistenceImpl implements Persistence {
+    
+    private final static Logger LOGGER = LoggerFactory.getLogger(PersistenceImpl.class);
     
     public PersistenceImpl() {
         
@@ -70,11 +74,19 @@ public class PersistenceImpl implements Persistence {
 
     @Override
     public Token saveToken(Token token) {
+        LOGGER.info("Saving user: {}", token.getUser());
         TokenHb tokenHb = converter.convert(token);
+        
+        LOGGER.info("Converted user: {}", tokenHb.getUser());
 
         tokenHb = tokenRepo.save(tokenHb);
+        
+        LOGGER.info("Saved user: {}", tokenHb.getUser());
 
-        return converter.convert(tokenHb);
+        Token result = converter.convert(tokenHb);
+        
+        LOGGER.info("Reconverted user: {}", result.getUser());
+        return result;
     }
 
     @Override
