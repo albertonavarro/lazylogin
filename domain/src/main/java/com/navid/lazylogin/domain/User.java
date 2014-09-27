@@ -43,7 +43,10 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("email", email).add("userId", userId).toString();
+        return Objects.toStringHelper(this)
+                .add("email", email)
+                .add("userId", userId)
+                .add("username", name).toString();
     }
 
     /**
