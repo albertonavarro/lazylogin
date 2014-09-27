@@ -1,6 +1,7 @@
 
 package com.navid.utils;
 
+import java.io.IOException;
 import java.util.Map.Entry;
 import java.util.Properties;
 import org.springframework.beans.factory.InitializingBean;
@@ -24,4 +25,6 @@ public class CustomPropertySourcesPlaceholderConfigurer extends PropertyPlacehol
             ex.printStackTrace();
         }
     }
+
+    
 }

@@ -13,7 +13,8 @@
     <dependencies>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
-            <artifactId>jetty-endpoint</artifactId>
+            <artifactId>springboot</artifactId>
+            <classifier>war</classifier>
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>

@@ -136,9 +136,9 @@
                 <module>eventproducer-api</module>
                 <module>eventproducer-amq</module>
                 <module>eventconsumer-amq-email</module>
-                <module>component-test</module>
                 <module>common-context</module>
                 <module>client</module>
+                <module>springboot</module>
             </modules>
         </profile>
         
@@ -1072,11 +1072,6 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
                 <artifactId>springloaded</artifactId>
                 <version>${spring-loaded.version}</version>
             </dependency>
@@ -1371,6 +1366,12 @@
                 <artifactId>common-context</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>springboot</artifactId>
+                <version>${project.version}</version>
+                <classifier>war</classifier>
+            </dependency>
             
             <!-- Jetty -->
             <dependency>
@@ -1381,16 +1382,6 @@
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-servlet</artifactId>
-                <version>${jetty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-webapp</artifactId>
-                <version>${jetty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-jsp</artifactId>
                 <version>${jetty.version}</version>
             </dependency>
             
@@ -1513,11 +1504,6 @@
             
             <!-- Other third party -->
             <dependency>
-                <groupId>commons-pool</groupId>
-                <artifactId>commons-pool</artifactId>
-                <version>1.5.7</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-all</artifactId>
                 <version>${amq.version}</version>
@@ -1576,24 +1562,8 @@
             
             <dependency>
                 <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>${hibernate.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
                 <version>${hibernate.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.22</version>
-            </dependency>
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>${h2.version}</version>
-                <scope>runtime</scope>
             </dependency>
             <dependency>
                 <groupId>org.springframework.data</groupId>
@@ -1624,27 +1594,6 @@
             </dependency>
             <!-- Runtime -->
             
-            
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>jcl-over-slf4j</artifactId>
-                <version>1.6.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.6.1</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>1.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.jms</groupId>
-                <artifactId>jms-api</artifactId>
-                <version>1.1-rev-1</version>
-            </dependency>
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>javax.annotation-api</artifactId>
@@ -1733,10 +1682,6 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>springboot</module>
-        <module>persistence-jpa</module>
-    </modules>
     
     <repositories>
         <repository>
