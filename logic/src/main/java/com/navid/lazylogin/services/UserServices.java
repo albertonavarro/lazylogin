@@ -38,6 +38,8 @@ public class UserServices {
             LOGGER.debug("Email not found, creating user: {}", email);
             user = persistence.saveUser(new User(email, null));
             LOGGER.info("User created: {}", user);
+        } else {
+            LOGGER.info("User found: {}", user);
         }
 
         Token token = persistence.createToken(user);
@@ -71,12 +73,18 @@ public class UserServices {
         return result;
     }
 
-    public Token verify(String validationKey) throws UsernameNotFoundException {
-        ValidationKey found = persistence.findOneValidationKey(validationKey);
+    public Token verify(String verificationKey) throws UsernameNotFoundException {
+        LOGGER.info("Verifying key: {}", verificationKey);
+        
+        ValidationKey found = persistence.findOneValidationKey(verificationKey);
 
         if (found == null) {
             throw new IllegalArgumentException("ValidationKey doesn't exist");
-        } else if (found.getToken().getUser().getName() == null) {
+        } 
+        
+        LOGGER.info("ValidationKey found: {}", found);
+        
+        if (found.getToken().getUser().getName() == null) {
             throw new UsernameNotFoundException();
         }
 
@@ -86,17 +94,32 @@ public class UserServices {
         return found.getToken();
     }
 
-    public Token verify(String validationKey, String username) {
-        ValidationKey found = persistence.findOneValidationKey(validationKey);
+    public Token verify(String verificationKey, String username) {
+        LOGGER.info("Verifying key: {} and username: {}", verificationKey, username);
+
+        ValidationKey found = persistence.findOneValidationKey(verificationKey);
 
         if (found == null) {
             throw new IllegalArgumentException("ValidationKey doesn't exist");
-        } else if (found.getToken().getUser().getName() != null) {
+        } 
+        
+        LOGGER.info("ValidationKey found: {}", found);
+
+        if (found.getToken().getUser().getName() != null) {
             throw new IllegalArgumentException("Username already set");
         }
+        
         found.getToken().getUser().setName(username);
+        
+        persistence.saveUser(found.getToken().getUser());
+        
         found.getToken().setValidated(Boolean.TRUE);
+        
         Token token = persistence.saveToken(found.getToken());
+        
+        LOGGER.info("Just in case: token: {}", token);
+        LOGGER.info("Another case: user: {}", persistence.findOneUserByEmail(token.getUser().getEmail()));
+        
         persistence.deleteValidationKey(found);
         return found.getToken();
     }
