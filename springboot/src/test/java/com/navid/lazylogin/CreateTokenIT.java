@@ -64,6 +64,8 @@ public class CreateTokenIT extends BaseIT {
         Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
+        
+        System.out.println("URL Detected: " + url);
 
         verifyUrl(url, Response.Status.FOUND.getStatusCode());
           

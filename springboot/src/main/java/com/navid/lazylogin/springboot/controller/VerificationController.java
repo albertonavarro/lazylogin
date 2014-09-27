@@ -40,6 +40,12 @@ public class VerificationController {
 
     @Resource
     private UserServices userServices;
+    
+    @RequestMapping(value= "/addUsername")
+    public String addUsername(@RequestParam(value = "verificationKey", required = true) String verificationKey,
+            ModelMap model) {
+        return "addUsername";
+    }
 
     @RequestMapping(value = "/verify", method = RequestMethod.GET)
     public String verify(
@@ -52,10 +58,10 @@ public class VerificationController {
         try {
             token = userServices.verify(verificationKey);
         } catch (UsernameNotFoundException ex) {
-            return "redirect:/static/username.html";
+            return "redirect:/addUsername";
         }
 
-        return "validated";
+        return "verified";
     }
 
     @RequestMapping(value = "/verifyWithUsername", method = RequestMethod.GET)
@@ -68,7 +74,7 @@ public class VerificationController {
 
         Token token = userServices.verify(verificationKey, username);
 
-        return "validated";
+        return "verified";
     }
 
 }

@@ -6,4 +6,4 @@ email.auth=
 email.starttls.enable=false
 email.from=component-test
 email.subject=component-test
-email.server.address=http://localhost:6789
+email.server.address=http://localhost:8080
