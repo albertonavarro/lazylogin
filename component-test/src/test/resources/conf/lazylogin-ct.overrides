@@ -1,9 +1,0 @@
-email.host=localhost
-email.port=1025
-email.username=
-email.password=
-email.auth=
-email.starttls.enable=false
-email.from=component-test
-email.subject=component-test
-email.server.address=http://localhost:6789

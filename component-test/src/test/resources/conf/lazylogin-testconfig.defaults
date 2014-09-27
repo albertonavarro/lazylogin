@@ -1,3 +1,0 @@
-server.port=8080
-lazylogin.url=http://localhost:${server.port}
-test.smtp.port=1025
