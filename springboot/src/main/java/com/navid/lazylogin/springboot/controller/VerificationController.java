@@ -19,31 +19,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class VerificationController {
 
-    @Value("${application.message:Hello World}")
-    private String message = "Hello World";
-
-    @RequestMapping("/")
-    public String welcome(Map<String, Object> model) {
-        model.put("time", new Date());
-        model.put("message", this.message);
-        return "welcome";
-    }
-
-    @RequestMapping("/foo")
-    public String foo(Map<String, Object> model) {
-        model.put("time", new Date());
-        model.put("message", this.message);
-        return "welcome";
-    }
-
     private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
 
     @Resource
     private UserServices userServices;
-    
-    @RequestMapping(value= "/addUsername")
-    public String addUsername(@RequestParam(value = "verificationKey", required = true) String verificationKey,
+
+    @RequestMapping(value = "/addUsername")
+    public String addUsername(
+            @RequestParam(value = "verificationKey", required = true) String verificationKey,
             ModelMap model) {
+        
+        model.addAttribute("verificationKey", verificationKey);
+        
         return "addUsername";
     }
 
@@ -58,7 +45,7 @@ public class VerificationController {
         try {
             token = userServices.verify(verificationKey);
         } catch (UsernameNotFoundException ex) {
-            return "redirect:/addUsername";
+            return "redirect:/addUsername?verificationKey=" + verificationKey;
         }
 
         return "verified";
