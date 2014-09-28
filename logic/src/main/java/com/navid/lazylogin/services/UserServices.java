@@ -83,6 +83,7 @@ public class UserServices {
         } 
         
         LOGGER.info("ValidationKey found: {}", found);
+        LOGGER.info("User found: {}", found.getToken().getUser());
         
         if (found.getToken().getUser().getName() == null) {
             throw new UsernameNotFoundException();
