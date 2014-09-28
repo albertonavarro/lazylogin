@@ -73,7 +73,12 @@ public class JdtoConverter implements Converter {
 
     @Override
     public ValidationKey convert(ValidationKeyHb from) {
-        return binder.bindFromBusinessObject(ValidationKey.class, from);
+        ValidationKey result = binder.bindFromBusinessObject(ValidationKey.class, from);
+        if(result!= null && result.getToken()!= null && result.getToken().getUser() !=null){
+            result.getToken().getUser().setName(from.getToken().getUser().getUsername()); //jdto doesn't allow immutable and fields at the same time
+        }
+        
+        return result;
     }
 
     @Override
