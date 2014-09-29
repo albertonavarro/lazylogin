@@ -7,6 +7,19 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "database::mysql"
+
+# Create a mysql database
+mysql_database 'lazylogin' do
+  connection(
+    :host     => 'localhost',
+    :username => 'root',
+    :password => node['mysql']['server_root_password']
+  )
+  action :create
+end
+
+
 remote_file "/root/springboot.war" do
    source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/springboot/${project.version}/springboot-${project.version}.war"
 end

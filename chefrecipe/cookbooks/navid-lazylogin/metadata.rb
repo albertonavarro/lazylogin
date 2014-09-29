@@ -7,5 +7,5 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '${project.version}'
 
 %w{ java }.each do |cb|
-  depends cb
+  depends cb database
 end
