@@ -20,3 +20,4 @@ lazylogin-war-endpoint/nb-configurations.xml
 /persistence-api/pom.xml.versionsBackup
 /persistence-hibernate/pom.xml.versionsBackup
 /nb-configuration.xml
+/springboot/activemq-data/

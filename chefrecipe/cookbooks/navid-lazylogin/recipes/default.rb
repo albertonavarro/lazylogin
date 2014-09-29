@@ -7,8 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
-remote_file "/root/jetty-deployable.jar" do
-   source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/jetty-endpoint/${project.version}/jetty-endpoint-${project.version}.jar"
+remote_file "/root/springboot.war" do
+   source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/springboot/${project.version}/springboot-${project.version}.jar"
 end
 
 directory "/root/navidconfig" do

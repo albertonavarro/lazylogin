@@ -7,7 +7,7 @@
 . /etc/init.d/functions
 
 pname="lazylogin"
-exe="java -jar /root/jetty-deployable.jar"
+exe="java -jar /root/springboot.war"
 pidfile="/var/run/${pname}.pid"
 lockfile="/var/lock/subsys/${pname}"
 logfile="/var/log/lazylogin.log"
