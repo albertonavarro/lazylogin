@@ -6,6 +6,6 @@ description      'Installs/Configures navid-lazylogin'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '${project.version}'
 
-%w{ java }.each do |cb|
-  depends cb database
+%w{ java database }.each do |cb|
+  depends cb
 end
