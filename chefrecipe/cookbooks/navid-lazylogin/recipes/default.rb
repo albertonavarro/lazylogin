@@ -24,7 +24,7 @@ remote_file "/root/springboot.war" do
    source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/springboot/${project.version}/springboot-${project.version}.war"
 end
 
-directory "/root/navidconfig" do
+directory "/root/config" do
   owner "root"
   group "root"
   mode 00644
