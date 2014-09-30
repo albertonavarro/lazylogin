@@ -24,14 +24,14 @@ remote_file "/root/springboot.war" do
    source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/springboot/${project.version}/springboot-${project.version}.war"
 end
 
-directory "/root/config" do
+directory "/root/navidconfig" do
   owner "root"
   group "root"
   mode 00644
   action :create
 end
 
-template "/root/config/application.properties" do
+template "/root/navidconfig/lazylogin.overrides" do
   mode 0755
   owner "root"
   group "root"
