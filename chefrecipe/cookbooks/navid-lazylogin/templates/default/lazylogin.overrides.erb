@@ -8,4 +8,9 @@ email.from=<%= node[:lazylogin][:email][:from] %>
 email.subject=<%= node[:lazylogin][:email][:subject] %>
 email.server.address=<%= node[:lazylogin][:email][:server_address] %>
 
-
+spring.datasource.url=<%= node[:lazylogin][:datasource][:url] %>
+spring.datasource.username=<%= node[:lazylogin][:datasource][:username] %>
+spring.datasource.password=<%= node[:lazylogin][:datasource][:password] %>
+spring.datasource.driverClassName=<%= node[:lazylogin][:datasource][:driverClassName] %>
+spring.jpa.database=<%= node[:lazylogin][:datasource][:database] %>
+spring.jpa.generate-ddl=<%= node[:lazylogin][:datasource][:generateDll] %>
