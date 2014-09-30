@@ -31,7 +31,7 @@ directory "/root/navidconfig" do
   action :create
 end
 
-template "/root/navidconfig/lazylogin.overrides" do
+template "/root/config/application.properties" do
   mode 0755
   owner "root"
   group "root"
