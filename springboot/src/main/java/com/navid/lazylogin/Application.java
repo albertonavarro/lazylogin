@@ -15,7 +15,7 @@ import org.springframework.context.annotation.PropertySource;
 @EnableAutoConfiguration
 @ComponentScan
 @ImportResource({"classpath:/conf/config-web-services.xml", "classpath:conf/config-amq.xml", "classpath:conf/config-amq-email.xml"})
-@PropertySource(value={"classpath:/application.properties", "classpath:/conf/lazylogin${env}.overrides", "file:${user.home}/navidconfig/lazylogin${env}.overrides" }, ignoreResourceNotFound = true)
+@PropertySource(value={"classpath:/application.properties", "classpath:/conf/lazylogin${env}.overrides", "file:${appdir}/navidconfig/lazylogin${env}.overrides" }, ignoreResourceNotFound = true)
 public class Application extends SpringBootServletInitializer {
 
     @Override
@@ -34,21 +34,5 @@ public class Application extends SpringBootServletInitializer {
         servletDef.setLoadOnStartup(1);
         return servletDef;
     }
-    
-    /*
-    <bean id="configuration" class="com.navid.utils.CustomPropertySourcesPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath:/application.properties</value>
-                <value>classpath:/conf/lazylogin.defaults</value>
-                <value>classpath:/conf/lazylogin#{ systemProperties['env']}.overrides</value>
-                <value>file:${user.home}/navidconfig/lazylogin#{ systemProperties['env']}.overrides</value>
-            </list>
-        </property>
-        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
-        <property name="ignoreResourceNotFound" value="true"/>
-        <property name="ignoreUnresolvablePlaceholders" value="false"/>
-        <property name="fileEncoding" value="UTF-8" />
-    </bean>*/
 
 }

@@ -24,25 +24,17 @@ remote_file "/root/springboot.war" do
    source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/springboot/${project.version}/springboot-${project.version}.war"
 end
 
-directory "/root/navidconfig" do
+directory "/root/config" do
   owner "root"
   group "root"
   mode 00644
   action :create
 end
 
-template "/root/navidconfig/lazylogin.overrides" do
+template "/root/config/application.properties" do
   mode 0755
   owner "root"
   group "root"
-end
-
-# script file used by service to launch your java program
-file "/root/run_lazylogin.cmd" do
-    content "java -jar /root/jetty-deployable.jar\n"
-    mode 0755
-    owner "root"
-    group "root"
 end
 
 # setup the service (based on the script above),

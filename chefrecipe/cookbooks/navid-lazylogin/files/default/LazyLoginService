@@ -7,6 +7,7 @@
 . /etc/init.d/functions
 
 pname="lazylogin"
+direxe="/root"
 exe="java -jar /root/springboot.war"
 pidfile="/var/run/${pname}.pid"
 lockfile="/var/lock/subsys/${pname}"
@@ -25,6 +26,7 @@ start() {
        echo -n "Already running !" && warning
        echo
     else
+       cd ${direxe}
        nohup ${exe} >>${logfile} 2>>${errfile} &
        RETVAL=$?
        PID=$!
