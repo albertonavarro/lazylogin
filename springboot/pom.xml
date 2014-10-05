@@ -117,6 +117,10 @@
             </resource>
             <resource>
                 <directory>src/main/webapp</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/content</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
