@@ -230,6 +230,16 @@
                                 <mainClass>com.navid.lazylogin.Application</mainClass>
                             </manifest>
                         </archive>
+                        <webResources>
+                            <resource>
+                                <directory>content</directory>
+                                <!-- enable filtering -->
+                                <filtering>true</filtering>
+                                <excludes>
+                                    <exclude>**/properties</exclude>
+                                </excludes>
+                            </resource>
+                        </webResources>
                     </configuration>
                 </plugin>
                 <plugin>
