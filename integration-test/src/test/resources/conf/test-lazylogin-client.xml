@@ -26,7 +26,7 @@ http://cxf.apache.org/jaxrs                 http://cxf.apache.org/schemas/jaxrs.
     
     <bean id="clientSystemFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
         <property name="serviceClass" value="com.lazylogin.client.system.v0.SystemCommands"/>
-        <property name="address" value="${lazylogin.url}/system"/>
+        <property name="address" value="${lazylogin.url}/services/system"/>
         <property name="handlers">
             <list>
                 <bean class="com.navid.lazylogin.context.interceptors.RequestIdHandler"/>
@@ -38,7 +38,7 @@ http://cxf.apache.org/jaxrs                 http://cxf.apache.org/schemas/jaxrs.
     
     <bean id="clientUserFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
         <property name="serviceClass" value="com.lazylogin.client.user.v0.UserCommands"/>
-        <property name="address" value="${lazylogin.url}/user"/>
+        <property name="address" value="${lazylogin.url}/services/user"/>
         <property name="handlers">
             <list>
                 <bean class="com.navid.lazylogin.context.interceptors.RequestIdHandler"/>

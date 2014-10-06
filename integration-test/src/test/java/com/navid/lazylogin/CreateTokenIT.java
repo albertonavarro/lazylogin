@@ -28,7 +28,7 @@ public class CreateTokenIT extends BaseIT {
         GetInfoResponse responseInfo = userCommands.getInfo(new GetInfoRequest().withSessionid(ctresp.getSessionid().getSessionid()));
         
         Assert.notNull(responseInfo);
-        Assert.isTrue(responseInfo.getStatus() == Status.VERIFIED);
+        Assert.isTrue(responseInfo.getStatus() == Status.UNVERIFIED);
     }
     
 }
