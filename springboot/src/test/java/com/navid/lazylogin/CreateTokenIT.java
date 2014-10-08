@@ -6,12 +6,14 @@
 package com.navid.lazylogin;
 
 import java.io.IOException;
+import java.net.URL;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import org.glassfish.jersey.client.ClientProperties;
+import org.hamcrest.MatcherAssert;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 
@@ -61,6 +63,8 @@ public class CreateTokenIT extends BaseIT {
 
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
+        Assert.isNull(giresp.getName());
+
         Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
@@ -68,13 +72,21 @@ public class CreateTokenIT extends BaseIT {
         System.out.println("URL Detected: " + url);
 
         verifyUrl(url, Response.Status.FOUND.getStatusCode());
-          
-        //verifyUrl(url + "&username=user", Response.Status.OK.getStatusCode());
         
-        //GetInfoResponse giresp2 = userCommands.getInfo(gireq);
+        URL urlParsed = new URL(url);
+        URL newURL = new URL(
+                urlParsed.getProtocol(), 
+                urlParsed.getHost(), 
+                urlParsed.getPort(), 
+                "/verifyWithUsername?"+ urlParsed.getQuery()+"&username=user");
+        
+        verifyUrl(newURL.toString(), Response.Status.OK.getStatusCode());
+        
+        GetInfoResponse giresp2 = userCommands.getInfo(gireq);
 
-        //Assert.notNull(giresp2);
-        //Assert.isTrue(giresp2.getStatus() == Status.VERIFIED);
+        Assert.notNull(giresp2);
+        Assert.isTrue(giresp2.getStatus() == Status.VERIFIED);
+        Assert.isTrue(giresp2.getName().equals("user"));
     }
     
     @Test

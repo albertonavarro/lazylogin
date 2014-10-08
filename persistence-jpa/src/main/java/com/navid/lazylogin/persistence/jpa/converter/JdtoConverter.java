@@ -54,7 +54,11 @@ public class JdtoConverter implements Converter {
 
     @Override
     public SessionId convert(SessionIdHb from) {
-        return binder.bindFromBusinessObject(SessionId.class, from);
+        SessionId result = binder.bindFromBusinessObject(SessionId.class, from);
+        if(result!=null && result.getToken()!=null && result.getToken().getUser()!=null){
+            result.getToken().getUser().setName(from.getToken().getUser().getUsername());
+        }
+        return result;
     }
 
     @Override

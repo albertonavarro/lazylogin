@@ -77,8 +77,6 @@ public class UserCommandsImpl implements UserCommands {
     public GetInfoResponse getInfo(GetInfoRequest parameters) {
         LOG.info("Executing operation getInfo with sessionId {}", parameters.getSessionid());
 
-        GetInfoResponse _return = new GetInfoResponse();
-
         SessionId ssoId = systemServices.getUserInfo(parameters.getSessionid());
 
         if (ssoId == null) {
@@ -86,10 +84,15 @@ public class UserCommandsImpl implements UserCommands {
             throw new NotFoundException(parameters.getSessionid());
         }
 
-        _return.setStatus(ssoId.getToken().getValidated() ? Status.VERIFIED : Status.UNVERIFIED);
-
+        GetInfoResponse _return = new GetInfoResponse();
+        if( ssoId.getToken().getValidated()){
+            _return.setStatus(Status.VERIFIED);
+            _return.setName(ssoId.getToken().getUser().getName());
+        } else {
+            _return.setStatus(Status.UNVERIFIED);
+        }
+        
         return _return;
-
     }
 
 }

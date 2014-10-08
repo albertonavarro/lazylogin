@@ -52,7 +52,7 @@ public class VerificationController {
     }
 
     @RequestMapping(value = "/verifyWithUsername", method = RequestMethod.GET)
-    public String validateInputWithUsername(
+    public String verifyWithUsername(
             @RequestParam(value = "verificationKey", required = true) String verificationKey,
             @RequestParam(value = "username", required = true) String username,
             ModelMap model) {
