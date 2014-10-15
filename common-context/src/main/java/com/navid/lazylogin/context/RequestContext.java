@@ -6,7 +6,7 @@ import com.google.common.base.Objects;
 
 public class RequestContext {
 
-    private String userId;
+    private Long userId;
 
     private String userName;
 
@@ -21,14 +21,14 @@ public class RequestContext {
     /**
      * @return the userId
      */
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
     /**
      * @param userId the userId to set
      */
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

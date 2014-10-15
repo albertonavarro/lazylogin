@@ -20,6 +20,15 @@
             <artifactId>contract</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf.xjc-utils</groupId>
+            <artifactId>cxf-xjc-runtime</artifactId>
+            <version>${cxf.version}</version>
+          </dependency>
     </dependencies>
     
     <build>
@@ -39,6 +48,7 @@
                                     <wsdl>classpath:system.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-xjc-Xfluent-api</extraarg>
+                                        <extraarg>-xjc-Xts</extraarg>
                                         <extraarg>-p</extraarg>
                                         <extraarg>com.lazylogin.client.system.v0</extraarg>
                                     </extraargs>
@@ -60,6 +70,7 @@
                                     <wsdl>classpath:user.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-xjc-Xfluent-api</extraarg>
+                                        <extraarg>-xjc-Xts</extraarg>
                                         <extraarg>-p</extraarg>
                                         <extraarg>com.lazylogin.client.user.v0</extraarg>
                                     </extraargs>
@@ -77,6 +88,11 @@
                         <groupId>org.jvnet.jaxb2_commons</groupId>
                         <artifactId>jaxb2-fluent-api</artifactId>
                         <version>3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.cxf.xjcplugins</groupId>
+                        <artifactId>cxf-xjc-ts</artifactId>
+                        <version>${cxf.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>

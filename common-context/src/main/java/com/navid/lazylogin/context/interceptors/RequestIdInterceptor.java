@@ -42,15 +42,15 @@ public class RequestIdInterceptor extends AbstractPhaseInterceptor<Message> {
                 LOGGER.info("SID header not added, sessionId not found");
             }
 
-            if (requestContextContainer.get().getCorrelationId() == null) {
-                String newCorrelationId = UUID.randomUUID().toString();
-                LOGGER.info("Correlation Id not found, new one generated with value {}", newCorrelationId);
-                requestContextContainer.get().setCorrelationId(newCorrelationId);
-            }
+            //if (requestContextContainer.get().getCorrelationId() == null) {
+            String newCorrelationId = UUID.randomUUID().toString();
+            LOGGER.info("Generating a new correlationId with value {}", newCorrelationId);
+            requestContextContainer.get().setCorrelationId(newCorrelationId);
+            //}
 
             ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS))
                     .put(HeaderConstants.CORRELATION_ID, singletonList(requestContextContainer.get().getCorrelationId()));
-            LOGGER.info("Adding RID header with value {}", requestContextContainer.get().getSessionId());
+            LOGGER.info("Adding RID header with value {}", requestContextContainer.get().getCorrelationId());
         }
     }
 

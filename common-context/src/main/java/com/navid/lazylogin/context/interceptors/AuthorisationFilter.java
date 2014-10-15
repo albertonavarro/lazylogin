@@ -37,7 +37,8 @@ public class AuthorisationFilter implements ContainerRequestFilter {
             try {
                 final UserInfo userInfo = systemCommands.getUserInfo(sessionId);
                 LOGGER.debug("UserInfo discovered: {}", userInfo);
-                requestContextContainer.get().setUserId(userInfo.getUsername());
+                requestContextContainer.get().setUserId(userInfo.getUserid());
+                requestContextContainer.get().setUserName(userInfo.getUsername());
             } catch (GetUserInfoError_Exception e) {
                 LOGGER.error("Error authenticating with sessionId" + sessionId, e);
                 throw new AuthenticationException("Error authenticating client with sessionId " + sessionId);
