@@ -34,10 +34,10 @@ public class RequestIdInterceptor extends AbstractPhaseInterceptor<Message> {
         if (requestContextContainer != null) {
             RequestContext requestContext = requestContextContainer.get();
 
-            if (requestContextContainer.get().getSessionId() != null) {
+            if (requestContext.getSessionId() != null) {
                 ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS))
-                        .put(HeaderConstants.SESSION_ID, singletonList(requestContextContainer.get().getSessionId()));
-                LOGGER.info("Adding SID header with value {}", requestContextContainer.get().getSessionId());
+                        .put(HeaderConstants.SESSION_ID, singletonList(requestContext.getSessionId()));
+                LOGGER.info("Adding SID header with value {}", requestContext.getSessionId());
             } else {
                 LOGGER.info("SID header not added, sessionId not found");
             }
@@ -45,12 +45,12 @@ public class RequestIdInterceptor extends AbstractPhaseInterceptor<Message> {
             //if (requestContextContainer.get().getCorrelationId() == null) {
             String newCorrelationId = UUID.randomUUID().toString();
             LOGGER.info("Generating a new correlationId with value {}", newCorrelationId);
-            requestContextContainer.get().setCorrelationId(newCorrelationId);
+            requestContext.setCorrelationId(newCorrelationId);
             //}
 
             ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS))
-                    .put(HeaderConstants.CORRELATION_ID, singletonList(requestContextContainer.get().getCorrelationId()));
-            LOGGER.info("Adding RID header with value {}", requestContextContainer.get().getCorrelationId());
+                    .put(HeaderConstants.CORRELATION_ID, singletonList(requestContext.getCorrelationId()));
+            LOGGER.info("Adding RID header with value {}", requestContext.getCorrelationId());
         }
     }
 

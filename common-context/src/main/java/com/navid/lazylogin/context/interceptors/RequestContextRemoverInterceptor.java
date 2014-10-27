@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.AbstractPhaseInterceptor;
 import org.apache.cxf.phase.Phase;
+import org.slf4j.MDC;
 
 public class RequestContextRemoverInterceptor extends AbstractPhaseInterceptor<Message> {
 
@@ -20,11 +21,13 @@ public class RequestContextRemoverInterceptor extends AbstractPhaseInterceptor<M
     @Override
     public void handleMessage(Message message) {
         requestContextContainer.delete();
+        MDC.clear();
     }
 
     @Override
     public void handleFault(Message messageParam) {
         requestContextContainer.delete();
+        MDC.clear();
     }
     
     public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
