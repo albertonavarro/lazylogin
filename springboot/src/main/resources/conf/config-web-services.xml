@@ -21,10 +21,16 @@
         implementor="com.navid.lazylogin.springboot.cxf.UserCommandsImpl" 
         address="/user" />
         
-   <jaxws:endpoint 
+    <jaxws:endpoint 
         id="systemCommands" 
         implementor="com.navid.lazylogin.springboot.cxf.SystemCommandsImpl" 
         address="/system" /> 
         
+    <bean id="org.apache.cxf.management.InstrumentationManager"
+         class="org.apache.cxf.management.jmx.InstrumentationManagerImpl">
+        <property name="enabled" value="true" />
+        <property name="bus" ref="cxf" />
+        <property name="usePlatformMBeanServer" value="true" />
+    </bean>
 	  
 </beans>
