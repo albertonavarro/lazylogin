@@ -1,0 +1,912 @@
+411  [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper [][] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@76b41f9c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b8777a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4ac0499d]
+423  [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper [][] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7ff2f29d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2716630b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2ec07b39]
+426  [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper [][] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@36eb3965, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d05320e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@50193bcf]
+722  [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/test-lazylogin-client.xml]
+824  [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+871  [main] INFO  o.s.c.s.GenericApplicationContext [][] - Refreshing org.springframework.context.support.GenericApplicationContext@52cf89d0: startup date [Sat Nov 01 15:42:32 GMT 2014]; root of context hierarchy
+1126 [main] INFO  o.s.b.f.c.PropertyPlaceholderConfigurer [][] - Loading properties file from class path resource [conf/lazylogin-testconfig.defaults]
+1247 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [][] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+1483 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://lazylogin.navid.com/}SystemCommandsService from class com.navid.lazylogin.SystemCommands
+2211 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://lazylogin.navid.com/}UserCommandsService from class com.navid.lazylogin.UserCommands
+2496 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2496 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletContextInitParams] PropertySource with lowest search precedence
+2496 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemProperties] PropertySource with lowest search precedence
+2496 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemEnvironment] PropertySource with lowest search precedence
+2497 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2511 [main] INFO  o.a.m.s.booter.SurefireBooter [][] - Starting SurefireBooter v2.6 on linux-5eh9.site with PID 353 (/home/casa/.m2/repository/org/apache/maven/surefire/surefire-booter/2.6/surefire-booter-2.6.jar started by casa in /home/casa/code/lazylogin/springboot)
+2531 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [][] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c4f7575: startup date [Sat Nov 01 15:42:33 GMT 2014]; root of context hierarchy
+2537 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [class path resource [application.properties]] PropertySource with lowest search precedence
+2538 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [class path resource [conf/lazylogin-ct.overrides]] PropertySource with search precedence immediately higher than [class path resource [application.properties]]
+3019 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-persistence-test.xml]
+3044 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-web-services.xml]
+3074 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+3114 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-amq.xml]
+3129 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-amq-email.xml]
+3721 [main] INFO  o.s.b.f.c.PropertiesFactoryBean [][] - Loading properties file from URL [jar:file:/home/casa/.m2/repository/org/springframework/integration/spring-integration-core/4.1.0.M1/spring-integration-core-4.1.0.M1.jar!/META-INF/spring.integration.default.properties]
+3725 [main] INFO  o.s.i.config.IntegrationRegistrar [][] - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+4087 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [applicationConfig: [classpath:/application.properties]] PropertySource with search precedence immediately lower than [applicationConfigurationProperties]
+4088 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Removing [applicationConfigurationProperties] PropertySource
+4088 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Removing [defaultProperties] PropertySource
+4110 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [][] - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+4114 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [][] - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+4122 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [][] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+4163 [main] INFO  o.h.validator.internal.util.Version [][] - HV000001: Hibernate Validator 5.0.3.Final
+4314 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4325 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.jms.annotation.JmsBootstrapConfiguration' of type [class org.springframework.jms.annotation.JmsBootstrapConfiguration$$EnhancerBySpringCGLIB$$51d524cb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4388 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$53b06608] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4406 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4415 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4419 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4445 [main] INFO  o.s.b.f.c.PropertiesFactoryBean [][] - Loading properties file from URL [jar:file:/home/casa/.m2/repository/org/springframework/integration/spring-integration-core/4.1.0.M1/spring-integration-core-4.1.0.M1.jar!/META-INF/spring.integration.default.properties]
+4445 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4446 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4450 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4510 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean '(inner bean)#4b9530ed' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4511 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler [][] - Initializing ExecutorService  'taskScheduler'
+4512 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4514 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4870 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer [][] - Tomcat initialized with port(s): 8080/http
+5050 [main] INFO  o.a.catalina.core.StandardService [][] - Starting service Tomcat
+5052 [main] INFO  o.a.catalina.core.StandardEngine [][] - Starting Servlet Engine: Apache Tomcat/7.0.55
+5214 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [][] - Initializing Spring embedded WebApplicationContext
+5215 [localhost-startStop-1] DEBUG o.s.web.context.ContextLoader [][] - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+5215 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [][] - Root WebApplicationContext: initialization completed in 2684 ms
+5361 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+5361 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletContextInitParams] PropertySource with lowest search precedence
+5361 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemProperties] PropertySource with lowest search precedence
+5362 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemEnvironment] PropertySource with lowest search precedence
+5362 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+5875 [localhost-startStop-1] INFO  o.s.b.c.e.ServletRegistrationBean [][] - Mapping servlet: 'CXFServlet' to [/services/*]
+5876 [localhost-startStop-1] INFO  o.s.b.c.e.ServletRegistrationBean [][] - Mapping servlet: 'dispatcherServlet' to [/]
+5878 [localhost-startStop-1] INFO  o.s.b.c.e.FilterRegistrationBean [][] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+5911 [localhost-startStop-1] DEBUG o.s.w.filter.HiddenHttpMethodFilter [][] - Initializing filter 'hiddenHttpMethodFilter'
+5912 [localhost-startStop-1] DEBUG o.s.w.filter.HiddenHttpMethodFilter [][] - Filter 'hiddenHttpMethodFilter' configured successfully
+5914 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+6280 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [][] - Building JPA container EntityManagerFactory for persistence unit 'default'
+6291 [main] INFO  o.h.jpa.internal.util.LogHelper [][] - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+6371 [main] INFO  org.hibernate.Version [][] - HHH000412: Hibernate Core {4.3.6.Final}
+6372 [main] INFO  org.hibernate.cfg.Environment [][] - HHH000206: hibernate.properties not found
+6374 [main] INFO  org.hibernate.cfg.Environment [][] - HHH000021: Bytecode provider name : javassist
+6599 [main] INFO  o.h.annotations.common.Version [][] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+7121 [main] INFO  org.hibernate.dialect.Dialect [][] - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+7228 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [][] - HHH000397: Using ASTQueryTranslatorFactory
+7560 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000227: Running hbm2ddl schema export
+7563 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - HHH000389: Unsuccessful: alter table ssoid drop constraint FK_gsrvgb3ooslgp0l9i7v8k9d27
+7563 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - user lacks privilege or object not found: PUBLIC.SSOID
+7563 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - HHH000389: Unsuccessful: alter table token drop constraint FK_6rsdd1yeqbt504a09irxjoqrp
+7563 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - user lacks privilege or object not found: PUBLIC.TOKEN
+7564 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - HHH000389: Unsuccessful: alter table validation_keys drop constraint FK_pey10k8jmesutya0dlydugj4g
+7564 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - user lacks privilege or object not found: PUBLIC.VALIDATION_KEYS
+7570 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000230: Schema export complete
+8143 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://cxf.springboot.lazylogin.navid.com/}UserCommandsImplService from class com.navid.lazylogin.UserCommands
+8179 [main] INFO  org.apache.cxf.endpoint.ServerImpl [][] - Setting the server's publish address to be /user
+8193 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://cxf.springboot.lazylogin.navid.com/}SystemCommandsImplService from class com.navid.lazylogin.SystemCommands
+8198 [main] INFO  org.apache.cxf.endpoint.ServerImpl [][] - Setting the server's publish address to be /system
+8316 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [][] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+8403 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c4f7575: startup date [Sat Nov 01 15:42:33 GMT 2014]; root of context hierarchy
+8413 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/verifyWithUsername],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verifyWithUsername(java.lang.String,java.lang.String,org.springframework.ui.ModelMap)
+8414 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/addUsername],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.addUsername(java.lang.String,org.springframework.ui.ModelMap)
+8414 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/verify],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verify(java.lang.String,org.springframework.ui.ModelMap)
+8415 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+8416 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+8434 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Looking for URL mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c4f7575: startup date [Sat Nov 01 15:42:33 GMT 2014]; root of context hierarchy
+8434 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'application': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'verificationController': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'userServices': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemServices': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'persistenceImpl': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jpaPersistenceConfiguration': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'queries': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'lazylogin.persistence.jdtoconverter': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'AMQEventProducer': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestContextContainer': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'lazylogin.persistence-hibernate.converter': no URL paths identified
+8435 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'cxfServlet': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'cxf': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.bus.spring.Jsr250BeanPostProcessor': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.bus.spring.BusExtensionPostProcessor': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'lazylogin.endpoint.converter': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'userCommands': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemCommands': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'pooledJmsConnectionFactory': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jmsTemplate': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mailSender': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'templateMessage': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'emailNotifier': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'destination': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.listener.DefaultMessageListenerContainer#0': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+8436 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'tomcatEmbeddedServletContainerFactory': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dispatcherServlet': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'errorAttributes': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'basicErrorController': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'faviconHandlerMapping': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'faviconRequestHandler': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+8437 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'resourceHandlerMapping': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcConversionService': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcValidator': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcPathMatcher': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'handlerExceptionResolver': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcViewResolver': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'defaultViewResolver': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestContextListener': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'viewResolver': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.mvc.CONFIGURATION_PROPERTIES': no URL paths identified
+8438 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.resources.CONFIGURATION_PROPERTIES': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$JdkDynamicAutoProxyConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jta.JtaAutoConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jta.CONFIGURATION_PROPERTIES': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$JdbcTemplateConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jdbcTemplate': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$NonEmbeddedConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSource': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$DataSourceInitializerConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSourceInitializer': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$TomcatDataSourcePoolMetadataProviderConfiguration': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'tomcatPoolDataSourceMetadataProvider': no URL paths identified
+8439 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.datasource.CONFIGURATION_PROPERTIES': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'openEntityManagerInViewInterceptor': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'transactionManager': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jpaVendorAdapter': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'entityManagerFactoryBuilder': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'entityManagerFactory': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jpa.CONFIGURATION_PROPERTIES': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSourceInitializedPublisher': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.jpa.repository.support.EntityManagerBeanDefinitionRegistrarPostProcessor#0': no URL paths identified
+8440 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jpaMapppingContext': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'userRepository': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'tokenRepository': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'validationKeyRepository': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'ssoIdRepository': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.web.config.SpringDataWebConfiguration': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'pageableResolver': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'sortResolver': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.web.config.SpringDataJacksonConfiguration': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jacksonGeoModule': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.MBeanExportConfiguration': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mbeanExporter': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$Empty': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'objectNamingStrategy': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mbeanServer': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationConfiguration': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'channelInitializer': no URL paths identified
+8441 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name '$autoCreateChannelCandidates': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'IntegrationConfigurationBeanFactoryPostProcessor': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationEvaluationContext': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.expression.IntegrationEvaluationContextAwareBeanPostProcessor#0': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationGlobalProperties': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationHeaderChannelRegistry': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'globalChannelInterceptorProcessor': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'toStringFriendlyJsonNodeToStringConverter': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'converterRegistrar': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationConversionService': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'DefaultConfiguringBeanFactoryPostProcessor': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'datatypeChannelMessageConverter': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.internalMessagingAnnotationPostProcessor': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'messageBuilderFactory': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderAutoConfiguration': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'http.mappers.CONFIGURATION_PROPERTIES': no URL paths identified
+8442 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jackson.CONFIGURATION_PROPERTIES': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperAutoConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jacksonObjectMapper': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'transactionAttributeSource': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'transactionInterceptor': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$TransactionManagementConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration$MessagingTemplateConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jmsMessagingTemplate': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.annotation.JmsBootstrapConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.config.internalJmsListenerAnnotationProcessor': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.config.internalJmsListenerEndpointRegistry': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAnnotationDrivenConfiguration$EnableJmsConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAnnotationDrivenConfiguration': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jmsListenerContainerFactory': no URL paths identified
+8443 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jms.CONFIGURATION_PROPERTIES': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'messageConverters': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'multipartConfigElement': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'multipartResolver': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'multipart.CONFIGURATION_PROPERTIES': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'serverProperties': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.orm.jpa.SharedEntityManagerCreator#0': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'nullChannel': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'errorChannel': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name '_org.springframework.integration.errorLogger': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'taskScheduler': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.config.IdGeneratorConfigurer#0': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'autoConfigurationReport': no URL paths identified
+8444 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'applicationEventMulticaster': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'environment': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemProperties': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemEnvironment': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'messageSource': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'servletContext': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'contextParameters': no URL paths identified
+8445 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'contextAttributes': no URL paths identified
+8449 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [][] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+8449 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [][] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+8501 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [][] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c4f7575: startup date [Sat Nov 01 15:42:33 GMT 2014]; root of context hierarchy
+8552 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [][] - Looking for exception mappings: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c4f7575: startup date [Sat Nov 01 15:42:33 GMT 2014]; root of context hierarchy
+8873 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Registering beans for JMX exposure on startup
+8880 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Starting beans in phase -2147483648
+8881 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Starting beans in phase 0
+8883 [main] INFO  o.s.i.endpoint.EventDrivenConsumer [][] - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+8883 [main] INFO  o.s.i.c.PublishSubscribeChannel [][] - Channel 'application:8080.errorChannel' has 1 subscriber(s).
+8883 [main] INFO  o.s.i.endpoint.EventDrivenConsumer [][] - started _org.springframework.integration.errorLogger
+8884 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Starting beans in phase 2147483647
+8980 [main] INFO  o.a.activemq.broker.BrokerService [][] - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+8996 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ null JMS Message Broker (localhost) is starting
+8997 [main] INFO  o.a.activemq.broker.BrokerService [][] - For help or more information please see: http://activemq.apache.org/
+9013 [main] INFO  o.a.a.s.amq.AMQPersistenceAdapter [][] - AMQStore starting using directory: activemq-data/localhost
+9029 [JMX connector] INFO  o.a.a.broker.jmx.ManagementContext [][] - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+9071 [main] INFO  o.a.activemq.kaha.impl.KahaStore [][] - Kaha Store using data directory activemq-data/localhost/kr-store/state
+9150 [main] INFO  o.a.a.s.amq.AMQPersistenceAdapter [][] - Active data files: []
+9324 [main] INFO  o.a.activemq.kaha.impl.KahaStore [][] - Kaha Store using data directory activemq-data/localhost/kr-store/data
+9378 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ JMS Message Broker (localhost, ID:linux-5eh9.site-44613-1414856560578-0:0) started
+9383 [main] INFO  o.a.a.broker.TransportConnector [][] - Connector vm://localhost Started
+9423 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Looking for resource handler mappings
+9423 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@6edb7a65]
+9424 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Found resource handler mapping: URL pattern="/**", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@455c145e]
+9424 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@203d4ae5]
+9432 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Initializing ProtocolHandler ["http-nio-8080"]
+9447 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Starting ProtocolHandler ["http-nio-8080"]
+9452 [main] INFO  o.a.tomcat.util.net.NioSelectorPool [][] - Using a shared selector for servlet write/read
+9500 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer [][] - Tomcat started on port(s): 8080/http
+9503 [main] INFO  o.a.m.s.booter.SurefireBooter [][] - Started SurefireBooter in 7.144 seconds (JVM running for 10.44)
+9759 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context created: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+9955 [http-nio-8080-exec-1] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation createToken
+9972 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - Creating token for loginWithUnverifiedToken@someDomain
+10113 [http-nio-8080-exec-1] DEBUG c.n.lazylogin.services.UserServices [][] - Email not found, creating user: loginWithUnverifiedToken@someDomain
+10118 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10148 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - User created: User{email=loginWithUnverifiedToken@someDomain, userId=UserId{value=1}, username=null}
+10148 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10152 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - Token created: Token{value=1-793699631-155af8ec-c604-415b-bae8-294c82365331-1414856561541}
+10155 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10157 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey created: ValidationKey{token=Token{value=1-793699631-155af8ec-c604-415b-bae8-294c82365331-1414856561541}, validationKey=1-93afcaa9-9330-4cdd-87e2-ee9541e415ff}
+10158 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10159 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - SessionId created: SessionId{token=Token{value=1-793699631-155af8ec-c604-415b-bae8-294c82365331-1414856561541}, value=1-80634817-9e7ff670-f87d-4655-8dc2-05d1f12c7ac5}
+10175 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Ready to send message with following parameters: ActiveMQMapMessage {commandId = 7, responseRequired = true, messageId = ID:linux-5eh9.site-44613-1414856560578-2:0:2:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:linux-5eh9.site-44613-1414856560578-2:0:2:1, destination = queue://jmsExample, transactionId = null, expiration = 0, timestamp = 1414856561556, arrival = 0, brokerInTime = 1414856561558, brokerOutTime = 1414856561564, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@5b6613be, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 1175, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false} ActiveMQMapMessage{ theTable = {} }
+10220 [http-nio-8080-exec-2] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation loginWithToken with parameters
+10221 [http-nio-8080-exec-2] INFO  c.n.lazylogin.services.UserServices [][] - Logging with token: 1-793699631-155af8ec-c604-415b-bae8-294c82365331-1414856561541
+10236 [http-nio-8080-exec-2] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10237 [http-nio-8080-exec-2] INFO  c.n.lazylogin.services.UserServices [][] - Ssoid SessionId{token=Token{value=1-793699631-155af8ec-c604-415b-bae8-294c82365331-1414856561541}, value=1-80634817-72879326-3236-4dee-a838-2ca76449f866} created for token Token{value=1-793699631-155af8ec-c604-415b-bae8-294c82365331-1414856561541}
+10294 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Email successfully sent to loginWithUnverifiedToken@someDomain
+10298 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context deleted: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+10302 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context created: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+10308 [http-nio-8080-exec-3] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation createToken
+10309 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - Creating token for shouldCreateUnverifiedToken@someDomain
+10311 [http-nio-8080-exec-3] DEBUG c.n.lazylogin.services.UserServices [][] - Email not found, creating user: shouldCreateUnverifiedToken@someDomain
+10311 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10314 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - User created: User{email=shouldCreateUnverifiedToken@someDomain, userId=UserId{value=2}, username=null}
+10314 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10316 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - Token created: Token{value=1-416051729-77648850-7d74-4161-afe8-2c1b5a575f89-1414856561705}
+10316 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10318 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey created: ValidationKey{token=Token{value=1-416051729-77648850-7d74-4161-afe8-2c1b5a575f89-1414856561705}, validationKey=1-0e987c8e-7029-400b-b437-41988d35a143}
+10318 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10319 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - SessionId created: SessionId{token=Token{value=1-416051729-77648850-7d74-4161-afe8-2c1b5a575f89-1414856561705}, value=1-834264752-c166575a-5d21-44e1-b5e7-1a1992a60bd4}
+10321 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Ready to send message with following parameters: ActiveMQMapMessage {commandId = 9, responseRequired = true, messageId = ID:linux-5eh9.site-44613-1414856560578-2:0:2:1:2, originalDestination = null, originalTransactionId = null, producerId = ID:linux-5eh9.site-44613-1414856560578-2:0:2:1, destination = queue://jmsExample, transactionId = null, expiration = 0, timestamp = 1414856561709, arrival = 0, brokerInTime = 1414856561710, brokerOutTime = 1414856561710, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@296a679f, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 1178, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false} ActiveMQMapMessage{ theTable = {} }
+10324 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Email successfully sent to shouldCreateUnverifiedToken@someDomain
+10333 [http-nio-8080-exec-4] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation getInfo with sessionId 1-834264752-c166575a-5d21-44e1-b5e7-1a1992a60bd4
+10344 [http-nio-8080-exec-4] INFO  c.n.l.services.SystemServices [][] - Requesting user info for sessionId 1-834264752-c166575a-5d21-44e1-b5e7-1a1992a60bd4
+10348 [http-nio-8080-exec-4] DEBUG c.n.l.services.SystemServices [][] - Response SessionId{token=Token{value=1-416051729-77648850-7d74-4161-afe8-2c1b5a575f89-1414856561705}, value=1-834264752-c166575a-5d21-44e1-b5e7-1a1992a60bd4}
+10352 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context deleted: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+10355 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context created: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+10359 [http-nio-8080-exec-5] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation createToken
+10359 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - Creating token for shouldVerifyToken@someDomain
+10361 [http-nio-8080-exec-5] DEBUG c.n.lazylogin.services.UserServices [][] - Email not found, creating user: shouldVerifyToken@someDomain
+10361 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10363 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - User created: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=null}
+10363 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10364 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - Token created: Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}
+10364 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10366 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey created: ValidationKey{token=Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}, validationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab}
+10366 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10367 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - SessionId created: SessionId{token=Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}, value=1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15}
+10368 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Ready to send message with following parameters: ActiveMQMapMessage {commandId = 11, responseRequired = true, messageId = ID:linux-5eh9.site-44613-1414856560578-2:0:2:1:3, originalDestination = null, originalTransactionId = null, producerId = ID:linux-5eh9.site-44613-1414856560578-2:0:2:1, destination = queue://jmsExample, transactionId = null, expiration = 0, timestamp = 1414856561757, arrival = 0, brokerInTime = 1414856561758, brokerOutTime = 1414856561758, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@1a5be6b3, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 1168, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false} ActiveMQMapMessage{ theTable = {} }
+10372 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Email successfully sent to shouldVerifyToken@someDomain
+10381 [http-nio-8080-exec-6] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation getInfo with sessionId 1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15
+10382 [http-nio-8080-exec-6] INFO  c.n.l.services.SystemServices [][] - Requesting user info for sessionId 1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15
+10387 [http-nio-8080-exec-6] DEBUG c.n.l.services.SystemServices [][] - Response SessionId{token=Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}, value=1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15}
+10773 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Initializing servlet 'dispatcherServlet'
+10774 [http-nio-8080-exec-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [][] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+10774 [http-nio-8080-exec-7] INFO  o.s.web.servlet.DispatcherServlet [][] - FrameworkServlet 'dispatcherServlet': initialization started
+10774 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Using MultipartResolver [org.springframework.web.multipart.support.StandardServletMultipartResolver@704177ee]
+10776 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate LocaleResolver with name 'localeResolver': using default [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@78fa294e]
+10779 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate ThemeResolver with name 'themeResolver': using default [org.springframework.web.servlet.theme.FixedThemeResolver@432fed39]
+10782 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate RequestToViewNameTranslator with name 'viewNameTranslator': using default [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@424fd70]
+10787 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate FlashMapManager with name 'flashMapManager': using default [org.springframework.web.servlet.support.SessionFlashMapManager@241d0ce5]
+10787 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Published WebApplicationContext of servlet 'dispatcherServlet' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet]
+10787 [http-nio-8080-exec-7] INFO  o.s.web.servlet.DispatcherServlet [][] - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+10787 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Servlet 'dispatcherServlet' configured successfully
+10788 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - DispatcherServlet with name 'dispatcherServlet' processing GET request for [/verify/]
+10792 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Looking up handler method for path /verify/
+10795 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Returning handler method [public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verify(java.lang.String,org.springframework.ui.ModelMap)]
+10795 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Last-Modified value for [/verify/] is: -1
+10807 [http-nio-8080-exec-7] INFO  c.n.l.s.c.VerificationController [][] - Verifying with verificationKey 1-7a2629eb-e636-4552-9976-7ec7cabedbab
+10808 [http-nio-8080-exec-7] INFO  c.n.lazylogin.services.UserServices [][] - Verifying key: 1-7a2629eb-e636-4552-9976-7ec7cabedbab
+10811 [http-nio-8080-exec-7] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey found: ValidationKey{token=Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}, validationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab}
+10812 [http-nio-8080-exec-7] INFO  c.n.lazylogin.services.UserServices [][] - User found: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=null}
+10817 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Requested media types are [text/html, image/gif, image/jpeg, */*;q=.2] based on Accept header types and producible media types [*/*])
+10820 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Returning redirect view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/addUsername?verificationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab'; URL [/addUsername?verificationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab]]
+10820 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/addUsername?verificationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab'; URL [/addUsername?verificationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab]] in DispatcherServlet with name 'dispatcherServlet'
+10822 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Successfully completed request
+10857 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - DispatcherServlet with name 'dispatcherServlet' processing GET request for [/verifyWithUsername]
+10857 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Looking up handler method for path /verifyWithUsername
+10858 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Returning handler method [public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verifyWithUsername(java.lang.String,java.lang.String,org.springframework.ui.ModelMap)]
+10858 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - Last-Modified value for [/verifyWithUsername] is: -1
+10859 [http-nio-8080-exec-8] INFO  c.n.l.s.c.VerificationController [][] - Verifying with input 1-7a2629eb-e636-4552-9976-7ec7cabedbab
+10859 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - Verifying key: 1-7a2629eb-e636-4552-9976-7ec7cabedbab and username: user
+10863 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey found: ValidationKey{token=Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}, validationKey=1-7a2629eb-e636-4552-9976-7ec7cabedbab}
+10863 [http-nio-8080-exec-8] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10866 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Saving user: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=user}
+10867 [http-nio-8080-exec-8] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10867 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Converted user: UserHb{email=shouldVerifyToken@someDomain, userId=3, username=user}
+10868 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Saved user: UserHb{email=shouldVerifyToken@someDomain, userId=3, username=user}
+10868 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Reconverted user: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=user}
+10868 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - Just in case: token: Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}
+10875 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - Another case: user: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=user}
+10876 [http-nio-8080-exec-8] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+10882 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Requested media types are [text/html, image/gif, image/jpeg, */*;q=.2] based on Accept header types and producible media types [*/*])
+10885 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Returning [org.springframework.web.servlet.view.JstlView: name 'verified'; URL [/WEB-INF/jsp/verified.jsp]] based on requested media type 'text/html'
+10885 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - Rendering view [org.springframework.web.servlet.view.JstlView: name 'verified'; URL [/WEB-INF/jsp/verified.jsp]] in DispatcherServlet with name 'dispatcherServlet'
+10887 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView [][] - Forwarding to resource [/WEB-INF/jsp/verified.jsp] in InternalResourceView 'verified'
+11504 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - Successfully completed request
+11509 [http-nio-8080-exec-9] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation getInfo with sessionId 1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15
+11510 [http-nio-8080-exec-9] INFO  c.n.l.services.SystemServices [][] - Requesting user info for sessionId 1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15
+11513 [http-nio-8080-exec-9] DEBUG c.n.l.services.SystemServices [][] - Response SessionId{token=Token{value=1-1267907669-3eefbe30-c6af-4874-91cc-e66b1cb702a5-1414856561753}, value=1-696503340-d8ab210c-a9a0-487b-bc2c-a927df59bd15}
+11517 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context deleted: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+11519 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [][] - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c4f7575: startup date [Sat Nov 01 15:42:33 GMT 2014]; root of context hierarchy
+11521 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Stopping beans in phase 2147483647
+12374 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Stopping beans in phase 0
+12374 [main] INFO  o.s.i.endpoint.EventDrivenConsumer [][] - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+12374 [main] INFO  o.s.i.c.PublishSubscribeChannel [][] - Channel 'application:8080.errorChannel' has 0 subscriber(s).
+12375 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Stopping beans in phase -2147483648
+12378 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Unregistering JMX-exposed beans on shutdown
+12390 [main] INFO  o.a.a.broker.TransportConnector [][] - Connector vm://localhost Stopped
+12390 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ Message Broker (localhost, ID:linux-5eh9.site-44613-1414856560578-0:0) is shutting down
+12436 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ JMS Message Broker (localhost, ID:linux-5eh9.site-44613-1414856560578-0:0) stopped
+12441 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [][] - Closing JPA EntityManagerFactory for persistence unit 'default'
+12442 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000227: Running hbm2ddl schema export
+12450 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000230: Schema export complete
+12453 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler [][] - Shutting down ExecutorService 'taskScheduler'
+12455 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Pausing ProtocolHandler ["http-nio-8080"]
+12506 [main] INFO  o.a.catalina.core.StandardService [][] - Stopping service Tomcat
+12510 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [][] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+12521 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Stopping ProtocolHandler ["http-nio-8080"]
+12622 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Destroying ProtocolHandler ["http-nio-8080"]
+12696 [Thread-3] INFO  o.s.c.s.GenericApplicationContext [][] - Closing org.springframework.context.support.GenericApplicationContext@52cf89d0: startup date [Sat Nov 01 15:42:32 GMT 2014]; root of context hierarchy
+416  [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper [][] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2a16c143, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3bea2b4b, org.springframework.test.context.support.DirtiesContextTestExecutionListener@ac067a8]
+423  [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper [][] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1689b6f9, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2b4ba0fe, org.springframework.test.context.support.DirtiesContextTestExecutionListener@723699e6]
+426  [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper [][] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@798ef8a3, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1965d3ae, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6c2c5188]
+717  [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/test-lazylogin-client.xml]
+817  [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+864  [main] INFO  o.s.c.s.GenericApplicationContext [][] - Refreshing org.springframework.context.support.GenericApplicationContext@79b9048d: startup date [Sat Nov 01 22:59:39 GMT 2014]; root of context hierarchy
+1107 [main] INFO  o.s.b.f.c.PropertyPlaceholderConfigurer [][] - Loading properties file from class path resource [conf/lazylogin-testconfig.defaults]
+1230 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [][] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+1468 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://lazylogin.navid.com/}SystemCommandsService from class com.navid.lazylogin.SystemCommands
+2108 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://lazylogin.navid.com/}UserCommandsService from class com.navid.lazylogin.UserCommands
+2389 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2389 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletContextInitParams] PropertySource with lowest search precedence
+2389 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemProperties] PropertySource with lowest search precedence
+2390 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemEnvironment] PropertySource with lowest search precedence
+2390 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+2402 [main] INFO  o.a.m.s.booter.SurefireBooter [][] - Starting SurefireBooter v2.6 on linux-5eh9.site with PID 7757 (/home/casa/.m2/repository/org/apache/maven/surefire/surefire-booter/2.6/surefire-booter-2.6.jar started by casa in /home/casa/code/lazylogin/springboot)
+2418 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [][] - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2eba4fff: startup date [Sat Nov 01 22:59:40 GMT 2014]; root of context hierarchy
+2424 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [class path resource [application.properties]] PropertySource with lowest search precedence
+2425 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [class path resource [conf/lazylogin-ct.overrides]] PropertySource with search precedence immediately higher than [class path resource [application.properties]]
+2867 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-persistence-test.xml]
+2891 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-web-services.xml]
+2921 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2959 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-amq.xml]
+2974 [main] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [][] - Loading XML bean definitions from class path resource [conf/config-amq-email.xml]
+3576 [main] INFO  o.s.b.f.c.PropertiesFactoryBean [][] - Loading properties file from URL [jar:file:/home/casa/.m2/repository/org/springframework/integration/spring-integration-core/4.1.0.M1/spring-integration-core-4.1.0.M1.jar!/META-INF/spring.integration.default.properties]
+3579 [main] INFO  o.s.i.config.IntegrationRegistrar [][] - No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+3943 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [applicationConfig: [classpath:/application.properties]] PropertySource with search precedence immediately lower than [applicationConfigurationProperties]
+3943 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Removing [applicationConfigurationProperties] PropertySource
+3943 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Removing [defaultProperties] PropertySource
+3977 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [][] - No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+3983 [main] INFO  o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [][] - No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+3992 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [][] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+4033 [main] INFO  o.h.validator.internal.util.Version [][] - HV000001: Hibernate Validator 5.0.3.Final
+4179 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4190 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.jms.annotation.JmsBootstrapConfiguration' of type [class org.springframework.jms.annotation.JmsBootstrapConfiguration$$EnhancerBySpringCGLIB$$ab753dd1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4262 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean '$autoCreateChannelCandidates' of type [class org.springframework.integration.config.ChannelInitializer$AutoCreateCandidatesCollector] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4263 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ad507f0e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4280 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4288 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4292 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4310 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.integration.jmx.config.IntegrationMBeanExportConfiguration' of type [class org.springframework.integration.jmx.config.IntegrationMBeanExportConfiguration$$EnhancerBySpringCGLIB$$ad39d33a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4350 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'objectNamingStrategy' of type [class org.springframework.boot.autoconfigure.jmx.ParentAwareNamingStrategy] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4351 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [class org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$$EnhancerBySpringCGLIB$$2649a52a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4389 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'mbeanServer' of type [class com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4446 [main] INFO  o.s.b.f.c.PropertiesFactoryBean [][] - Loading properties file from URL [jar:file:/home/casa/.m2/repository/org/springframework/integration/spring-integration-core/4.1.0.M1/spring-integration-core-4.1.0.M1.jar!/META-INF/spring.integration.default.properties]
+4446 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'integrationGlobalProperties' of type [class org.springframework.beans.factory.config.PropertiesFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4448 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'integrationGlobalProperties' of type [class java.util.Properties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4455 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'messageBuilderFactory' of type [class org.springframework.integration.support.DefaultMessageBuilderFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4529 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean '(inner bean)#58e5f32b' of type [class org.springframework.integration.channel.MessagePublishingErrorHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4530 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler [][] - Initializing ExecutorService  'taskScheduler'
+4531 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'taskScheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4533 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [][] - Bean 'integrationHeaderChannelRegistry' of type [class org.springframework.integration.channel.DefaultHeaderChannelRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+4864 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer [][] - Tomcat initialized with port(s): 8080/http
+5012 [main] INFO  o.a.catalina.core.StandardService [][] - Starting service Tomcat
+5013 [main] INFO  o.a.catalina.core.StandardEngine [][] - Starting Servlet Engine: Apache Tomcat/7.0.55
+5185 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [][] - Initializing Spring embedded WebApplicationContext
+5185 [localhost-startStop-1] DEBUG o.s.web.context.ContextLoader [][] - Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+5185 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [][] - Root WebApplicationContext: initialization completed in 2767 ms
+5307 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+5307 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [servletContextInitParams] PropertySource with lowest search precedence
+5307 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemProperties] PropertySource with lowest search precedence
+5307 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Adding [systemEnvironment] PropertySource with lowest search precedence
+5308 [localhost-startStop-1] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+5778 [localhost-startStop-1] INFO  o.s.b.c.e.ServletRegistrationBean [][] - Mapping servlet: 'CXFServlet' to [/services/*]
+5780 [localhost-startStop-1] INFO  o.s.b.c.e.ServletRegistrationBean [][] - Mapping servlet: 'dispatcherServlet' to [/]
+5781 [localhost-startStop-1] INFO  o.s.b.c.e.FilterRegistrationBean [][] - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+11934 [localhost-startStop-1] INFO  o.a.c.util.SessionIdGenerator [][] - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [6,132] milliseconds.
+11938 [localhost-startStop-1] DEBUG o.s.w.filter.HiddenHttpMethodFilter [][] - Initializing filter 'hiddenHttpMethodFilter'
+11938 [localhost-startStop-1] DEBUG o.s.w.filter.HiddenHttpMethodFilter [][] - Filter 'hiddenHttpMethodFilter' configured successfully
+11940 [main] DEBUG o.s.w.c.s.StandardServletEnvironment [][] - Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+12310 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [][] - Building JPA container EntityManagerFactory for persistence unit 'default'
+12320 [main] INFO  o.h.jpa.internal.util.LogHelper [][] - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+12416 [main] INFO  org.hibernate.Version [][] - HHH000412: Hibernate Core {4.3.6.Final}
+12418 [main] INFO  org.hibernate.cfg.Environment [][] - HHH000206: hibernate.properties not found
+12419 [main] INFO  org.hibernate.cfg.Environment [][] - HHH000021: Bytecode provider name : javassist
+12629 [main] INFO  o.h.annotations.common.Version [][] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+13124 [main] INFO  org.hibernate.dialect.Dialect [][] - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+13222 [main] INFO  o.h.h.i.a.ASTQueryTranslatorFactory [][] - HHH000397: Using ASTQueryTranslatorFactory
+13517 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000227: Running hbm2ddl schema export
+13520 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - HHH000389: Unsuccessful: alter table ssoid drop constraint FK_gsrvgb3ooslgp0l9i7v8k9d27
+13520 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - user lacks privilege or object not found: PUBLIC.SSOID
+13520 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - HHH000389: Unsuccessful: alter table token drop constraint FK_6rsdd1yeqbt504a09irxjoqrp
+13521 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - user lacks privilege or object not found: PUBLIC.TOKEN
+13521 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - HHH000389: Unsuccessful: alter table validation_keys drop constraint FK_pey10k8jmesutya0dlydugj4g
+13521 [main] ERROR o.h.tool.hbm2ddl.SchemaExport [][] - user lacks privilege or object not found: PUBLIC.VALIDATION_KEYS
+13527 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000230: Schema export complete
+14000 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registering MBean org.apache.cxf:bus.id=cxf1933660543,type=Bus,instance.id=1933660543: org.apache.cxf.bus.ManagedBus@454da3f6
+14010 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registering MBean org.apache.cxf:bus.id=cxf1933660543,type=Bus,instance.id=1933660543: javax.management.modelmbean.RequiredModelMBean@4e74fed4
+14010 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registered org.apache.cxf:bus.id=cxf1933660543,type=Bus,instance.id=1933660543
+14051 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://cxf.springboot.lazylogin.navid.com/}UserCommandsImplService from class com.navid.lazylogin.UserCommands
+14085 [main] INFO  org.apache.cxf.endpoint.ServerImpl [][] - Setting the server's publish address to be /user
+14089 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registering MBean org.apache.cxf:bus.id=cxf1933660543,type=Bus.Service.Endpoint,service="{http://cxf.springboot.lazylogin.navid.com/}UserCommandsImplService",port="UserCommandsImplPort",instance.id=1241025507: org.apache.cxf.endpoint.ManagedEndpoint@5ca80a05
+14092 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registering MBean org.apache.cxf:bus.id=cxf1933660543,type=Bus.Service.Endpoint,service="{http://cxf.springboot.lazylogin.navid.com/}UserCommandsImplService",port="UserCommandsImplPort",instance.id=1241025507: javax.management.modelmbean.RequiredModelMBean@5a4d6455
+14103 [main] INFO  o.a.c.w.s.f.ReflectionServiceFactoryBean [][] - Creating Service {http://cxf.springboot.lazylogin.navid.com/}SystemCommandsImplService from class com.navid.lazylogin.SystemCommands
+14108 [main] INFO  org.apache.cxf.endpoint.ServerImpl [][] - Setting the server's publish address to be /system
+14108 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registering MBean org.apache.cxf:bus.id=cxf1933660543,type=Bus.Service.Endpoint,service="{http://cxf.springboot.lazylogin.navid.com/}SystemCommandsImplService",port="SystemCommandsImplPort",instance.id=1192800169: org.apache.cxf.endpoint.ManagedEndpoint@25b4a4b6
+14109 [main] INFO  o.a.c.m.j.InstrumentationManagerImpl [][] - registering MBean org.apache.cxf:bus.id=cxf1933660543,type=Bus.Service.Endpoint,service="{http://cxf.springboot.lazylogin.navid.com/}SystemCommandsImplService",port="SystemCommandsImplPort",instance.id=1192800169: javax.management.modelmbean.RequiredModelMBean@76a9bc10
+14218 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [][] - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+14301 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Looking for request mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2eba4fff: startup date [Sat Nov 01 22:59:40 GMT 2014]; root of context hierarchy
+14311 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/addUsername],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.addUsername(java.lang.String,org.springframework.ui.ModelMap)
+14311 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/verifyWithUsername],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verifyWithUsername(java.lang.String,java.lang.String,org.springframework.ui.ModelMap)
+14311 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/verify],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verify(java.lang.String,org.springframework.ui.ModelMap)
+14313 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+14313 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+14330 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Looking for URL mappings in application context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2eba4fff: startup date [Sat Nov 01 22:59:40 GMT 2014]; root of context hierarchy
+14330 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+14330 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+14330 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+14330 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+14330 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'application': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'verificationController': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'userServices': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemServices': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'persistenceImpl': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jpaPersistenceConfiguration': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'queries': no URL paths identified
+14331 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'lazylogin.persistence.jdtoconverter': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'AMQEventProducer': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestContextContainer': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'lazylogin.persistence-hibernate.converter': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'cxfServlet': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'cxf': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.bus.spring.BusWiringBeanFactoryPostProcessor': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.bus.spring.Jsr250BeanPostProcessor': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.bus.spring.BusExtensionPostProcessor': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'lazylogin.endpoint.converter': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'userCommands': no URL paths identified
+14332 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemCommands': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.apache.cxf.management.InstrumentationManager': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'pooledJmsConnectionFactory': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jmsTemplate': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mailSender': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'templateMessage': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'emailNotifier': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'destination': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.listener.DefaultMessageListenerContainer#0': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+14333 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'propertySourcesPlaceholderConfigurer': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'tomcatEmbeddedServletContainerFactory': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'embeddedServletContainerCustomizerBeanPostProcessor': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dispatcherServlet': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration': no URL paths identified
+14334 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'errorAttributes': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'basicErrorController': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'faviconHandlerMapping': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'faviconRequestHandler': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.web.servlet.config.annotation.DelegatingWebMvcConfiguration': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+14335 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'resourceHandlerMapping': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcConversionService': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcValidator': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcPathMatcher': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+14336 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'handlerExceptionResolver': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mvcViewResolver': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'defaultViewResolver': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'requestContextListener': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'viewResolver': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.mvc.CONFIGURATION_PROPERTIES': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.resources.CONFIGURATION_PROPERTIES': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration': no URL paths identified
+14337 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$JdkDynamicAutoProxyConfiguration': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jta.JtaAutoConfiguration': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jta.CONFIGURATION_PROPERTIES': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$JdbcTemplateConfiguration': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jdbcTemplate': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$NonEmbeddedConfiguration': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSource': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$DataSourceInitializerConfiguration': no URL paths identified
+14338 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSourceInitializer': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$TomcatDataSourcePoolMetadataProviderConfiguration': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'tomcatPoolDataSourceMetadataProvider': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.datasource.CONFIGURATION_PROPERTIES': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'openEntityManagerInViewInterceptor': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'transactionManager': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jpaVendorAdapter': no URL paths identified
+14339 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'entityManagerFactoryBuilder': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'entityManagerFactory': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jpa.CONFIGURATION_PROPERTIES': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'dataSourceInitializedPublisher': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.jpa.repository.support.EntityManagerBeanDefinitionRegistrarPostProcessor#0': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jpaMapppingContext': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'tokenRepository': no URL paths identified
+14340 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'validationKeyRepository': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'userRepository': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'ssoIdRepository': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.web.config.SpringDataWebConfiguration': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'pageableResolver': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'sortResolver': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.data.web.config.SpringDataJacksonConfiguration': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jacksonGeoModule': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.MBeanExportConfiguration': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mbeanExporter': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration$Empty': no URL paths identified
+14341 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'objectNamingStrategy': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mbeanServer': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.jmx.config.IntegrationMBeanExportConfiguration': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationMbeanExporter': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationConfiguration': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'channelInitializer': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name '$autoCreateChannelCandidates': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'IntegrationConfigurationBeanFactoryPostProcessor': no URL paths identified
+14342 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationEvaluationContext': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.expression.IntegrationEvaluationContextAwareBeanPostProcessor#0': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationGlobalProperties': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationHeaderChannelRegistry': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'globalChannelInterceptorProcessor': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'toStringFriendlyJsonNodeToStringConverter': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'converterRegistrar': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'integrationConversionService': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'DefaultConfiguringBeanFactoryPostProcessor': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'datatypeChannelMessageConverter': no URL paths identified
+14343 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.internalMessagingAnnotationPostProcessor': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'messageBuilderFactory': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderAutoConfiguration': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'http.mappers.CONFIGURATION_PROPERTIES': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jackson.CONFIGURATION_PROPERTIES': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperAutoConfiguration': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jacksonObjectMapper': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+14344 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'transactionAttributeSource': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'transactionInterceptor': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$TransactionManagementConfiguration': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration$MessagingTemplateConfiguration': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jmsMessagingTemplate': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.annotation.JmsBootstrapConfiguration': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.config.internalJmsListenerAnnotationProcessor': no URL paths identified
+14345 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.jms.config.internalJmsListenerEndpointRegistry': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAnnotationDrivenConfiguration$EnableJmsConfiguration': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAnnotationDrivenConfiguration': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'jmsListenerContainerFactory': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'spring.jms.CONFIGURATION_PROPERTIES': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'messageConverters': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration': no URL paths identified
+14346 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'multipartConfigElement': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'multipartResolver': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'multipart.CONFIGURATION_PROPERTIES': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'serverProperties': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.orm.jpa.SharedEntityManagerCreator#0': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.jmx.config.MBeanExporterHelper': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'nullChannel': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'errorChannel': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name '_org.springframework.integration.errorLogger': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'taskScheduler': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.integration.config.IdGeneratorConfigurer#0': no URL paths identified
+14347 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'autoConfigurationReport': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'applicationEventMulticaster': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'environment': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemProperties': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'systemEnvironment': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'messageSource': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'servletContext': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'contextParameters': no URL paths identified
+14348 [main] DEBUG o.s.w.s.h.BeanNameUrlHandlerMapping [][] - Rejected bean name 'contextAttributes': no URL paths identified
+14352 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [][] - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+14352 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [][] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+14403 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [][] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2eba4fff: startup date [Sat Nov 01 22:59:40 GMT 2014]; root of context hierarchy
+14456 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [][] - Looking for exception mappings: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2eba4fff: startup date [Sat Nov 01 22:59:40 GMT 2014]; root of context hierarchy
+14743 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Registering beans for JMX exposure on startup
+14750 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Bean with name 'integrationMbeanExporter' has been autodetected for JMX exposure
+14752 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Located managed bean 'integrationMbeanExporter': registering with JMX server as MBean [org.springframework.integration.monitor:name=integrationMbeanExporter,type=IntegrationMBeanExporter]
+14787 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Registering beans for JMX exposure on startup
+14791 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Starting beans in phase -2147483648
+14792 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Starting beans in phase 0
+14792 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Registering MessageChannel errorChannel
+14794 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Located managed bean 'org.springframework.integration:type=MessageChannel,name=errorChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=errorChannel]
+14831 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Registering MessageChannel nullChannel
+14833 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Located managed bean 'org.springframework.integration:type=MessageChannel,name=nullChannel': registering with JMX server as MBean [org.springframework.integration:type=MessageChannel,name=nullChannel]
+14885 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Located managed bean 'org.springframework.integration:type=MessageHandler,name=errorLogger,bean=internal': registering with JMX server as MBean [org.springframework.integration:type=MessageHandler,name=errorLogger,bean=internal]
+14920 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - started org.springframework.integration.monitor.IntegrationMBeanExporter@3ef96495
+14922 [main] INFO  o.s.i.endpoint.EventDrivenConsumer [][] - Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+14923 [main] INFO  o.s.i.c.PublishSubscribeChannel [][] - Channel 'application:8080.errorChannel' has 1 subscriber(s).
+14923 [main] INFO  o.s.i.endpoint.EventDrivenConsumer [][] - started _org.springframework.integration.errorLogger
+14923 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Starting beans in phase 2147483647
+15008 [main] INFO  o.a.activemq.broker.BrokerService [][] - Using Persistence Adapter: AMQPersistenceAdapter(activemq-data/localhost)
+15023 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ null JMS Message Broker (localhost) is starting
+15024 [main] INFO  o.a.activemq.broker.BrokerService [][] - For help or more information please see: http://activemq.apache.org/
+15037 [main] INFO  o.a.a.s.amq.AMQPersistenceAdapter [][] - AMQStore starting using directory: activemq-data/localhost
+15055 [JMX connector] INFO  o.a.a.broker.jmx.ManagementContext [][] - JMX consoles can connect to service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+15059 [main] INFO  o.a.activemq.kaha.impl.KahaStore [][] - Kaha Store using data directory activemq-data/localhost/kr-store/state
+15088 [main] INFO  o.a.a.s.amq.AMQPersistenceAdapter [][] - Active data files: []
+15271 [main] INFO  o.a.activemq.kaha.impl.KahaStore [][] - Kaha Store using data directory activemq-data/localhost/kr-store/data
+15319 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ JMS Message Broker (localhost, ID:linux-5eh9.site-35350-1414882793613-0:0) started
+15323 [main] INFO  o.a.a.broker.TransportConnector [][] - Connector vm://localhost Started
+15358 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Looking for resource handler mappings
+15359 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@30d2e7e1]
+15360 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Found resource handler mapping: URL pattern="/**", locations=[ServletContext resource [/], class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@2b9758e4]
+15360 [main] DEBUG o.s.w.s.r.ResourceUrlProvider [][] - Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@5d4cf717]
+15368 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Initializing ProtocolHandler ["http-nio-8080"]
+15397 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Starting ProtocolHandler ["http-nio-8080"]
+15401 [main] INFO  o.a.tomcat.util.net.NioSelectorPool [][] - Using a shared selector for servlet write/read
+15446 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer [][] - Tomcat started on port(s): 8080/http
+15448 [main] INFO  o.a.m.s.booter.SurefireBooter [][] - Started SurefireBooter in 13.189 seconds (JVM running for 16.349)
+15630 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context created: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+15815 [http-nio-8080-exec-1] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation createToken
+15836 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - Creating token for loginWithUnverifiedToken@someDomain
+16002 [http-nio-8080-exec-1] DEBUG c.n.lazylogin.services.UserServices [][] - Email not found, creating user: loginWithUnverifiedToken@someDomain
+16008 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16044 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - User created: User{email=loginWithUnverifiedToken@someDomain, userId=UserId{value=1}, username=null}
+16044 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16048 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - Token created: Token{value=1-793699631-70135218-a3db-439a-9ef7-5c73377537d9-1414882794519}
+16051 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16054 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey created: ValidationKey{token=Token{value=1-793699631-70135218-a3db-439a-9ef7-5c73377537d9-1414882794519}, validationKey=1-a5db5521-4e5f-4b0e-bd1b-83ab248e7590}
+16054 [http-nio-8080-exec-1] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16057 [http-nio-8080-exec-1] INFO  c.n.lazylogin.services.UserServices [][] - SessionId created: SessionId{token=Token{value=1-793699631-70135218-a3db-439a-9ef7-5c73377537d9-1414882794519}, value=1-425446193-e66d6e5f-a13c-434b-8c36-6c0f09769293}
+16074 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Ready to send message with following parameters: ActiveMQMapMessage {commandId = 7, responseRequired = true, messageId = ID:linux-5eh9.site-35350-1414882793613-2:0:2:1:1, originalDestination = null, originalTransactionId = null, producerId = ID:linux-5eh9.site-35350-1414882793613-2:0:2:1, destination = queue://jmsExample, transactionId = null, expiration = 0, timestamp = 1414882794538, arrival = 0, brokerInTime = 1414882794540, brokerOutTime = 1414882794545, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@764e3493, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 1175, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false} ActiveMQMapMessage{ theTable = {} }
+16122 [http-nio-8080-exec-2] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation loginWithToken with parameters
+16122 [http-nio-8080-exec-2] INFO  c.n.lazylogin.services.UserServices [][] - Logging with token: 1-793699631-70135218-a3db-439a-9ef7-5c73377537d9-1414882794519
+16138 [http-nio-8080-exec-2] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16139 [http-nio-8080-exec-2] INFO  c.n.lazylogin.services.UserServices [][] - Ssoid SessionId{token=Token{value=1-793699631-70135218-a3db-439a-9ef7-5c73377537d9-1414882794519}, value=1-425446193-333a1c0e-4658-4570-a5a9-413059b72254} created for token Token{value=1-793699631-70135218-a3db-439a-9ef7-5c73377537d9-1414882794519}
+16172 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Email successfully sent to loginWithUnverifiedToken@someDomain
+16174 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context deleted: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+16177 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context created: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+16181 [http-nio-8080-exec-3] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation createToken
+16182 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - Creating token for shouldCreateUnverifiedToken@someDomain
+16183 [http-nio-8080-exec-3] DEBUG c.n.lazylogin.services.UserServices [][] - Email not found, creating user: shouldCreateUnverifiedToken@someDomain
+16183 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16185 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - User created: User{email=shouldCreateUnverifiedToken@someDomain, userId=UserId{value=2}, username=null}
+16185 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16186 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - Token created: Token{value=1-416051729-ade51c06-bc12-46d8-809d-f020842d4596-1414882794658}
+16187 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16188 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey created: ValidationKey{token=Token{value=1-416051729-ade51c06-bc12-46d8-809d-f020842d4596-1414882794658}, validationKey=1-5b8b2aa1-f032-4308-a768-b715b50359be}
+16188 [http-nio-8080-exec-3] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16189 [http-nio-8080-exec-3] INFO  c.n.lazylogin.services.UserServices [][] - SessionId created: SessionId{token=Token{value=1-416051729-ade51c06-bc12-46d8-809d-f020842d4596-1414882794658}, value=1-1328533059-1ad58b95-96ef-4cd5-a8aa-0a7306ea77fd}
+16191 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Ready to send message with following parameters: ActiveMQMapMessage {commandId = 9, responseRequired = true, messageId = ID:linux-5eh9.site-35350-1414882793613-2:0:2:1:2, originalDestination = null, originalTransactionId = null, producerId = ID:linux-5eh9.site-35350-1414882793613-2:0:2:1, destination = queue://jmsExample, transactionId = null, expiration = 0, timestamp = 1414882794661, arrival = 0, brokerInTime = 1414882794662, brokerOutTime = 1414882794662, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@12d5008a, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 1178, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false} ActiveMQMapMessage{ theTable = {} }
+16194 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Email successfully sent to shouldCreateUnverifiedToken@someDomain
+16204 [http-nio-8080-exec-4] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation getInfo with sessionId 1-1328533059-1ad58b95-96ef-4cd5-a8aa-0a7306ea77fd
+16214 [http-nio-8080-exec-4] INFO  c.n.l.services.SystemServices [][] - Requesting user info for sessionId 1-1328533059-1ad58b95-96ef-4cd5-a8aa-0a7306ea77fd
+16218 [http-nio-8080-exec-4] DEBUG c.n.l.services.SystemServices [][] - Response SessionId{token=Token{value=1-416051729-ade51c06-bc12-46d8-809d-f020842d4596-1414882794658}, value=1-1328533059-1ad58b95-96ef-4cd5-a8aa-0a7306ea77fd}
+16222 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context deleted: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+16224 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context created: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+16229 [http-nio-8080-exec-5] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation createToken
+16231 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - Creating token for shouldVerifyToken@someDomain
+16234 [http-nio-8080-exec-5] DEBUG c.n.lazylogin.services.UserServices [][] - Email not found, creating user: shouldVerifyToken@someDomain
+16235 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16238 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - User created: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=null}
+16238 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16239 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - Token created: Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}
+16240 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16241 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey created: ValidationKey{token=Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}, validationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d}
+16241 [http-nio-8080-exec-5] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16242 [http-nio-8080-exec-5] INFO  c.n.lazylogin.services.UserServices [][] - SessionId created: SessionId{token=Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}, value=1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb}
+16244 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Ready to send message with following parameters: ActiveMQMapMessage {commandId = 11, responseRequired = true, messageId = ID:linux-5eh9.site-35350-1414882793613-2:0:2:1:3, originalDestination = null, originalTransactionId = null, producerId = ID:linux-5eh9.site-35350-1414882793613-2:0:2:1, destination = queue://jmsExample, transactionId = null, expiration = 0, timestamp = 1414882794715, arrival = 0, brokerInTime = 1414882794715, brokerOutTime = 1414882794715, correlationId = null, replyTo = null, persistent = true, type = null, priority = 4, groupID = null, groupSequence = 0, targetConsumerId = null, compressed = false, userID = null, content = org.apache.activemq.util.ByteSequence@51198fcc, marshalledProperties = null, dataStructure = null, redeliveryCounter = 0, size = 1168, properties = null, readOnlyProperties = true, readOnlyBody = true, droppable = false} ActiveMQMapMessage{ theTable = {} }
+16247 [org.springframework.jms.listener.DefaultMessageListenerContainer#0-1] INFO  c.n.l.jmsconsumer.EmailNotifier [][] - Email successfully sent to shouldVerifyToken@someDomain
+16259 [http-nio-8080-exec-6] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation getInfo with sessionId 1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb
+16260 [http-nio-8080-exec-6] INFO  c.n.l.services.SystemServices [][] - Requesting user info for sessionId 1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb
+16264 [http-nio-8080-exec-6] DEBUG c.n.l.services.SystemServices [][] - Response SessionId{token=Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}, value=1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb}
+16649 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Initializing servlet 'dispatcherServlet'
+16650 [http-nio-8080-exec-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [][] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+16650 [http-nio-8080-exec-7] INFO  o.s.web.servlet.DispatcherServlet [][] - FrameworkServlet 'dispatcherServlet': initialization started
+16650 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Using MultipartResolver [org.springframework.web.multipart.support.StandardServletMultipartResolver@118519e0]
+16652 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate LocaleResolver with name 'localeResolver': using default [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@258add2c]
+16655 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate ThemeResolver with name 'themeResolver': using default [org.springframework.web.servlet.theme.FixedThemeResolver@74db824a]
+16659 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate RequestToViewNameTranslator with name 'viewNameTranslator': using default [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@18dfccf7]
+16664 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Unable to locate FlashMapManager with name 'flashMapManager': using default [org.springframework.web.servlet.support.SessionFlashMapManager@45c9731a]
+16664 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Published WebApplicationContext of servlet 'dispatcherServlet' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet]
+16664 [http-nio-8080-exec-7] INFO  o.s.web.servlet.DispatcherServlet [][] - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+16665 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Servlet 'dispatcherServlet' configured successfully
+16666 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - DispatcherServlet with name 'dispatcherServlet' processing GET request for [/verify/]
+16669 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Looking up handler method for path /verify/
+16674 [http-nio-8080-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Returning handler method [public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verify(java.lang.String,org.springframework.ui.ModelMap)]
+16674 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Last-Modified value for [/verify/] is: -1
+16687 [http-nio-8080-exec-7] INFO  c.n.l.s.c.VerificationController [][] - Verifying with verificationKey 1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d
+16688 [http-nio-8080-exec-7] INFO  c.n.lazylogin.services.UserServices [][] - Verifying key: 1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d
+16691 [http-nio-8080-exec-7] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey found: ValidationKey{token=Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}, validationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d}
+16692 [http-nio-8080-exec-7] INFO  c.n.lazylogin.services.UserServices [][] - User found: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=null}
+16696 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Requested media types are [text/html, image/gif, image/jpeg, */*;q=.2] based on Accept header types and producible media types [*/*])
+16699 [http-nio-8080-exec-7] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Returning redirect view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/addUsername?verificationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d'; URL [/addUsername?verificationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d]]
+16700 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/addUsername?verificationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d'; URL [/addUsername?verificationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d]] in DispatcherServlet with name 'dispatcherServlet'
+16701 [http-nio-8080-exec-7] DEBUG o.s.web.servlet.DispatcherServlet [][] - Successfully completed request
+16738 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - DispatcherServlet with name 'dispatcherServlet' processing GET request for [/verifyWithUsername]
+16738 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Looking up handler method for path /verifyWithUsername
+16738 [http-nio-8080-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [][] - Returning handler method [public java.lang.String com.navid.lazylogin.springboot.controller.VerificationController.verifyWithUsername(java.lang.String,java.lang.String,org.springframework.ui.ModelMap)]
+16738 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - Last-Modified value for [/verifyWithUsername] is: -1
+16740 [http-nio-8080-exec-8] INFO  c.n.l.s.c.VerificationController [][] - Verifying with input 1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d
+16740 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - Verifying key: 1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d and username: user
+16743 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - ValidationKey found: ValidationKey{token=Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}, validationKey=1-3566d62f-c74e-4ebf-9f5d-6c7402d0ec9d}
+16744 [http-nio-8080-exec-8] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16747 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Saving user: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=user}
+16748 [http-nio-8080-exec-8] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16748 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Converted user: UserHb{email=shouldVerifyToken@someDomain, userId=3, username=user}
+16749 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Saved user: UserHb{email=shouldVerifyToken@someDomain, userId=3, username=user}
+16750 [http-nio-8080-exec-8] INFO  c.n.l.p.jpa.PersistenceImpl [][] - Reconverted user: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=user}
+16750 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - Just in case: token: Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}
+16757 [http-nio-8080-exec-8] INFO  c.n.lazylogin.services.UserServices [][] - Another case: user: User{email=shouldVerifyToken@someDomain, userId=UserId{value=3}, username=user}
+16758 [http-nio-8080-exec-8] INFO  o.j.spring.BeanWrapperBeanModifier [][] - Cannot write property path userIdWrapper of bean
+16764 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Requested media types are [text/html, image/gif, image/jpeg, */*;q=.2] based on Accept header types and producible media types [*/*])
+16766 [http-nio-8080-exec-8] DEBUG o.s.w.s.v.ContentNegotiatingViewResolver [][] - Returning [org.springframework.web.servlet.view.JstlView: name 'verified'; URL [/WEB-INF/jsp/verified.jsp]] based on requested media type 'text/html'
+16767 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - Rendering view [org.springframework.web.servlet.view.JstlView: name 'verified'; URL [/WEB-INF/jsp/verified.jsp]] in DispatcherServlet with name 'dispatcherServlet'
+16769 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.view.JstlView [][] - Forwarding to resource [/WEB-INF/jsp/verified.jsp] in InternalResourceView 'verified'
+17392 [http-nio-8080-exec-8] DEBUG o.s.web.servlet.DispatcherServlet [][] - Successfully completed request
+17398 [http-nio-8080-exec-9] INFO  c.n.l.s.cxf.UserCommandsImpl [][] - Executing operation getInfo with sessionId 1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb
+17399 [http-nio-8080-exec-9] INFO  c.n.l.services.SystemServices [][] - Requesting user info for sessionId 1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb
+17402 [http-nio-8080-exec-9] DEBUG c.n.l.services.SystemServices [][] - Response SessionId{token=Token{value=1-1267907669-1b8733e2-85dd-4ccb-a28a-ba7d8238e643-1414882794711}, value=1-1657075010-0ad65b03-9926-42f1-81d1-8ef81607e4bb}
+17406 [main] DEBUG c.n.l.c.RequestContextContainer [][] - Request context deleted: RequestContext{userName=null, userId=null, sessionId=null, correlationId=null}
+17408 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext [][] - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2eba4fff: startup date [Sat Nov 01 22:59:40 GMT 2014]; root of context hierarchy
+17411 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Stopping beans in phase 2147483647
+18248 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Stopping beans in phase 0
+18249 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Unregistering JMX-exposed beans
+18250 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - stopped org.springframework.integration.monitor.IntegrationMBeanExporter@3ef96495
+18251 [main] INFO  o.s.i.endpoint.EventDrivenConsumer [][] - Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+18251 [main] INFO  o.s.i.c.PublishSubscribeChannel [][] - Channel 'application:8080.errorChannel' has 0 subscriber(s).
+18252 [main] INFO  o.s.c.s.DefaultLifecycleProcessor [][] - Stopping beans in phase -2147483648
+18259 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Unregistering JMX-exposed beans on shutdown
+18260 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter [][] - Unregistering JMX-exposed beans
+18273 [main] INFO  o.a.a.broker.TransportConnector [][] - Connector vm://localhost Stopped
+18273 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ Message Broker (localhost, ID:linux-5eh9.site-35350-1414882793613-0:0) is shutting down
+18317 [main] INFO  o.a.activemq.broker.BrokerService [][] - ActiveMQ JMS Message Broker (localhost, ID:linux-5eh9.site-35350-1414882793613-0:0) stopped
+18322 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean [][] - Closing JPA EntityManagerFactory for persistence unit 'default'
+18323 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000227: Running hbm2ddl schema export
+18328 [main] INFO  o.h.tool.hbm2ddl.SchemaExport [][] - HHH000230: Schema export complete
+18331 [main] INFO  o.s.s.c.ThreadPoolTaskScheduler [][] - Shutting down ExecutorService 'taskScheduler'
+18331 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Unregistering JMX-exposed beans on shutdown
+18331 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Summary on shutdown: MessageChannelMonitor: [name=errorChannel, sends=0]
+18331 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Summary on shutdown: MessageChannelMonitor: [name=nullChannel, sends=0, receives=0]
+18333 [main] INFO  o.s.i.m.IntegrationMBeanExporter [][] - Summary on shutdown: MessageHandlerMonitor: [name=errorLogger, source=internal, duration=[N=0, min=0.000000, max=0.000000, mean=0.000000, sigma=0.000000]]
+18334 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Pausing ProtocolHandler ["http-nio-8080"]
+18385 [main] INFO  o.a.catalina.core.StandardService [][] - Stopping service Tomcat
+18388 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [][] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+18399 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Stopping ProtocolHandler ["http-nio-8080"]
+18497 [main] INFO  o.a.coyote.http11.Http11NioProtocol [][] - Destroying ProtocolHandler ["http-nio-8080"]
+18567 [Thread-3] INFO  o.s.c.s.GenericApplicationContext [][] - Closing org.springframework.context.support.GenericApplicationContext@79b9048d: startup date [Sat Nov 01 22:59:39 GMT 2014]; root of context hierarchy
