@@ -37,18 +37,6 @@ template "/root/config/application.properties" do
   group "root"
 end
 
-template "/root/config/access.jmx" do
-  mode 0755
-  owner "root"
-  group "root"
-end
-
-template "/root/config/password.jmx" do
-  mode 0755
-  owner "root"
-  group "root"
-end
-
 # setup the service (based on the script above),
 # start it, and make it start at boot
 cookbook_file '/etc/init.d/lazylogin' do

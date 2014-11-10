@@ -37,21 +37,5 @@
         <property name="bus" ref="cxf" />
     </bean>
     
-    <bean id="rmiRegistry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
-	        <property name="port" value="2000" />
-	    </bean>
-
-    <bean class="org.springframework.jmx.support.ConnectorServerFactoryBean"
-        depends-on="rmiRegistry">
-        <property name="objectName" value="connector:name=rmi" />
-        <property name="serviceUrl"
-            value="service:jmx:rmi://localhost/jndi/rmi://localhost:2000/jemosJmxConnector" />
-        <property name="environment">
-            <map>
-                <entry key="${jmxpasswordproperty}" value="${jmxpassword}" />
-                <entry key="${jmxaccessproperty}" value="${jmxaccess}" />
-            </map>
-        </property>
-    </bean>
 	  
 </beans>
