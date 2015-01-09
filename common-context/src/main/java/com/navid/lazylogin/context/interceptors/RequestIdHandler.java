@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 /**
  * This OUT handler is going to fill RID and SID in RS client
  */
-public class RequestIdHandler implements Handler<MessageContext> {
+public final class RequestIdHandler implements Handler<MessageContext> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RequestIdHandler.class);
 
