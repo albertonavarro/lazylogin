@@ -14,11 +14,11 @@ lazylogin-war-endpoint/nb-configurations.xml
 /eventproducer-api/pom.xml.versionsBackup
 /integration-test/pom.xml.versionsBackup
 /jetty-endpoint/pom.xml.versionsBackup
-/jetty-endpoint/logFile.log
+/jetty-endpoint/*.log
 /logic/pom.xml.versionsBackup
 /pom.xml.versionsBackup
 /persistence-api/pom.xml.versionsBackup
 /persistence-hibernate/pom.xml.versionsBackup
 /nb-configuration.xml
 /springboot/activemq-data/
-/springboot/logFile.log
+/springboot/*.log
