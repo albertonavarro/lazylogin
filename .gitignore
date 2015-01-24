@@ -21,4 +21,4 @@ lazylogin-war-endpoint/nb-configurations.xml
 /persistence-hibernate/pom.xml.versionsBackup
 /nb-configuration.xml
 /springboot/activemq-data/
-/springboot/*.log
+/springboot/logFile.log
