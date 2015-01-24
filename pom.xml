@@ -34,7 +34,7 @@
         <main.basedir>${basedir}/../..</main.basedir>
         <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
         <!-- Spring Boot -->
-        <spring-boot.version>1.2.1.RELEASE</spring-boot.version>
+        <spring-boot.version>1.2.0.M2</spring-boot.version>
         
         <!-- Third Party -->
         <activemq.version>5.9.1</activemq.version>
