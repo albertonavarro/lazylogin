@@ -34,7 +34,8 @@
         <main.basedir>${basedir}/../..</main.basedir>
         <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
         <!-- Spring Boot -->
-        <spring-boot.version>1.2.0.RELEASE</spring-boot.version>
+        <spring-boot.version>1.2.1.RELEASE</spring-boot.version>
+        
         <!-- Third Party -->
         <activemq.version>5.9.1</activemq.version>
         <aspectj.version>1.8.2</aspectj.version>
@@ -93,7 +94,7 @@
         <snakeyaml.version>1.13</snakeyaml.version>
         <solr.version>4.7.2</solr.version>
         <spock.version>0.7-groovy-2.0</spock.version>
-        <spring.version>4.1.0.RELEASE</spring.version>
+        <spring.version>4.1.2.RELEASE</spring.version>
         <spring-amqp.version>1.4.0.M1</spring-amqp.version>
         <spring-cloud.version>1.1.0.RELEASE</spring-cloud.version>
         <spring-batch.version>3.0.1.RELEASE</spring-batch.version>
