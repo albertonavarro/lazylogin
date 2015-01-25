@@ -11,7 +11,7 @@ public class RequestContext {
     private String userName;
 
     private String correlationId;
-    
+
     private String sessionId;
 
     RequestContext() {

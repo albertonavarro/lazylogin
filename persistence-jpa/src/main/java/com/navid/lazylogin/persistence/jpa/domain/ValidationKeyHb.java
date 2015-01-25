@@ -14,15 +14,15 @@ import org.hibernate.annotations.GenericGenerator;
  * @author alberto
  */
 @Entity
-@Table(name="VALIDATION_KEYS")
+@Table(name = "VALIDATION_KEYS")
 public class ValidationKeyHb implements Serializable {
-    
+
     @OneToOne
     private TokenHb token;
-    
+
     @Id
-    @Column(name="VALIDATION_KEY")
-    @GenericGenerator(name="validationkey_gen", strategy="com.navid.lazylogin.persistence.jpa.ValidationKeyGenerator")
+    @Column(name = "VALIDATION_KEY")
+    @GenericGenerator(name = "validationkey_gen", strategy = "com.navid.lazylogin.persistence.jpa.ValidationKeyGenerator")
     @GeneratedValue(generator = "validationkey_gen")
     private String validationKey;
 
@@ -54,6 +54,4 @@ public class ValidationKeyHb implements Serializable {
         this.validationKey = validationKey;
     }
 
-        
-    
 }

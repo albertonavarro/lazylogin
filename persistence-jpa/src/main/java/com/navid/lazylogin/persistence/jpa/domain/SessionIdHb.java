@@ -24,7 +24,7 @@ public class SessionIdHb implements Serializable {
 
     @Id
     @Column(name = "SSOID_VALUE")
-    @GenericGenerator(name="sessionid_gen", strategy="com.navid.lazylogin.persistence.jpa.SessionIdGenerator")
+    @GenericGenerator(name = "sessionid_gen", strategy = "com.navid.lazylogin.persistence.jpa.SessionIdGenerator")
     @GeneratedValue(generator = "sessionid_gen")
     private String value = null;
 
@@ -55,7 +55,5 @@ public class SessionIdHb implements Serializable {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
 }

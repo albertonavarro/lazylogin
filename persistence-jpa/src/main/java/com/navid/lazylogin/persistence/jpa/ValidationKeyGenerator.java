@@ -12,11 +12,11 @@ import org.hibernate.id.IdentifierGenerator;
  *
  * @author alberto
  */
-public class ValidationKeyGenerator  implements IdentifierGenerator {
+public class ValidationKeyGenerator implements IdentifierGenerator {
 
     public Serializable generate(SessionImplementor si, Object o) throws HibernateException {
         ValidationKeyHb sessionId = (ValidationKeyHb) o;
-        
+
         return DomainFactory.validationKeyGenerator(sessionId.getToken().getValue());
     }
 }

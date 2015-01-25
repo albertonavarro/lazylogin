@@ -24,7 +24,7 @@ public class TokenHb implements Serializable {
 
     @Id
     @Column(name = "TOKEN_VALUE")
-    @GenericGenerator(name="token_gen", strategy="com.navid.lazylogin.persistence.jpa.TokenGenerator")
+    @GenericGenerator(name = "token_gen", strategy = "com.navid.lazylogin.persistence.jpa.TokenGenerator")
     @GeneratedValue(generator = "token_gen")
     private String value = null;
 
@@ -72,9 +72,5 @@ public class TokenHb implements Serializable {
     public void setValidated(Boolean validated) {
         this.validated = validated;
     }
-
-    
-
-    
 
 }

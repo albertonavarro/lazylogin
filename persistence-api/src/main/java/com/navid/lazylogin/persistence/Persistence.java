@@ -12,13 +12,13 @@ import com.navid.lazylogin.domain.ValidationKey;
 public interface Persistence {
 
     User findOneUser(String email);
-    
+
     User saveUser(User user);
-    
+
     Token findOneToken(String token);
 
     Token saveToken(Token token);
-    
+
     SessionId saveSsoId(SessionId ssoId);
 
     ValidationKey saveValidationKey(ValidationKey validationKey);
@@ -26,13 +26,13 @@ public interface Persistence {
     ValidationKey findOneValidationKey(String validationKey);
 
     void deleteValidationKey(ValidationKey found);
-    
+
     Token createToken(User user);
 
     SessionId createSsoId(Token token);
 
     SessionId findOneSessionId(String sessionId);
-    
+
     User findOneUserByEmail(String email);
-    
+
 }

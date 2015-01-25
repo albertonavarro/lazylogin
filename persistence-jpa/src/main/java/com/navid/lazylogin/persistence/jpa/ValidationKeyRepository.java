@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author alberto
  */
-public interface ValidationKeyRepository extends JpaRepository<ValidationKeyHb, String>{
-    
+public interface ValidationKeyRepository extends JpaRepository<ValidationKeyHb, String> {
+
 }

@@ -21,13 +21,12 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class PersistenceImpl implements Persistence {
-    
+
     private final static Logger LOGGER = LoggerFactory.getLogger(PersistenceImpl.class);
-    
+
     public PersistenceImpl() {
-        
+
     }
-    
 
     @Resource
     private SsoIdRepository ssoIdRepo;
@@ -40,7 +39,7 @@ public class PersistenceImpl implements Persistence {
 
     @Resource
     private ValidationKeyRepository validationRepo;
-    
+
     @Resource
     private Queries queries;
 
@@ -59,9 +58,9 @@ public class PersistenceImpl implements Persistence {
         UserHb userHb = converter.convert(user);
 
         userHb = userRepo.save(userHb);
-        
+
         User result = converter.convert(userHb);
-        
+
         return result;
     }
 
@@ -76,15 +75,15 @@ public class PersistenceImpl implements Persistence {
     public Token saveToken(Token token) {
         LOGGER.info("Saving user: {}", token.getUser());
         TokenHb tokenHb = converter.convert(token);
-        
+
         LOGGER.info("Converted user: {}", tokenHb.getUser());
 
         tokenHb = tokenRepo.save(tokenHb);
-        
+
         LOGGER.info("Saved user: {}", tokenHb.getUser());
 
         Token result = converter.convert(tokenHb);
-        
+
         LOGGER.info("Reconverted user: {}", result.getUser());
         return result;
     }
@@ -120,11 +119,11 @@ public class PersistenceImpl implements Persistence {
 
         validationRepo.delete(validationKeyHb);
     }
-    
+
     @Override
     public Token createToken(User user) {
         UserHb userHb = converter.convert(user);
-        
+
         TokenHb tokenHb = new TokenHb();
         tokenHb.setUser(userHb);
         tokenHb.setValidated(false);
@@ -137,14 +136,14 @@ public class PersistenceImpl implements Persistence {
     @Override
     public SessionId createSsoId(Token token) {
         TokenHb tokenHb = converter.convert(token);
-        
+
         SessionIdHb ssoIdHb = new SessionIdHb();
         ssoIdHb.setToken(tokenHb);
 
         ssoIdHb = ssoIdRepo.save(ssoIdHb);
 
         return converter.convert(ssoIdHb);
-        
+
     }
 
     @Override
@@ -156,7 +155,7 @@ public class PersistenceImpl implements Persistence {
     @Override
     public User findOneUserByEmail(String email) {
         UserHb userHb = queries.findSingleUserByEmail(email);
-        
+
         return converter.convert(userHb);
     }
 

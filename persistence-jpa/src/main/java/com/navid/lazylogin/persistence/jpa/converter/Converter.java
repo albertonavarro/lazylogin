@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.navid.lazylogin.persistence.jpa.converter;
 
 import com.navid.lazylogin.domain.SessionId;
@@ -20,17 +19,21 @@ import com.navid.lazylogin.persistence.jpa.domain.ValidationKeyHb;
  * @author casa
  */
 public interface Converter {
-    
-    User convert( UserHb from);
-    UserHb convert( User from);
-    
-    SessionIdHb convert ( SessionId from);
-    SessionId convert ( SessionIdHb from);
-    
-    Token convert( TokenHb from);
-    TokenHb convert( Token from);
-    
-    ValidationKey convert( ValidationKeyHb from);
-    ValidationKeyHb convert( ValidationKey from);
-    
+
+    User convert(UserHb from);
+
+    UserHb convert(User from);
+
+    SessionIdHb convert(SessionId from);
+
+    SessionId convert(SessionIdHb from);
+
+    Token convert(TokenHb from);
+
+    TokenHb convert(Token from);
+
+    ValidationKey convert(ValidationKeyHb from);
+
+    ValidationKeyHb convert(ValidationKey from);
+
 }

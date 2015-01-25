@@ -28,7 +28,7 @@
             <groupId>org.apache.cxf.xjc-utils</groupId>
             <artifactId>cxf-xjc-runtime</artifactId>
             <version>${cxf.version}</version>
-          </dependency>
+        </dependency>
     </dependencies>
     
     <build>

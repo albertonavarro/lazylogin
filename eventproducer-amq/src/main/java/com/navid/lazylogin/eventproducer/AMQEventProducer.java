@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AMQEventProducer implements EventProducer {
-    
+
     @Value("${email.server.address}")
     private String emailServerAddress;
 

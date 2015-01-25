@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
 public class BaseIT extends AbstractTestNGSpringContextTests {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseIT.class);
-    
+
     @Resource
     protected GreenMail greenMail; //uses test ports by default
 
@@ -44,27 +44,27 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     @Resource
     protected RequestContextContainer requestContextContainer;
-    
+
     ConfigurableApplicationContext app;
 
     @BeforeMethod
     public void beforeTest() {
-        
+
     }
 
     @AfterMethod
     public void afterTest() {
         requestContextContainer.delete();
-        
+
     }
 
     @BeforeClass
-    public void init() throws Exception {        
+    public void init() throws Exception {
         //helping recordserver to choose what config file should use.
         System.setProperty("env", "-ct");
 
         greenMail.start();
-        
+
         app = new SpringApplication(Application.class).run(new String[0]);
     }
 
@@ -78,7 +78,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
                 return 0;
             }
         });
-        
+
         greenMail.stop();
     }
 

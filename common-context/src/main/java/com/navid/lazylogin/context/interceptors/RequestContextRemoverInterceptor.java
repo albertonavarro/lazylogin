@@ -29,8 +29,8 @@ public class RequestContextRemoverInterceptor extends AbstractPhaseInterceptor<M
         requestContextContainer.delete();
         MDC.clear();
     }
-    
-    public void setRequestContextContainer( RequestContextContainer requestContextContainer) {
+
+    public void setRequestContextContainer(RequestContextContainer requestContextContainer) {
         this.requestContextContainer = requestContextContainer;
     }
 

@@ -75,16 +75,16 @@ public class UserServices {
 
     public Token verify(String verificationKey) throws UsernameNotFoundException {
         LOGGER.info("Verifying key: {}", verificationKey);
-        
+
         ValidationKey found = persistence.findOneValidationKey(verificationKey);
 
         if (found == null) {
             throw new IllegalArgumentException("ValidationKey doesn't exist");
-        } 
-        
+        }
+
         LOGGER.info("ValidationKey found: {}", found);
         LOGGER.info("User found: {}", found.getToken().getUser());
-        
+
         if (found.getToken().getUser().getName() == null) {
             throw new UsernameNotFoundException();
         }
@@ -102,25 +102,25 @@ public class UserServices {
 
         if (found == null) {
             throw new IllegalArgumentException("ValidationKey doesn't exist");
-        } 
-        
+        }
+
         LOGGER.info("ValidationKey found: {}", found);
 
         if (found.getToken().getUser().getName() != null) {
             throw new IllegalArgumentException("Username already set");
         }
-        
+
         found.getToken().getUser().setName(username);
-        
+
         persistence.saveUser(found.getToken().getUser());
-        
+
         found.getToken().setValidated(Boolean.TRUE);
-        
+
         Token token = persistence.saveToken(found.getToken());
-        
+
         LOGGER.info("Just in case: token: {}", token);
         LOGGER.info("Another case: user: {}", persistence.findOneUserByEmail(token.getUser().getEmail()));
-        
+
         persistence.deleteValidationKey(found);
         return found.getToken();
     }

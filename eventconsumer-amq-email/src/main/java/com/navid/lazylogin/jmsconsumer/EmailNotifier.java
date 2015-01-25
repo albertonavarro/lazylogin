@@ -16,12 +16,12 @@ import org.springframework.mail.SimpleMailMessage;
  * @author alberto
  */
 public class EmailNotifier implements MessageListener {
-    
+
     private static final Logger LOGGER = LoggerFactory.getLogger(EmailNotifier.class);
 
     @Resource
     private MailSender mailSender;
-    
+
     @Resource
     private SimpleMailMessage templateMessage;
 
@@ -29,14 +29,14 @@ public class EmailNotifier implements MessageListener {
     public void onMessage(Message msg) {
         try {
             LOGGER.info("Ready to send message with following parameters: {}", msg);
-            
+
             MapMessage mapMessage = (MapMessage) msg;
-            
+
             String email = mapMessage.getString("email");
             String validationUrl = mapMessage.getString("validationUrl");
             String deviceInfo = mapMessage.getString("deviceInfo");
             sendEmail(email, validationUrl, deviceInfo);
-            
+
             LOGGER.info("Email successfully sent to {}", email);
         } catch (JMSException jmse) {
             LOGGER.error("Error processing message from queue", jmse);
@@ -47,9 +47,9 @@ public class EmailNotifier implements MessageListener {
         SimpleMailMessage msg = new SimpleMailMessage(this.templateMessage);
         msg.setTo(email);
         msg.setText(validationUrl);
-        try{
+        try {
             this.mailSender.send(msg);
-        } catch(MailException ex) {
+        } catch (MailException ex) {
             LOGGER.error("Error sending email", ex);
         }
     }

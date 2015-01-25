@@ -1,4 +1,3 @@
-
 package com.navid.utils;
 
 import java.io.IOException;
@@ -12,19 +11,18 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  *
  * @author casa
  */
-public class CustomPropertySourcesPlaceholderConfigurer extends PropertyPlaceholderConfigurer implements InitializingBean{
+public class CustomPropertySourcesPlaceholderConfigurer extends PropertyPlaceholderConfigurer implements InitializingBean {
 
     @Override
-    public void afterPropertiesSet(){
-        try{
+    public void afterPropertiesSet() {
+        try {
             Properties loadedProperties = this.mergeProperties();
-            for(Entry<Object, Object> singleProperty : loadedProperties.entrySet()){
-                logger.info("LoadedProperty: "+singleProperty.getKey()+"="+singleProperty.getValue());
+            for (Entry<Object, Object> singleProperty : loadedProperties.entrySet()) {
+                logger.info("LoadedProperty: " + singleProperty.getKey() + "=" + singleProperty.getValue());
             }
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    
 }

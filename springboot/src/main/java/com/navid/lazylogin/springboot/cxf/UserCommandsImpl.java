@@ -85,13 +85,13 @@ public class UserCommandsImpl implements UserCommands {
         }
 
         GetInfoResponse _return = new GetInfoResponse();
-        if( ssoId.getToken().getValidated()){
+        if (ssoId.getToken().getValidated()) {
             _return.setStatus(Status.VERIFIED);
             _return.setName(ssoId.getToken().getUser().getName());
         } else {
             _return.setStatus(Status.UNVERIFIED);
         }
-        
+
         return _return;
     }
 

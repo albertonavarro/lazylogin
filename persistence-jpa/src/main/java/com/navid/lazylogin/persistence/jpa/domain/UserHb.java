@@ -22,10 +22,10 @@ public class UserHb implements Serializable {
 
     @Column(name = "USER_NAME", unique = true, nullable = true)
     private String username;
-    
+
     @Column(name = "EMAIL")
     private String email;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "USER_ID")
@@ -76,7 +76,7 @@ public class UserHb implements Serializable {
     public UserIdHb getUserIdWrapper() {
         return new UserIdHb(userId);
     }
-    
+
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
@@ -84,5 +84,5 @@ public class UserHb implements Serializable {
                 .add("userId", userId)
                 .add("username", username).toString();
     }
-    
+
 }

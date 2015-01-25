@@ -23,9 +23,9 @@ public class SystemServices {
 
     public SessionId getUserInfo(String sessionId) {
         LOGGER.info("Requesting user info for sessionId {}", sessionId);
-        
+
         SessionId ssoId = persistence.findOneSessionId(sessionId);
-        
+
         LOGGER.debug("Response {}", ssoId);
 
         return ssoId;

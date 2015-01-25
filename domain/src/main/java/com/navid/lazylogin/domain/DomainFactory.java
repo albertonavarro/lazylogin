@@ -37,9 +37,9 @@ public class DomainFactory {
 
     public static String tokenGenerator(String email) {
         String variable = UUID.randomUUID().toString();
-        
+
         int fixed = Math.abs(email.hashCode());
-        
+
         return VERSION + "-" + fixed + "-" + variable + "-" + System.currentTimeMillis();
     }
 

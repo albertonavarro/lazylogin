@@ -16,7 +16,5 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 @ImportResource(value = "classpath:/conf/config-persistence-test.xml")
 public class JpaPersistenceConfiguration {
-    
 
-    
 }

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.navid.lazylogin;
 
 import org.springframework.util.Assert;
@@ -14,7 +13,6 @@ import org.testng.annotations.Test;
  * @author alberto
  */
 public class LoginWithTokenIT extends BaseIT {
-    
+
     /**/
-    
 }

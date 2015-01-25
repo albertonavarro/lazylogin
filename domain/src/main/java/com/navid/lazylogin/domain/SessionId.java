@@ -28,7 +28,7 @@ public class SessionId implements Serializable {
     public String getValue() {
         return value;
     }
-    
+
     @Override
     public String toString() {
         return Objects.toStringHelper(this).add("token", token).add("value", value).toString();

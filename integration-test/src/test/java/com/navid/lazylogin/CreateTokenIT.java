@@ -13,22 +13,22 @@ import org.testng.annotations.Test;
  * @author alberto
  */
 public class CreateTokenIT extends BaseIT {
-    
+
     @Test
     public void shouldCreateTokenAndValidateIt() throws Exception {
-        
+
         CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(testEmail));
-    
+
         Assert.notNull(ctresp.getSessionid());
         Assert.notNull(ctresp.getToken());
-        
+
         String url = getUrlFromEmail();
         verifyUrl(url);
-        
+
         GetInfoResponse responseInfo = userCommands.getInfo(new GetInfoRequest().withSessionid(ctresp.getSessionid().getSessionid()));
-        
+
         Assert.notNull(responseInfo);
         Assert.isTrue(responseInfo.getStatus() == Status.UNVERIFIED);
     }
-    
+
 }

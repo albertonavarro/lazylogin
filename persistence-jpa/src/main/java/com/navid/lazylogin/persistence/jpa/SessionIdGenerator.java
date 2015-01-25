@@ -15,8 +15,8 @@ public class SessionIdGenerator implements IdentifierGenerator {
 
     public Serializable generate(SessionImplementor si, Object o) throws HibernateException {
         SessionIdHb sessionId = (SessionIdHb) o;
-        
+
         return DomainFactory.sessionIdGenerator(sessionId.getToken().getUser().getEmail(), sessionId.getToken().getValue());
     }
-    
+
 }

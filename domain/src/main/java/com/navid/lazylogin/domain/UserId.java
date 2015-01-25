@@ -2,7 +2,6 @@ package com.navid.lazylogin.domain;
 
 import com.google.common.base.Objects;
 
-
 /**
  *
  * @author alberto
@@ -18,10 +17,10 @@ public class UserId {
     public Long getValue() {
         return this.value;
     }
-    
+
     @Override
     public String toString() {
         return Objects.toStringHelper(this).add("value", value).toString();
     }
-    
+
 }

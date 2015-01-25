@@ -18,8 +18,8 @@ public class TokenGenerator implements IdentifierGenerator {
     @Override
     public Serializable generate(SessionImplementor si, Object o) throws HibernateException {
         TokenHb token = (TokenHb) o;
-        
+
         return DomainFactory.tokenGenerator(token.getUser().getEmail());
-    } 
-    
+    }
+
 }

@@ -15,7 +15,6 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import org.glassfish.jersey.client.ClientProperties;
-import org.hamcrest.MatcherAssert;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 
@@ -42,7 +41,7 @@ public class CreateTokenIT extends BaseIT {
 
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
-        
+
         Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
     }
 
@@ -70,30 +69,30 @@ public class CreateTokenIT extends BaseIT {
         Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
-        
+
         System.out.println("URL Detected: " + url);
 
         verifyUrl(url, Response.Status.FOUND.getStatusCode());
-        
+
         URL urlParsed = new URL(url);
         URL newURL = new URL(
-                urlParsed.getProtocol(), 
-                urlParsed.getHost(), 
-                urlParsed.getPort(), 
-                "/verifyWithUsername?"+ urlParsed.getQuery()+"&username=user");
-        
+                urlParsed.getProtocol(),
+                urlParsed.getHost(),
+                urlParsed.getPort(),
+                "/verifyWithUsername?" + urlParsed.getQuery() + "&username=user");
+
         verifyUrl(newURL.toString(), Response.Status.OK.getStatusCode());
-        
+
         GetInfoResponse giresp2 = userCommands.getInfo(gireq);
 
         Assert.notNull(giresp2);
         Assert.isTrue(giresp2.getStatus() == Status.VERIFIED);
         Assert.isTrue(giresp2.getName().equals("user"));
     }
-    
+
     @Test
     public void loginWithUnverifiedToken() throws Exception {
-        
+
         CreateTokenRequest ctreq = new CreateTokenRequest();
         ctreq.setEmail("loginWithUnverifiedToken@someDomain");
 
@@ -101,23 +100,23 @@ public class CreateTokenIT extends BaseIT {
 
         Assert.notNull(ctresp.getSessionid());
         Assert.notNull(ctresp.getToken());
-    
+
         LoginWithTokenRequest loginReq = new LoginWithTokenRequest();
         loginReq.setToken(ctresp.getToken());
-        
+
         LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
         Assert.notNull(loginResp);
         Assert.notNull(loginResp.getResponse());
-        
+
         Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
     }
 
     private String extractUrlFromEmail(MimeMessage content) throws IOException, MessagingException {
         String urlContent = content.getContent().toString();
-        String url = urlContent.substring(0, urlContent.length() -2);
+        String url = urlContent.substring(0, urlContent.length() - 2);
         return url;
     }
-    
+
     private void verifyUrl(String url, int code) {
         Client client = ClientBuilder.newBuilder().build();
         Response response = client.target(url).property(ClientProperties.FOLLOW_REDIRECTS, false).request().get();

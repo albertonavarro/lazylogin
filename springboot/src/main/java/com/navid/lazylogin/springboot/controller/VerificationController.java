@@ -28,9 +28,9 @@ public class VerificationController {
     public String addUsername(
             @RequestParam(value = "verificationKey", required = true) String verificationKey,
             ModelMap model) {
-        
+
         model.addAttribute("verificationKey", verificationKey);
-        
+
         return "addUsername";
     }
 

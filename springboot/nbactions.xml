@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
-        <action>
-            <actionName>CUSTOM-run it</actionName>
-            <displayName>run it</displayName>
-            <goals>
-                <goal>spring-boot:run</goal>
+    <action>
+        <actionName>CUSTOM-run it</actionName>
+        <displayName>run it</displayName>
+        <goals>
+            <goal>spring-boot:run</goal>
                 
-            </goals>
-            <properties>
-                <appdir>/home/anavarro</appdir>
-                <env>-it</env>
-            </properties>
-        </action>
-    </actions>
+        </goals>
+        <properties>
+            <appdir>/home/anavarro</appdir>
+            <env>-it</env>
+        </properties>
+    </action>
+</actions>

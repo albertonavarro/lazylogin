@@ -30,7 +30,7 @@ public class AuthorisationFilter implements ContainerRequestFilter {
     @Override
     public void filter(final ContainerRequestContext requestContext) throws IOException {
         String sessionId = requestContextContainer.get().getSessionId();
-                
+
         LOGGER.info("Authorisating request for sessionId: {}", sessionId);
 
         if (requestContextContainer.get().getSessionId() != null) {

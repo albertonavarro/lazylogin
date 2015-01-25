@@ -14,9 +14,9 @@ public class Token implements Serializable {
     private final String value;
 
     private Boolean validated;
-    
+
     /**
-     * 
+     *
      * @param user
      * @param value
      * @param validated
@@ -59,6 +59,5 @@ public class Token implements Serializable {
     public String toString() {
         return Objects.toStringHelper(this).add("value", value).toString();
     }
-    
 
 }

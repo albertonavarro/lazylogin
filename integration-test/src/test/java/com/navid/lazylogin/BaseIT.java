@@ -27,7 +27,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
 /**
  *
  * @author vero
@@ -46,20 +45,20 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     @Resource
     protected RequestContextContainer requestContextContainer;
-    
+
     @Value("${test.imap.username}")
     protected String testEmail;
-    
+
     @Value("${test.imap.password}")
     private String testPassword;
-    
+
     @Value("${test.imap.host}")
     private String imapHost;
-    
+
     private final int maxRetries = 10;
-    
+
     Folder inbox;
-            
+
     private int emailIndex;
 
     @BeforeMethod
@@ -80,7 +79,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
     @AfterClass
     public void tearDown() throws Exception {
     }
-    
+
     private void initGmail() {
         Properties props = System.getProperties();
         props.setProperty("mail.store.protocol", "imaps");
@@ -91,8 +90,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
             inbox = store.getFolder("Inbox");
             inbox.open(Folder.READ_ONLY);
-            
-            
+
         } catch (MessagingException e) {
             e.printStackTrace();
             System.exit(2);
@@ -101,21 +99,21 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     protected String getUrlFromEmail() throws MessagingException, IOException, InterruptedException {
         int retries = 0;
-        while(retries++ < maxRetries && inbox.getMessageCount() == emailIndex) {
+        while (retries++ < maxRetries && inbox.getMessageCount() == emailIndex) {
             System.out.println("Email hasn't arrived yet, waiting another second. Retries: " + retries);
             Thread.sleep(2000L);
         }
-        
-        if(inbox.getMessageCount() == emailIndex) {
+
+        if (inbox.getMessageCount() == emailIndex) {
             throw new IllegalStateException("Email not received");
         }
-        
+
         Message message = inbox.getMessage(emailIndex + 1); //this library/protocol is not zero based
         String content = message.getContent().toString();
-        String url = content.substring(0, content.length() -2);
+        String url = content.substring(0, content.length() - 2);
         return url;
     }
-    
+
     protected void verifyUrl(String url) {
         Client client = ClientBuilder.newBuilder().build();
         Response response = client.target(url).request().get();
