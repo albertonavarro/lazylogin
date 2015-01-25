@@ -13,7 +13,7 @@
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.lazylogin.Token"> 
+    <dto type="com.lazylogin.client.user.v0.Token"> 
         <field name="token"> 
             <source name="value" /> 
         </field> 
@@ -28,7 +28,7 @@
             </arg>
         </immutableConstructor> 
     </dto>
-    <dto type="com.navid.lazylogin.Sessionid"> 
+    <dto type="com.lazylogin.client.user.v0.Sessionid"> 
         <field name="sessionid"> 
             <source name="value"/> 
         </field> 

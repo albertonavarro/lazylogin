@@ -1,7 +1,7 @@
 package com.navid.lazylogin.springboot.cxf;
 
-import com.navid.lazylogin.SystemCommands;
-import com.navid.lazylogin.UserInfo;
+import com.lazylogin.client.system.v0.SystemCommands;
+import com.lazylogin.client.system.v0.UserInfo;
 import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.services.SystemServices;
 import java.util.logging.Logger;
@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import org.jdto.DTOBinder;
 
 
-@javax.jws.WebService(endpointInterface = "com.navid.lazylogin.SystemCommands")                
+@javax.jws.WebService(endpointInterface = "com.lazylogin.client.system.v0.SystemCommands")                
 public class SystemCommandsImpl implements SystemCommands {
 
     private static final Logger LOG = Logger.getLogger(SystemCommandsImpl.class.getName());

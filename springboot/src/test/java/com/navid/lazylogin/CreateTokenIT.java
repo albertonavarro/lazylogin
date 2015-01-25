@@ -1,10 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.navid.lazylogin;
 
+import com.lazylogin.client.user.v0.CreateTokenRequest;
+import com.lazylogin.client.user.v0.CreateTokenResponse;
+import com.lazylogin.client.user.v0.GetInfoRequest;
+import com.lazylogin.client.user.v0.GetInfoResponse;
+import com.lazylogin.client.user.v0.LoginWithTokenRequest;
+import com.lazylogin.client.user.v0.LoginWithTokenResponse;
+import com.lazylogin.client.user.v0.Status;
 import java.io.IOException;
 import java.net.URL;
 import javax.mail.MessagingException;
@@ -31,8 +33,8 @@ public class CreateTokenIT extends BaseIT {
 
         CreateTokenResponse ctresp = userCommands.createToken(ctreq);
 
-        Assert.notNull(ctresp.getSessionid());
-        Assert.notNull(ctresp.getToken());
+        Assert.notNull(ctresp.getSessionid().getSessionid());
+        Assert.notNull(ctresp.getToken().getToken());
 
         GetInfoRequest gireq = new GetInfoRequest();
         gireq.setSessionid(ctresp.getSessionid().getSessionid());

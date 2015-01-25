@@ -51,6 +51,10 @@
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
+            <artifactId>common-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.navid.lazylogin</groupId>
             <artifactId>persistence-jpa</artifactId>
             <scope>runtime</scope>
         </dependency>
@@ -129,7 +133,13 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
             <scope>runtime</scope>
-        </dependency>   
+        </dependency>
+        <dependency>
+            <groupId>com.navid.lazylogin</groupId>
+            <artifactId>client</artifactId>
+            <version>1.4-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
     <build>
@@ -170,34 +180,6 @@
                             -->
                             <skipTests>${skip.integration.tests}</skipTests>
                         </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-codegen-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>generate-sources</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <sourceRoot>${basedir}/target/generated-sources</sourceRoot>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>classpath:user.wsdl</wsdl>
-                                    
-                                </wsdlOption>
-                                <wsdlOption>
-                                    <wsdl>classpath:system.wsdl</wsdl>
-                                    
-                                </wsdlOption>
-                            </wsdlOptions>
-                            <server/> 
-                        </configuration>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>

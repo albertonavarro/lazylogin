@@ -1,6 +1,8 @@
 package com.navid.lazylogin;
 
 import com.icegreen.greenmail.util.GreenMail;
+import com.lazylogin.client.system.v0.SystemCommands;
+import com.lazylogin.client.user.v0.UserCommands;
 import com.navid.lazylogin.context.RequestContextContainer;
 import javax.annotation.Resource;
 import org.slf4j.Logger;

@@ -1,15 +1,15 @@
 package com.navid.lazylogin.springboot.cxf;
 
-import com.navid.lazylogin.CreateTokenRequest;
-import com.navid.lazylogin.CreateTokenResponse;
-import com.navid.lazylogin.GetInfoRequest;
-import com.navid.lazylogin.GetInfoResponse;
-import com.navid.lazylogin.LoginWithTokenRequest;
-import com.navid.lazylogin.LoginWithTokenResponse;
-import com.navid.lazylogin.Sessionid;
-import com.navid.lazylogin.Status;
-import com.navid.lazylogin.Token;
-import com.navid.lazylogin.UserCommands;
+import com.lazylogin.client.user.v0.CreateTokenRequest;
+import com.lazylogin.client.user.v0.CreateTokenResponse;
+import com.lazylogin.client.user.v0.GetInfoRequest;
+import com.lazylogin.client.user.v0.GetInfoResponse;
+import com.lazylogin.client.user.v0.LoginWithTokenRequest;
+import com.lazylogin.client.user.v0.LoginWithTokenResponse;
+import com.lazylogin.client.user.v0.Sessionid;
+import com.lazylogin.client.user.v0.Status;
+import com.lazylogin.client.user.v0.Token;
+import com.lazylogin.client.user.v0.UserCommands;
 import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.services.SystemServices;
 import com.navid.lazylogin.services.UserServices;
@@ -19,7 +19,7 @@ import org.jdto.DTOBinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@javax.jws.WebService(endpointInterface = "com.navid.lazylogin.UserCommands")
+@javax.jws.WebService(endpointInterface = "com.lazylogin.client.user.v0.UserCommands")
 public class UserCommandsImpl implements UserCommands {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserCommandsImpl.class.getName());
@@ -35,10 +35,10 @@ public class UserCommandsImpl implements UserCommands {
 
 
     /* (non-Javadoc)
-     * @see com.navid.lazylogin.UserCommands#createToken(com.navid.lazylogin.CreateTokenRequest  parameters )*
+     * @see com.lazylogin.client.user.v0.UserCommands#createToken(com.navid.lazylogin.CreateTokenRequest  parameters )*
      */
     @Override
-    public com.navid.lazylogin.CreateTokenResponse createToken(CreateTokenRequest parameters) {
+    public CreateTokenResponse createToken(CreateTokenRequest parameters) {
         LOG.info("Executing operation createToken");
         try {
             CreateTokenResponse _return = new CreateTokenResponse();
@@ -55,10 +55,10 @@ public class UserCommandsImpl implements UserCommands {
     }
 
     /* (non-Javadoc)
-     * @see com.navid.lazylogin.UserCommands#loginWithToken(com.navid.lazylogin.LoginWithTokenRequest  parameters )*
+     * @see com.lazylogin.client.user.v0.UserCommands#loginWithToken(com.navid.lazylogin.LoginWithTokenRequest  parameters )*
      */
     @Override
-    public com.navid.lazylogin.LoginWithTokenResponse loginWithToken(LoginWithTokenRequest parameters) {
+    public LoginWithTokenResponse loginWithToken(LoginWithTokenRequest parameters) {
         LOG.info("Executing operation loginWithToken with parameters");
         try {
             LoginWithTokenResponse _return = new LoginWithTokenResponse();
