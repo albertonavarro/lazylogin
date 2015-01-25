@@ -125,6 +125,11 @@
             <artifactId>contract</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <scope>runtime</scope>
+        </dependency>   
     </dependencies>
     
     <build>

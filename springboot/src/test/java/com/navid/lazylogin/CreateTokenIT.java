@@ -41,7 +41,7 @@ public class CreateTokenIT extends BaseIT {
         Assert.notNull(giresp);
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
         
-        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
+        Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CreateTokenIT extends BaseIT {
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
         Assert.isNull(giresp.getName());
 
-        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
+        Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
 
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
         
@@ -107,7 +107,7 @@ public class CreateTokenIT extends BaseIT {
         Assert.notNull(loginResp);
         Assert.notNull(loginResp.getResponse());
         
-        Assert.isTrue(greenMail.waitForIncomingEmail(1000, 1));
+        Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
     }
 
     private String extractUrlFromEmail(MimeMessage content) throws IOException, MessagingException {
