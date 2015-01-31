@@ -14,12 +14,15 @@ import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.services.SystemServices;
 import com.navid.lazylogin.services.UserServices;
 import javax.annotation.Resource;
+import javax.jws.WebService;
 import javax.ws.rs.NotFoundException;
 import org.jdto.DTOBinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
-@javax.jws.WebService(endpointInterface = "com.lazylogin.client.user.v0.UserCommands")
+@Component("userCommandsImpl")
+@WebService(endpointInterface = "com.lazylogin.client.user.v0.UserCommands")
 public class UserCommandsImpl implements UserCommands {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserCommandsImpl.class.getName());

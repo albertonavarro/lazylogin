@@ -18,12 +18,14 @@
    
     <jaxws:endpoint 
         id="userCommands" 
-        implementor="com.navid.lazylogin.springboot.cxf.UserCommandsImpl" 
+        implementor="#userCommandsImpl"
         address="/user" />
+
+    <bean id="systemCommandsImpl" class="com.navid.lazylogin.springboot.cxf.SystemCommandsImpl" />
         
     <jaxws:endpoint 
         id="systemCommands" 
-        implementor="com.navid.lazylogin.springboot.cxf.SystemCommandsImpl" 
+        implementor="#systemCommandsImpl"
         address="/system" /> 
         
     <bean id="org.apache.cxf.management.InstrumentationManager"

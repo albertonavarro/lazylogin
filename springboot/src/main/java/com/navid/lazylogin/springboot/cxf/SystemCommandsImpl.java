@@ -6,9 +6,11 @@ import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.services.SystemServices;
 import java.util.logging.Logger;
 import javax.annotation.Resource;
+import javax.jws.WebService;
+
 import org.jdto.DTOBinder;
 
-@javax.jws.WebService(endpointInterface = "com.lazylogin.client.system.v0.SystemCommands")
+@WebService(endpointInterface = "com.lazylogin.client.system.v0.SystemCommands")
 public class SystemCommandsImpl implements SystemCommands {
 
     private static final Logger LOG = Logger.getLogger(SystemCommandsImpl.class.getName());

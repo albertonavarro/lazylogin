@@ -3,13 +3,12 @@ package com.navid.lazylogin.springboot.controller;
 import com.navid.lazylogin.domain.Token;
 import com.navid.lazylogin.services.UserServices;
 import com.navid.lazylogin.services.UsernameNotFoundException;
-import java.util.Date;
-import java.util.Map;
+
 import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+
 public class VerificationController {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
@@ -40,7 +40,6 @@ public class VerificationController {
             ModelMap model) {
 
         LOGGER.info("Verifying with verificationKey {}", verificationKey);
-
         Token token;
         try {
             token = userServices.verify(verificationKey);
