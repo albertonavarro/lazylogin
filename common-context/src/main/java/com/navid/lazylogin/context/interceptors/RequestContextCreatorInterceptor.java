@@ -38,7 +38,6 @@ public class RequestContextCreatorInterceptor extends AbstractPhaseInterceptor<M
             LOGGER.info("Message intercepted without Correlation Id, new one generated with value {}", newUUID);
             requestContext.setCorrelationId(newUUID);
         }
-        MDC.put("correlationId", requestContext.getCorrelationId());
 
         List<String> sessionList = ((Map<String, List<String>>) message.getContextualProperty(Message.PROTOCOL_HEADERS)).get(HeaderConstants.SESSION_ID);
 
@@ -48,7 +47,6 @@ public class RequestContextCreatorInterceptor extends AbstractPhaseInterceptor<M
         } else {
             LOGGER.info("Message intercepted without SessionId");
         }
-        MDC.put("sessionId", requestContext.getSessionId());
     }
 
     @Override

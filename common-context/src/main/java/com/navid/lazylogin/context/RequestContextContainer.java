@@ -4,6 +4,7 @@ package com.navid.lazylogin.context;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,11 +22,11 @@ public class RequestContextContainer {
         return context;
     }
 
-    public RequestContext delete() {
+    public void delete() {
         RequestContext temp = requestContext.get();
         requestContext.set(null);
         LOGGER.debug("Request context deleted: {}", temp);
-        return temp;
+        MDC.clear();
     }
 
     private RequestContext create() {

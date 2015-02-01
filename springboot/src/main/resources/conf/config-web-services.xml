@@ -16,18 +16,17 @@
         <property name="xmlConfig" value="classpath:conf/jdto-mapping-endpoint.xml" /> 
     </bean>
    
-    <jaxws:endpoint 
-        id="userCommands" 
-        implementor="#userCommandsImpl"
-        address="/user" />
+    <jaxws:endpoint id="userCommands" implementor="#userCommandsImpl" address="/user">
+        <jaxws:inInterceptors>
+            <bean class="com.navid.lazylogin.context.interceptors.RequestContextCreatorInterceptor"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <bean class="com.navid.lazylogin.context.interceptors.RequestContextRemoverInterceptor"/>
+        </jaxws:outInterceptors>
+    </jaxws:endpoint>
 
-    <bean id="systemCommandsImpl" class="com.navid.lazylogin.springboot.cxf.SystemCommandsImpl" />
-        
-    <jaxws:endpoint 
-        id="systemCommands" 
-        implementor="#systemCommandsImpl"
-        address="/system" /> 
-        
+    <jaxws:endpoint id="systemCommands" implementor="#systemCommandsImpl" address="/system" />
+
     <bean id="org.apache.cxf.management.InstrumentationManager"
           class="org.apache.cxf.management.jmx.InstrumentationManagerImpl">
         <property name="enabled" value="true" />

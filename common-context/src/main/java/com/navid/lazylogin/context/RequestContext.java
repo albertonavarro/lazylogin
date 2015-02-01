@@ -3,6 +3,7 @@
 package com.navid.lazylogin.context;
 
 import com.google.common.base.Objects;
+import org.slf4j.MDC;
 
 public class RequestContext {
 
@@ -58,6 +59,7 @@ public class RequestContext {
      */
     public void setCorrelationId(String correlationId) {
         this.correlationId = correlationId;
+        MDC.put("correlationId", correlationId);
     }
 
     /**
@@ -72,6 +74,7 @@ public class RequestContext {
      */
     public void setSessionId(String sessionId) {
         this.sessionId = sessionId;
+        MDC.put("sessionId", sessionId);
     }
 
     @Override

@@ -21,13 +21,11 @@ public class RequestContextRemoverInterceptor extends AbstractPhaseInterceptor<M
     @Override
     public void handleMessage(Message message) {
         requestContextContainer.delete();
-        MDC.clear();
     }
 
     @Override
     public void handleFault(Message messageParam) {
         requestContextContainer.delete();
-        MDC.clear();
     }
 
     public void setRequestContextContainer(RequestContextContainer requestContextContainer) {

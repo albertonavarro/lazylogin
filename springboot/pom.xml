@@ -40,10 +40,6 @@
             <artifactId>eventconsumer-amq-email</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>com.navid.lazylogin</groupId>
-            <artifactId>client</artifactId>
-        </dependency>
         <!-- SPRING -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
