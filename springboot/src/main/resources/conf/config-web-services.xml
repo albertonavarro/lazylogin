@@ -25,7 +25,14 @@
         </jaxws:outInterceptors>
     </jaxws:endpoint>
 
-    <jaxws:endpoint id="systemCommands" implementor="#systemCommandsImpl" address="/system" />
+    <jaxws:endpoint id="systemCommands" implementor="#systemCommandsImpl" address="/system">
+        <jaxws:inInterceptors>
+            <bean class="com.navid.lazylogin.context.interceptors.RequestContextCreatorInterceptor"/>
+        </jaxws:inInterceptors>
+        <jaxws:outInterceptors>
+            <bean class="com.navid.lazylogin.context.interceptors.RequestContextRemoverInterceptor"/>
+        </jaxws:outInterceptors>
+    </jaxws:endpoint>
 
     <bean id="org.apache.cxf.management.InstrumentationManager"
           class="org.apache.cxf.management.jmx.InstrumentationManagerImpl">
