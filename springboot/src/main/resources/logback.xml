@@ -50,7 +50,6 @@
 
     <logger name="com.navid.lazylogin.springboot.aop" level="DEBUG" additivity="false">
         <!--<appender-ref ref="STDOUT_METRICS" />-->
-        <appender-ref ref="STDOUT_METRICS" />
         <appender-ref ref="FILE_METRICS" />
     </logger>
 
