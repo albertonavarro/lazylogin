@@ -20,6 +20,8 @@ default[:lazylogin][:datasource][:showSql] = "TO BE SET"
 default[:lazylogin][:datasource][:testOnBorrow] = "TO BE SET"
 default[:lazylogin][:datasource][:validationQuery] = "TO BE SET"
 
+default[:amq][:url] = "TO BE SET"
+
 default[:lazylogin][:keystore][:loc] = "TO BE SET"
 default[:lazylogin][:keystore][:password] = "TO BE SET"
 default[:lazylogin][:truststore][:loc] = "TO BE SET"

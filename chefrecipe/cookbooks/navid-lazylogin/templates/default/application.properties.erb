@@ -17,7 +17,7 @@ spring.jpa.generate-ddl=<%= node[:lazylogin][:datasource][:generateDll] %>
 spring.jpa.show-sql=<%= node[:lazylogin][:datasource][:showSql] %>
 spring.datasource.testOnBorrow=<%= node[:lazylogin][:datasource][:testOnBorrow] %>
 spring.datasource.validationQuery=<%= node[:lazylogin][:datasource][:validationQuery] %>
-
+amq.url=<%= node[:amq][:url] %>
 security.keystore.loc=<%= node[:lazylogin][:keystore][:loc] %>
 security.keystore.password=<%= node[:lazylogin][:keystore][:password] %>
 security.truststore.loc=<%= node[:lazylogin][:truststore][:loc] %>
