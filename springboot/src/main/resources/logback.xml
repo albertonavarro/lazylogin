@@ -57,5 +57,6 @@
 
     <root level="INFO">
         <appender-ref ref="FILE_BUSINESS" />
+        <appender-ref ref="STDOUT_BUSINESS" />
     </root>
 </configuration>

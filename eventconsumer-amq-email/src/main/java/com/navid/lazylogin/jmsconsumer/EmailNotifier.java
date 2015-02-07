@@ -40,6 +40,7 @@ public class EmailNotifier implements MessageListener {
             LOGGER.info("Email successfully sent to {}", email);
         } catch (JMSException jmse) {
             LOGGER.error("Error processing message from queue", jmse);
+            throw new RuntimeException(jmse);
         }
     }
 
@@ -51,6 +52,7 @@ public class EmailNotifier implements MessageListener {
             this.mailSender.send(msg);
         } catch (MailException ex) {
             LOGGER.error("Error sending email", ex);
+            throw ex;
         }
     }
 

@@ -22,3 +22,8 @@ lazylogin-war-endpoint/nb-configurations.xml
 /nb-configuration.xml
 /springboot/activemq-data/
 /springboot/*.log
+*.log
+*.iml
+*.versionsBackup
+activemq-data
+.idea

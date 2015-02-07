@@ -1,4 +1,4 @@
-package com.navid.lazylogin.springboot.aop;
+package com.navid.aop.performance;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
@@ -16,7 +16,7 @@ public class LogMethod implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation methodInvocation) throws Throwable {
         StopWatch monitor = new StopWatch();
-        monitor.start();
+        monitor.start("monitor");
         boolean error = false;
         Object returned = null;
         try{

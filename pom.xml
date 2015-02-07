@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -31,7 +31,7 @@
         <jdto.version>1.4</jdto.version>
         <javax.ws.rs-api.version>2.0</javax.ws.rs-api.version>
         <commons-lang.version>2.4</commons-lang.version>
-        <amq.version>5.1.0</amq.version>
+        <amq.version>5.10.0</amq.version>
         <testng.version>6.8.7</testng.version>
         <h2.version>1.4.185</h2.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
@@ -45,6 +45,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
+                <module>aop-utils</module>
                 <module>logic</module>
                 <module>contract</module>
                 <module>domain</module>
@@ -144,6 +145,11 @@
                 <version>${project.version}</version>
                 <classifier>war</classifier>
             </dependency>
+            <dependency>
+                <groupId>com.navid.lazylogin</groupId>
+                <artifactId>aop-utils</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- CXF -->
             <dependency>
                 <groupId>org.apache.cxf</groupId>
@@ -177,8 +183,58 @@
             </dependency>
             <!-- Other third party -->
             <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jms_1.1_spec</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-jta_1.0.1B_spec</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-annotation_1.0_spec</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-camel</artifactId>
+                <version>${amq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-core</artifactId>
+                <version>${amq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-console</artifactId>
+                <version>${amq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-jaas</artifactId>
+                <version>${amq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-optional</artifactId>
+                <version>${amq.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-all</artifactId>
+                <version>${amq.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>kahadb</artifactId>
                 <version>${amq.version}</version>
             </dependency>
             <dependency>
@@ -417,6 +473,14 @@
     </build>
     <repositories>
         <repository>
+            <id>cabotrafalgar-repo</id>
+            <name>Cabo Trafalgar</name>
+            <url>http://repo.cabotrafalgar.mooo.com</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+       <!-- <repository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
             <url>http://repo.spring.io/snapshot</url>
@@ -431,10 +495,10 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </repository>
+        </repository>-->
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
+     <!--   <pluginRepository>
             <id>spring-snapshots</id>
             <name>Spring Snapshots</name>
             <url>http://repo.spring.io/snapshot</url>
@@ -457,7 +521,7 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </pluginRepository>
+        </pluginRepository>-->
     </pluginRepositories>
     
 </project>
