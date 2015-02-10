@@ -4,8 +4,6 @@ import com.lazylogin.client.user.v0.CreateTokenRequest;
 import com.lazylogin.client.user.v0.CreateTokenResponse;
 import com.lazylogin.client.user.v0.GetInfoRequest;
 import com.lazylogin.client.user.v0.GetInfoResponse;
-import com.lazylogin.client.user.v0.LoginWithTokenRequest;
-import com.lazylogin.client.user.v0.LoginWithTokenResponse;
 import com.lazylogin.client.user.v0.Status;
 import java.io.IOException;
 import java.net.URL;
@@ -18,6 +16,11 @@ import org.glassfish.jersey.client.ClientProperties;
 import org.springframework.util.Assert;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertNull;
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertNotNull;
+import static org.testng.AssertJUnit.assertTrue;
+
 /**
  *
  * @author alberto
@@ -25,55 +28,67 @@ import org.testng.annotations.Test;
 public class CreateTokenIT extends BaseIT {
 
     @Test
-    public void shouldCreateUnverifiedToken() throws Exception {
+    public void shouldCreateToken() throws Exception {
+        //Given
+        String email = "shouldCreateToken@CreateTokenIT";
 
-        CreateTokenRequest ctreq = new CreateTokenRequest();
-        ctreq.setEmail("shouldCreateUnverifiedToken@someDomain");
+        //when token is created
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
 
-        CreateTokenResponse ctresp = userCommands.createToken(ctreq);
+        //Then Session and tokens aren't coming null
+        assertNotNull(ctresp.getSessionid().getSessionid());
+        assertNotNull(ctresp.getToken().getToken());
+    }
+    
+    @Test
+    public void shouldCreateTokenWithExistingUser() throws Exception {
+        //Given
+        String email = "shouldCreateTokenWithExistingUser@CreateTokenIT";
+        userCommands.createToken(new CreateTokenRequest().withEmail(email));
 
-        Assert.notNull(ctresp.getSessionid().getSessionid());
-        Assert.notNull(ctresp.getToken().getToken());
+        //when new token is created with the same user (Email)
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
+        
+        //Then Session and tokens aren't coming null
+        assertNotNull(ctresp.getSessionid().getSessionid());
+        assertNotNull(ctresp.getToken().getToken());
+    }
 
-        GetInfoRequest gireq = new GetInfoRequest();
-        gireq.setSessionid(ctresp.getSessionid().getSessionid());
-        GetInfoResponse giresp = userCommands.getInfo(gireq);
+    @Test
+    public void unverifiedTokenShouldReturnUnverified() throws Exception {
+        //Given unverified sessionId
+        String email = "unverifiedTokenShouldReturnUnverified@CreateTokenIT";
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
+        String sessionId = ctresp.getSessionid().getSessionid();
 
-        Assert.notNull(giresp);
-        Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
+        //When info is requested
+        GetInfoResponse giresp = userCommands.getInfo(new GetInfoRequest().withSessionid(sessionId));
 
-        Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
+        //Then status is unverified
+        assertEquals(Status.UNVERIFIED, giresp.getStatus());
+        assertNull(giresp.getName());
+        //And we have received and email
+        assertTrue(greenMail.waitForIncomingEmail(5000, 1));
     }
 
     @Test
     public void shouldVerifyToken() throws Exception {
-
+        //Let's ignore any previous email
         int emailPreviousIndex = greenMail.getReceivedMessages().length;
 
-        CreateTokenRequest ctreq = new CreateTokenRequest();
-        ctreq.setEmail("shouldVerifyToken@someDomain");
-
-        CreateTokenResponse ctresp = userCommands.createToken(ctreq);
-
-        Assert.notNull(ctresp.getSessionid());
-        Assert.notNull(ctresp.getToken());
-
-        GetInfoRequest gireq = new GetInfoRequest();
-        gireq.setSessionid(ctresp.getSessionid().getSessionid());
-        GetInfoResponse giresp = userCommands.getInfo(gireq);
-
-        Assert.notNull(giresp);
+        //Given unverified sessionId
+        String email = "shouldVerifyToken@CreateTokenIT";
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
+        String sessionId = ctresp.getSessionid().getSessionid();
+        GetInfoResponse giresp = userCommands.getInfo(new GetInfoRequest().withSessionid(sessionId));
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
-        Assert.isNull(giresp.getName());
 
+        //When email is received with verification link
         Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
-
         String url = extractUrlFromEmail(greenMail.getReceivedMessages()[emailPreviousIndex]);
-
-        System.out.println("URL Detected: " + url);
-
+        //We need to enforce double click as it's first time for this user, this one shows the name box
         verifyUrl(url, Response.Status.FOUND.getStatusCode());
-
+        //this other completes with a name "user"
         URL urlParsed = new URL(url);
         URL newURL = new URL(
                 urlParsed.getProtocol(),
@@ -81,34 +96,13 @@ public class CreateTokenIT extends BaseIT {
                 urlParsed.getPort(),
                 "/verifyWithUsername?" + urlParsed.getQuery() + "&username=user");
 
+        //Then url verification responds ok
         verifyUrl(newURL.toString(), Response.Status.OK.getStatusCode());
+        //And getInfo response returns username and status VERIFIED
+        GetInfoResponse giresp2 = userCommands.getInfo(new GetInfoRequest().withSessionid(sessionId));
 
-        GetInfoResponse giresp2 = userCommands.getInfo(gireq);
-
-        Assert.notNull(giresp2);
-        Assert.isTrue(giresp2.getStatus() == Status.VERIFIED);
-        Assert.isTrue(giresp2.getName().equals("user"));
-    }
-
-    @Test
-    public void loginWithUnverifiedToken() throws Exception {
-
-        CreateTokenRequest ctreq = new CreateTokenRequest();
-        ctreq.setEmail("loginWithUnverifiedToken@someDomain");
-
-        CreateTokenResponse ctresp = userCommands.createToken(ctreq);
-
-        Assert.notNull(ctresp.getSessionid());
-        Assert.notNull(ctresp.getToken());
-
-        LoginWithTokenRequest loginReq = new LoginWithTokenRequest();
-        loginReq.setToken(ctresp.getToken());
-
-        LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
-        Assert.notNull(loginResp);
-        Assert.notNull(loginResp.getResponse());
-
-        Assert.isTrue(greenMail.waitForIncomingEmail(5000, 1));
+        assertTrue(giresp2.getStatus() == Status.VERIFIED);
+        assertTrue(giresp2.getName().equals("user"));
     }
 
     private String extractUrlFromEmail(MimeMessage content) throws IOException, MessagingException {
