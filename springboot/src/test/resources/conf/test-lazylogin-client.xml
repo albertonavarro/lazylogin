@@ -46,18 +46,6 @@ http://cxf.apache.org/jaxrs                 http://cxf.apache.org/schemas/jaxrs.
     </bean>
     
     <bean id="test.requestContextContainer" class="com.navid.lazylogin.context.RequestContextContainer" />
-    
-    <bean class="com.icegreen.greenmail.util.GreenMail" >
-        <constructor-arg>
-            <bean class="com.icegreen.greenmail.util.ServerSetup">
-                <constructor-arg index="0" value="${test.smtp.port}"/>
-                <constructor-arg index="1" >
-                    <null/>
-                </constructor-arg>
-                <constructor-arg index="2" value="smtp"/>
-            </bean>
-        </constructor-arg>
-    </bean>
 
 </beans> 
   

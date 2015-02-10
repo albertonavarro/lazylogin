@@ -1,6 +1,7 @@
 package com.navid.lazylogin;
 
 import com.icegreen.greenmail.util.GreenMail;
+import com.icegreen.greenmail.util.ServerSetup;
 import com.lazylogin.client.system.v0.SystemCommands;
 import com.lazylogin.client.user.v0.UserCommands;
 import com.navid.lazylogin.context.RequestContextContainer;
@@ -15,6 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,7 +31,9 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseIT.class);
 
-    @Resource
+    @Value("${test.smtp.port}")
+    private int smtpPort;
+    
     protected GreenMail greenMail; //uses test ports by default
 
     @Value("${server.port}")
@@ -62,6 +66,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         //helping recordserver to choose what config file should use.
         System.setProperty("env", "-ct");
 
+        greenMail = new GreenMail(new ServerSetup(smtpPort, null, "smtp"));
         greenMail.start();
 
         app = new SpringApplication(Application.class).run(new String[0]);
@@ -79,6 +84,11 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         });
 
         greenMail.stop();
+    }
+    
+    @AfterSuite
+    public void tearForever() {
+        
     }
 
 }
