@@ -9,6 +9,7 @@ default[:lazylogin][:email][:from] = "TO BE SET"
 default[:lazylogin][:email][:subject] = "LazyLogin email verification"
 default[:lazylogin][:email][:server_address] = "TO BE SET"
 
+default[:lazylogin][:datasource][:host] = "TO BE SET"
 default[:lazylogin][:datasource][:url] = "TO BE SET"
 default[:lazylogin][:datasource][:username] = "TO BE SET"
 default[:lazylogin][:datasource][:password] = "TO BE SET"

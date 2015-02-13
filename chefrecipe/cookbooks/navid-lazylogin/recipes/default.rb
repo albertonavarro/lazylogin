@@ -12,7 +12,7 @@ include_recipe "database::mysql"
 # Create a mysql database
 mysql_database 'lazylogin' do
   connection(
-    :host     => 'localhost',
+    :host     => node['lazylogin']['datasource']['host'],
     :username => node['lazylogin']['datasource']['username'],
     :password => node['lazylogin']['datasource']['password'] 
   )
