@@ -1,5 +1,6 @@
 package com.navid.lazylogin;
 
+import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -15,7 +16,7 @@ import org.springframework.context.annotation.PropertySource;
 @EnableAutoConfiguration
 @ComponentScan
 @ImportResource({"classpath:/conf/config-web-services.xml", "classpath:conf/config-amq.xml", "classpath:conf/config-amq-email.xml"})
-@PropertySource(value = {"classpath:/application.properties", "classpath:/conf/lazylogin${env}.overrides", "file:${appdir}/navidconfig/lazylogin${env}.overrides"}, ignoreResourceNotFound = true)
+@PropertySource(value = {"classpath:/application.properties", "classpath:/conf/lazylogin${env}.overrides", "file:${user.home}/navidconfig/lazylogin${env}.overrides"}, ignoreResourceNotFound = true)
 public class Application extends SpringBootServletInitializer {
 
     @Override
@@ -29,7 +30,7 @@ public class Application extends SpringBootServletInitializer {
 
     @Bean
     public ServletRegistrationBean cxfServlet() {
-        org.apache.cxf.transport.servlet.CXFServlet cxfServlet = new org.apache.cxf.transport.servlet.CXFServlet();
+        CXFServlet cxfServlet = new org.apache.cxf.transport.servlet.CXFServlet();
         ServletRegistrationBean servletDef = new ServletRegistrationBean(cxfServlet, "/services/*");
         servletDef.setLoadOnStartup(1);
         return servletDef;

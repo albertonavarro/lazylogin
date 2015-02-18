@@ -13,8 +13,6 @@ lazylogin-war-endpoint/nb-configurations.xml
 /eventproducer-amq/pom.xml.versionsBackup
 /eventproducer-api/pom.xml.versionsBackup
 /integration-test/pom.xml.versionsBackup
-/jetty-endpoint/pom.xml.versionsBackup
-/jetty-endpoint/*.log
 /logic/pom.xml.versionsBackup
 /pom.xml.versionsBackup
 /persistence-api/pom.xml.versionsBackup
