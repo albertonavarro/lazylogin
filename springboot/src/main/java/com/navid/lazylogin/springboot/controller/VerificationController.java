@@ -1,7 +1,7 @@
 package com.navid.lazylogin.springboot.controller;
 
 import com.navid.lazylogin.domain.Token;
-import com.navid.lazylogin.services.UserServices;
+import com.navid.lazylogin.services.UserServicesImpl;
 import com.navid.lazylogin.services.UsernameNotFoundException;
 
 import javax.annotation.Resource;
@@ -16,13 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-
 public class VerificationController {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
 
     @Resource
-    private UserServices userServices;
+    private UserServicesImpl userServices;
 
     @RequestMapping(value = "/addUsername")
     public String addUsername(

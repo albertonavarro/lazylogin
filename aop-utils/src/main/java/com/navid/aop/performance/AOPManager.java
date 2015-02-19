@@ -2,44 +2,50 @@ package com.navid.aop.performance;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.aop.framework.Advised;
-import org.springframework.beans.BeansException;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.jmx.export.annotation.ManagedOperation;
-import org.springframework.jmx.export.annotation.ManagedResource;
-import javax.annotation.PostConstruct;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.util.StopWatch;
 
-@Configuration
-@ManagedResource(objectName = "spring:name=simpleBean", description = "A sample JMX-managed bean")
-public class AOPManager implements ApplicationContextAware {
-
-    private ApplicationContext applicationContext;
+@Aspect
+public class AOPManager {
 
     private static final Logger LOG = LoggerFactory.getLogger(AOPManager.class);
 
-    private static final LogMethod LOG_METHOD = new LogMethod();
+    @Pointcut("@within(javax.jws.WebService)")
+    private void anyWebService() {
+    }
+    
+    @Pointcut("@within(org.springframework.stereotype.Controller)")
+    private void anyController() {
+    }
+    
+    @Pointcut("@within(org.springframework.stereotype.Repository)")
+    private void anyRepository() {
+    }
+    
+    @Pointcut("@within(org.springframework.stereotype.Service)")
+    private void anyService() {
+    }
 
-    @PostConstruct
-    public void setUp() {
-        for(Advised advised : applicationContext.getBeansOfType(Advised.class).values()) {
-            advised.addAdvice(0, LOG_METHOD);
+    @Around("anyWebService() || anyController() || anyRepository() || anyService()")
+    public Object logServiceAccess(ProceedingJoinPoint joinPoint) throws Throwable {
+        StopWatch monitor = new StopWatch();
+        monitor.start("monitor");
+        boolean error = false;
+        Object returned = null;
+        try {
+            returned = joinPoint.proceed();
+            monitor.stop();
+            return returned;
+        } catch (Throwable e) {
+            monitor.stop();
+            error = true;
+            throw e;
+        } finally {
+            LOG.info("{} {} {}", error ? "ERROR" : "SUCCESS", monitor.getTotalTimeSeconds(), joinPoint.getSignature());
         }
     }
 
-    @ManagedOperation
-    public Object[] getAdvisableClasses() {
-        return applicationContext.getBeansOfType(Advised.class).keySet().toArray();
-    }
-
-    @ManagedOperation
-    public void adviseBean(String bean) throws ClassNotFoundException {
-        ((Advised) applicationContext.getBean(bean)).addAdvice(LOG_METHOD);
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
 }

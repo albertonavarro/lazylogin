@@ -12,7 +12,7 @@ import com.lazylogin.client.user.v0.Token;
 import com.lazylogin.client.user.v0.UserCommands;
 import com.navid.lazylogin.domain.SessionId;
 import com.navid.lazylogin.services.SystemServices;
-import com.navid.lazylogin.services.UserServices;
+import com.navid.lazylogin.services.UserServicesImpl;
 import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.ws.rs.NotFoundException;
@@ -28,7 +28,7 @@ public class UserCommandsImpl implements UserCommands {
     private static final Logger LOG = LoggerFactory.getLogger(UserCommandsImpl.class.getName());
 
     @Resource
-    private UserServices userServices;
+    private UserServicesImpl userServices;
 
     @Resource
     private SystemServices systemServices;
