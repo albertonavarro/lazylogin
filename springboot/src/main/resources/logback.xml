@@ -50,7 +50,7 @@
 
     <logger name="com.navid.aop.performance" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT_METRICS" />
-        <appender-ref ref="FILE_METRICS" />
+        <appender-ref ref="QUEUE_METRICS" />
     </logger>
 
     <logger name="com.navid" level="DEBUG"/>

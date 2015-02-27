@@ -8,8 +8,10 @@
 
 pname="lazylogin"
 direxe="/root"
+securityoptions="-Djavax.net.ssl.keyStore=<%=node[:lazylogin][:security][:keystore][:loc]%> -Djavax.net.ssl.keyStorePassword=<%=node[:lazylogin][:security][:keystore][:password]%> -Djavax.net.ssl.trustStore=<%=node[:lazylogin][:security][:truststore][:loc]%> -Djavax.net.ssl.trustStorePassword=<%=node[:lazylogin][:security][:truststore][:password]%>"
+metrics="-Dnavid.plugins.metrics.mqurl=<%=node[:navid][:plugin][:metrics][:mqurl]%> -Dnavid.plugins.metrics.enabled=<%=node[:navid][:plugin][:metrics][:enabled]%>"
 jmxoptions="-Dcom.sun.management.jmxremote.port=2001 -Dcom.sun.management.jmxremote.rmi.port=2000 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
-exe="java $jmxoptions -jar /root/springboot.war"
+exe="java $jmxoptions $securityoptions $metrics -jar /root/springboot.war"
 pidfile="/var/run/${pname}.pid"
 lockfile="/var/lock/subsys/${pname}"
 logfile="/var/log/lazylogin.log"

@@ -151,6 +151,11 @@
                 <artifactId>aop-utils</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.navid.spring</groupId>
+                <artifactId>addon-jms-performance</artifactId>
+                <version>1.1</version>
+            </dependency>
             <!-- CXF -->
             <dependency>
                 <groupId>org.apache.cxf</groupId>

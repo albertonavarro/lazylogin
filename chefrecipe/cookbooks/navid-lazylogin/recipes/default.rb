@@ -19,7 +19,6 @@ mysql_database 'lazylogin' do
   action :create
 end
 
-
 remote_file "/root/springboot.war" do
    source "http://repo.cabotrafalgar.mooo.com/libs-release-local/com/navid/lazylogin/springboot/${project.version}/springboot-${project.version}.war"
 end
@@ -39,8 +38,8 @@ end
 
 # setup the service (based on the script above),
 # start it, and make it start at boot
-cookbook_file '/etc/init.d/lazylogin' do
-    source 'LazyLoginService'
+template '/etc/init.d/lazylogin' do
+    source 'LazyLoginService.erb'
     mode 0755
     owner "root"
     group "root"
