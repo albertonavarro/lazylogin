@@ -46,7 +46,6 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <modules>
-                <module>aop-utils</module>
                 <module>logic</module>
                 <module>contract</module>
                 <module>domain</module>
