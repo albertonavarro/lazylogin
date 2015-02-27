@@ -23,10 +23,6 @@
         </dependency>
         <dependency>
             <groupId>com.navid.lazylogin</groupId>
-            <artifactId>aop-utils</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.navid.lazylogin</groupId>
             <artifactId>common-context</artifactId>
         </dependency>
         <dependency>
