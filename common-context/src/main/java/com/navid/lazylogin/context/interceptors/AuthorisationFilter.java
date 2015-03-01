@@ -22,6 +22,7 @@ import org.springframework.context.annotation.ScopedProxyMode;
  * Built in class for calling Lazylogin system endpoint and retrieve user info
  */
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+@PerformanceMetric
 public class AuthorisationFilter implements ContainerRequestFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthorisationFilter.class);
@@ -33,7 +34,6 @@ public class AuthorisationFilter implements ContainerRequestFilter {
     private RequestContextContainer requestContextContainer;
 
     @Override
-    @PerformanceMetric
     public void filter(final ContainerRequestContext requestContext) throws IOException {
         String sessionId = requestContextContainer.get().getSessionId();
 
