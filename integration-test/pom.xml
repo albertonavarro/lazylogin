@@ -54,6 +54,11 @@
             <artifactId>jersey-client</artifactId>
             <version>2.10.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
     
     <build>
