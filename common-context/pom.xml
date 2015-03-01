@@ -39,6 +39,11 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.navid.spring</groupId>
+            <artifactId>addon-jms-performance</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     

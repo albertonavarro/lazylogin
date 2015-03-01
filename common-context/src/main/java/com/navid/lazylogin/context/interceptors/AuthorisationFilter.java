@@ -11,6 +11,8 @@ import javax.annotation.Resource;
 import javax.security.sasl.AuthenticationException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+
+import com.navid.spring.addons.metrics.PerformanceMetric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,6 +30,7 @@ public class AuthorisationFilter implements ContainerRequestFilter {
     private RequestContextContainer requestContextContainer;
 
     @Override
+    @PerformanceMetric
     public void filter(final ContainerRequestContext requestContext) throws IOException {
         String sessionId = requestContextContainer.get().getSessionId();
 
