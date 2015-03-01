@@ -28,5 +28,5 @@ default[:lazylogin][:security][:keystore][:password] = "TO BE SET"
 default[:lazylogin][:security][:truststore][:loc] = "TO BE SET"
 default[:lazylogin][:security][:truststore][:password] = "TO BE SET"
 
-default[:navid][:plugin][:metrics][:mqurl] = "TO BE SET"
-default[:navid][:plugin][:metrics][:enabled] = "TO BE SET"
+default[:navid][:plugin][:metrics][:mqurl] = "NONE"
+default[:navid][:plugin][:metrics][:enabled] = "false"
