@@ -433,7 +433,7 @@
         <repository>
             <id>cabotrafalgar-repo</id>
             <name>Cabo Trafalgar</name>
-            <url>http://repo.cabotrafalgar.mooo.com</url>
+            <url>http://repo.cabotrafalgar.mooo.com/repo</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
