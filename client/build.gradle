@@ -1,0 +1,39 @@
+
+plugins {
+    id "no.nils.wsdl2java" version "0.6"
+}
+
+description = 'LazyLogin-client'
+
+
+configurations {
+    provided
+}
+
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+    }
+    generated {
+        java { srcDirs = [
+                "$projectDir/src/main/generated"
+        ] }
+        compileClasspath += sourceSets.main.output
+    }
+}
+
+dependencies {
+    compile group: 'commons-lang', name: 'commons-lang', version:'2.4'
+    compile group: 'org.apache.cxf.xjc-utils', name: 'cxf-xjc-runtime', version:'3.0.0'
+    provided project(':contract')
+}
+
+wsdl2java {
+    generatedWsdlDir = file("$projectDir/src/main/generated")  // target directory for generated source coude
+    wsdlsToGenerate = [   //  2d-array of wsdls and cxf-parameters
+                          ['-xjc-Xts', '-p', 'com.lazylogin.client.system.v0',"$projectDir/src/main/resources/wsdl/system.wsdl"],
+                          ['-xjc-Xts','-p', 'com.lazylogin.client.user.v0',"$projectDir/src/main/resources/wsdl/user.wsdl"]
+    ]
+    wsdlDir = file("$projectDir/src/main/resources/wsdl")
+    cxfVersion = "3.0.0"
+}
