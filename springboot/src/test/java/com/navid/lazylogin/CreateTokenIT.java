@@ -30,10 +30,10 @@ public class CreateTokenIT extends BaseIT {
     @Test
     public void shouldCreateToken() throws Exception {
         //Given
-        String email = "shouldCreateToken@CreateTokenIT";
+        final String newEmail = "shouldCreateToken@CreateTokenIT";
 
         //when token is created
-        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest(){{setEmail(newEmail);}});
 
         //Then Session and tokens aren't coming null
         assertNotNull(ctresp.getSessionid().getSessionid());
@@ -43,11 +43,13 @@ public class CreateTokenIT extends BaseIT {
     @Test
     public void shouldCreateTokenWithExistingUser() throws Exception {
         //Given
-        String email = "shouldCreateTokenWithExistingUser@CreateTokenIT";
-        userCommands.createToken(new CreateTokenRequest().withEmail(email));
+        final String newEmail = "shouldCreateTokenWithExistingUser@CreateTokenIT";
+        userCommands.createToken(new CreateTokenRequest() {{
+            setEmail(newEmail);
+        }});
 
         //when new token is created with the same user (Email)
-        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest(){{setEmail(newEmail);}});
         
         //Then Session and tokens aren't coming null
         assertNotNull(ctresp.getSessionid().getSessionid());
@@ -57,12 +59,12 @@ public class CreateTokenIT extends BaseIT {
     @Test
     public void unverifiedTokenShouldReturnUnverified() throws Exception {
         //Given unverified sessionId
-        String email = "unverifiedTokenShouldReturnUnverified@CreateTokenIT";
-        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
-        String sessionId = ctresp.getSessionid().getSessionid();
+        final String newEmail = "unverifiedTokenShouldReturnUnverified@CreateTokenIT";
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest(){{setEmail(newEmail);}});
+        final String sessionId = ctresp.getSessionid().getSessionid();
 
         //When info is requested
-        GetInfoResponse giresp = userCommands.getInfo(new GetInfoRequest().withSessionid(sessionId));
+        GetInfoResponse giresp = userCommands.getInfo(new GetInfoRequest(){{setSessionid(sessionId);}});
 
         //Then status is unverified
         assertEquals(Status.UNVERIFIED, giresp.getStatus());
@@ -77,10 +79,10 @@ public class CreateTokenIT extends BaseIT {
         int emailPreviousIndex = greenMail.getReceivedMessages().length;
 
         //Given unverified sessionId
-        String email = "shouldVerifyToken@CreateTokenIT";
-        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(email));
-        String sessionId = ctresp.getSessionid().getSessionid();
-        GetInfoResponse giresp = userCommands.getInfo(new GetInfoRequest().withSessionid(sessionId));
+        final String newEmail = "shouldVerifyToken@CreateTokenIT";
+        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest(){{setEmail(newEmail);}});
+        final String sessionId = ctresp.getSessionid().getSessionid();
+        GetInfoResponse giresp = userCommands.getInfo(new GetInfoRequest(){{setSessionid(sessionId);}});
         Assert.isTrue(giresp.getStatus() == Status.UNVERIFIED);
 
         //When email is received with verification link
@@ -99,7 +101,7 @@ public class CreateTokenIT extends BaseIT {
         //Then url verification responds ok
         verifyUrl(newURL.toString(), Response.Status.OK.getStatusCode());
         //And getInfo response returns username and status VERIFIED
-        GetInfoResponse giresp2 = userCommands.getInfo(new GetInfoRequest().withSessionid(sessionId));
+        final GetInfoResponse giresp2 = userCommands.getInfo(new GetInfoRequest(){{setSessionid(sessionId);}});
 
         assertTrue(giresp2.getStatus() == Status.VERIFIED);
         assertTrue(giresp2.getName().equals("user"));
