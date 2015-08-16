@@ -1,0 +1,18 @@
+
+description = 'LazyLogin-logic'
+dependencies {
+  compile project(':domain')
+  compile project(':eventproducer-api')
+  compile project(':persistence-api')
+    compile group: 'org.jdto', name: 'jdto', version:'1.4'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.8'
+    compile group: 'org.apache.cxf', name: 'cxf-rt-rs-service-description', version:'3.0.0'
+    compile group: 'org.springframework', name: 'spring-tx', version:'4.1.4.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version:'4.1.4.RELEASE'
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version:'2.0'
+    compile group: 'javax.annotation', name: 'javax.annotation-api', version:'1.2'
+    compile group: 'org.springframework', name: 'spring-context', version:'4.1.4.RELEASE'
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.8'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.1.4.RELEASE'
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.1.4.RELEASE'
+}

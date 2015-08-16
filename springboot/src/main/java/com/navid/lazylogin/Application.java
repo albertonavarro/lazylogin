@@ -15,7 +15,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = {"com.navid.lazylogin", "com.navid.spring.addons"})
-@ImportResource({"classpath:/conf/config-web-services.xml", "classpath:conf/config-amq.xml", "classpath:conf/config-amq-email.xml"})
+@ImportResource({"classpath:/conf/config-web-services.xml"})
 @PropertySource(value = {"classpath:/application.properties", "classpath:/conf/lazylogin${env}.overrides", "file:${user.home}/navidconfig/lazylogin${env}.overrides"}, ignoreResourceNotFound = true)
 public class Application extends SpringBootServletInitializer {
 

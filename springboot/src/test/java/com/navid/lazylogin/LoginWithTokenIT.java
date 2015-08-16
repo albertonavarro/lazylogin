@@ -22,11 +22,14 @@ public class LoginWithTokenIT extends BaseIT {
     public void shouldLoginWithUnverifiedToken() throws Exception {
 
         //Given unverified token
-        CreateTokenRequest ctreq = new CreateTokenRequest().withEmail("loginWithUnverifiedToken@someDomain");
+
+        CreateTokenRequest ctreq = new CreateTokenRequest();
+        ctreq.setEmail("loginWithUnverifiedToken@someDomain");
         Token token = userCommands.createToken(ctreq).getToken();
 
         //When we login with an unverified token
-        LoginWithTokenRequest loginReq = new LoginWithTokenRequest().withToken(token);
+        LoginWithTokenRequest loginReq = new LoginWithTokenRequest();
+        loginReq.setToken(token);
         LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
 
         //then
@@ -37,10 +40,11 @@ public class LoginWithTokenIT extends BaseIT {
     public void shouldNotAllowUnexistingSessionIds() throws Exception {
 
         //Given unexisting token
-        String token = "1-0000000000-aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa-000000000000";
+        final String newToken = "1-0000000000-aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa-000000000000";
         
         //When we login with an unverified token
-        LoginWithTokenRequest loginReq = new LoginWithTokenRequest().withToken(new Token().withToken(token));
+        LoginWithTokenRequest loginReq = new LoginWithTokenRequest();
+        loginReq.setToken(new Token(){{setToken(newToken);}});
         LoginWithTokenResponse loginResp = userCommands.loginWithToken(loginReq);
 
         //then

@@ -1,0 +1,13 @@
+
+description = 'LazyLogin-persistence-jpa'
+dependencies {
+  compile project(':logic')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version:'1.2.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.2.1.RELEASE'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.2.1.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+    testCompile group: 'org.testng', name: 'testng', version:'6.8.7'
+    testCompile group: 'commons-lang', name: 'commons-lang', version:'2.4'
+}
+test.useTestNG()

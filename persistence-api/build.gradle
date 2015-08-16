@@ -1,0 +1,5 @@
+
+description = 'LazyLogin-persistence-api'
+dependencies {
+  compile project(':domain')
+}
