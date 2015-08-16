@@ -1,4 +1,4 @@
 apply plugin: 'docker'
 
 group = "albertonavarro"
-//applicationName = "gamemanager"
+applicationName = "lazylogin"

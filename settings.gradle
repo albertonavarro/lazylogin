@@ -5,8 +5,7 @@ include ':domain'
 include ':persistence-api'
 include ':persistence-jpa'
 include ':eventproducer-api'
-include ':eventproducer-amq'
-include ':eventconsumer-amq-email'
+include ':eventproducer-nojms'
 include ':common-context'
 include ':client'
 include ':springboot'
@@ -17,8 +16,8 @@ project(':domain').projectDir = "$rootDir/domain" as File
 project(':persistence-api').projectDir = "$rootDir/persistence-api" as File
 project(':persistence-jpa').projectDir = "$rootDir/persistence-jpa" as File
 project(':eventproducer-api').projectDir = "$rootDir/eventproducer-api" as File
-project(':eventproducer-amq').projectDir = "$rootDir/eventproducer-amq" as File
-project(':eventconsumer-amq-email').projectDir = "$rootDir/eventconsumer-amq-email" as File
 project(':common-context').projectDir = "$rootDir/common-context" as File
 project(':client').projectDir = "$rootDir/client" as File
 project(':springboot').projectDir = "$rootDir/springboot" as File
+project(':eventproducer-nojms').projectDir = "$rootDir/eventproducer-nojms" as File
+
