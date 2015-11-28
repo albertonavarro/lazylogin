@@ -22,4 +22,4 @@ build:
     - script:
         name: echo
         code: |
-          echo "hello world!"
+          gradle clean build distDocker
