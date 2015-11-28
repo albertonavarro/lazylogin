@@ -4,3 +4,6 @@ jdk:
 script: ./gradlew clean build distDocker
 services:
   - docker
+sudo: required
+before-install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
