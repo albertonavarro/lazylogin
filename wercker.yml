@@ -20,6 +20,5 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - script:
-        name: echo
-        code: |
-          gradle clean build distDocker
+        name: compile and push to docker
+        code: ./gradlew clean build distDocker
