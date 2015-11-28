@@ -13,18 +13,18 @@ subprojects {
   targetCompatibility = 1.8
 
   task packageSources(type: Jar) {
-  classifier = 'sources'
-  from sourceSets.main.allSource
+   classifier = 'sources'
+   from sourceSets.main.allSource
+  }
 
+  artifacts.archives packageSources
 
-}
-
-artifacts.archives packageSources
-repositories {
-  mavenLocal()
-  jcenter()
-  maven { url "http://repo.maven.apache.org/maven2" }
-}
+  repositories {
+    mavenLocal()
+    jcenter()
+    maven { url "http://repo.maven.apache.org/maven2" }
+    maven { url "http://dl.bintray.com/albertonavarro/maven" }
+  }
 
   
   
