@@ -2,3 +2,7 @@ apply plugin: 'docker'
 
 group = "albertonavarro"
 applicationName = "lazylogin"
+
+distDocker {
+    push=true
+}
