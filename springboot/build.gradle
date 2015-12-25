@@ -31,11 +31,11 @@ dependencies {
 
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '1.2.1.RELEASE')
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.2.1.RELEASE')
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '1.2.1.RELEASE')
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.2.1.RELEASE') {
         exclude(module: 'spring-boot-starter-tomcat')
     }
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-jetty', version: '1.2.1.RELEASE')
-    compile(group: 'org.springframework.integration', name: 'spring-integration-jmx', version: '4.1.1.RELEASE')
     compile(group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.2.1.RELEASE')
     runtime(group: 'org.springframework.data', name: 'spring-data-commons', version: '1.9.1.RELEASE')
     compile(group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '8.0.15')
