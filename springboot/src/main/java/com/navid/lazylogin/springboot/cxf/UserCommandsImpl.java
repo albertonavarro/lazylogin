@@ -20,8 +20,9 @@ import org.jdto.DTOBinder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RestController;
 
-@Component("userCommandsImpl")
+@RestController("userCommandsImpl")
 @WebService(endpointInterface = "com.lazylogin.client.user.v0.UserCommands")
 public class UserCommandsImpl implements UserCommands {
 

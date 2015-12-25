@@ -10,8 +10,9 @@ import javax.jws.WebService;
 
 import org.jdto.DTOBinder;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RestController;
 
-@Component("systemCommandsImpl")
+@RestController("systemCommandsImpl")
 @WebService(endpointInterface = "com.lazylogin.client.system.v0.SystemCommands")
 public class SystemCommandsImpl implements SystemCommands {
 
