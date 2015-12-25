@@ -66,7 +66,7 @@ run {
     systemProperties = System.properties
 }
 
-def COMMIT=System.env['SNAP_COMMIT']? System.env['SNAP_BRANCH']: "UNSET"
-def BRANCH=System.env['SNAP_BRANCH']? System.env['SNAP_BRANCH']: "UNSET"
-def COMMIT_SHORT=System.env['SNAP_COMMIT_SHORT']? System.env['SNAP_COMMIT_SHORT']: "UNSET"
-def PIPELINE_COUNTER=System.env['SNAP_PIPELINE_COUNTER']? System.env['SNAP_PIPELINE_COUNTER']: "UNSET"
+COMMIT=System.env['SNAP_COMMIT']? System.env['SNAP_BRANCH']: "UNSET"
+BRANCH=System.env['SNAP_BRANCH']? System.env['SNAP_BRANCH']: "UNSET"
+COMMIT_SHORT=System.env['SNAP_COMMIT_SHORT']? System.env['SNAP_COMMIT_SHORT']: "UNSET"
+PIPELINE_COUNTER=System.env['SNAP_PIPELINE_COUNTER']? System.env['SNAP_PIPELINE_COUNTER']: "UNSET"
