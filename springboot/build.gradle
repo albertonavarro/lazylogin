@@ -20,10 +20,10 @@ description = 'LazyLogin-springboot-endpoint'
 
 processResources {
     filesMatching('**/application.properties') {
-        expand( COMMIT:System.env['SNAP_COMMIT']? System.env['SNAP_BRANCH']: "UNSET",
-                BRANCH:System.env['SNAP_BRANCH']? System.env['SNAP_BRANCH']: "UNSET",
-                COMMIT_SHORT:System.env['SNAP_COMMIT_SHORT']? System.env['SNAP_COMMIT_SHORT']: "UNSET",
-                PIPELINE_COUNTER:System.env['SNAP_PIPELINE_COUNTER']? System.env['SNAP_PIPELINE_COUNTER']: "UNSET",
+        expand( COMMIT: System.getenv("SNAP_COMMIT") ?: "UNSET",
+                BRANCH: System.getenv("SNAP_BRANCH") ?: "UNSET",
+                COMMIT_SHORT: System.getenv("SNAP_COMMIT_SHORT") ?: "UNSET",
+                PIPELINE_COUNTER: System.getenv("SNAP_PIPELINE_COUNTER") ?: "UNSET",
                 VERSION: project.version
                 )
 
