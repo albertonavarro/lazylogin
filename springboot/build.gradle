@@ -23,7 +23,10 @@ processResources {
         expand( COMMIT:System.env['SNAP_COMMIT']? System.env['SNAP_BRANCH']: "UNSET",
                 BRANCH:System.env['SNAP_BRANCH']? System.env['SNAP_BRANCH']: "UNSET",
                 COMMIT_SHORT:System.env['SNAP_COMMIT_SHORT']? System.env['SNAP_COMMIT_SHORT']: "UNSET",
-                PIPELINE_COUNTER:System.env['SNAP_PIPELINE_COUNTER']? System.env['SNAP_PIPELINE_COUNTER']: "UNSET")
+                PIPELINE_COUNTER:System.env['SNAP_PIPELINE_COUNTER']? System.env['SNAP_PIPELINE_COUNTER']: "UNSET",
+                VERSION: project.version
+                )
+
     }
 
 }
