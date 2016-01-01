@@ -17,6 +17,7 @@ jar {
 }
 
 description = 'LazyLogin-springboot-endpoint'
+project.version = System.getenv("SNAP_PIPELINE_COUNTER") ?: "UNSET"
 
 processResources {
     filesMatching('**/application.properties') {
@@ -24,11 +25,8 @@ processResources {
                 BRANCH: System.getenv("SNAP_BRANCH") ?: "UNSET",
                 COMMIT_SHORT: System.getenv("SNAP_COMMIT_SHORT") ?: "UNSET",
                 PIPELINE_COUNTER: System.getenv("SNAP_PIPELINE_COUNTER") ?: "UNSET",
-                VERSION: project.version
                 )
-
     }
-
 }
 
 dependencies {

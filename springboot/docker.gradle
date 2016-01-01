@@ -6,3 +6,4 @@ applicationName = "lazylogin"
 distDocker {
     push=true
 }
+
