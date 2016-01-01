@@ -2,7 +2,7 @@ allprojects  {
   apply plugin: 'maven'
 
   group = 'com.navid.lazylogin'
-  version = '1.4.1'
+  version = System.getenv("SNAP_PIPELINE_COUNTER") ?: "UNSET"
 }
 
 subprojects {
