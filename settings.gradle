@@ -20,4 +20,5 @@ project(':common-context').projectDir = "$rootDir/common-context" as File
 project(':client').projectDir = "$rootDir/client" as File
 project(':springboot').projectDir = "$rootDir/springboot" as File
 project(':eventproducer-nojms').projectDir = "$rootDir/eventproducer-nojms" as File
+include 'deploy_tools'
 
