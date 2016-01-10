@@ -18,7 +18,7 @@ task waitUntilDeployed << {
     println 'waitUntilDeployed'
 
     def http = new groovyx.net.http.HTTPBuilder(deploy_endpoint)
-    int counter = deploy_tries;
+    int counter = deploy_tries.toInteger()
 
     def found = false
 
