@@ -43,7 +43,7 @@ task waitUntilDeployed << {
         if(found)
             break
         else
-            sleep(deploy_sleep)
+            sleep(deploy_sleep.toLong())
     }
 
     if ( ! found){
