@@ -22,15 +22,15 @@ task waitUntilDeployed << {
 
     def found = false
 
-    while (counter-- > 0) {
+    while (!found && counter-- > 0) {
         println "trying $counter"
         try{
             http.request(GET, JSON) {
                 response.success = { resp, reader ->
                     println "found version $reader.app.version"
-                    assert resp.status, 200
-                    assert reader.app.version, deploy_expected_version
-                    found = true
+                    if(reader.app.version.equals(deploy_expected_version)){
+                        found = true
+                    }
                 }
                 response.failure = { fail ->
                     println "received error $fail.status"
@@ -40,10 +40,11 @@ task waitUntilDeployed << {
             println "captured error $e.message"
         }
 
-        if(found)
+        if(found) {
             break
-        else
+        } else {
             sleep(deploy_sleep.toLong())
+        }
     }
 
     if ( ! found){
