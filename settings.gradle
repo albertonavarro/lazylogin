@@ -8,7 +8,13 @@ include ':eventproducer-nojms'
 include ':common-context'
 include ':client'
 include ':springboot'
-include ':integration-test'
+
+println("integrationTests:"+hasProperty('integrationTests'))
+
+if(hasProperty('integrationTests')) {
+    include ':integration-test'
+    project(':integration-test').projectDir = "$rootDir/integration-test" as File
+}
 
 project(':logic').projectDir = "$rootDir/logic" as File
 project(':domain').projectDir = "$rootDir/domain" as File
@@ -16,7 +22,6 @@ project(':persistence-api').projectDir = "$rootDir/persistence-api" as File
 project(':persistence-jpa').projectDir = "$rootDir/persistence-jpa" as File
 project(':eventproducer-api').projectDir = "$rootDir/eventproducer-api" as File
 project(':common-context').projectDir = "$rootDir/common-context" as File
-project(':integration-test').projectDir = "$rootDir/integration-test" as File
 project(':client').projectDir = "$rootDir/client" as File
 project(':springboot').projectDir = "$rootDir/springboot" as File
 project(':eventproducer-nojms').projectDir = "$rootDir/eventproducer-nojms" as File
