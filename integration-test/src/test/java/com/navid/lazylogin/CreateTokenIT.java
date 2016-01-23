@@ -17,7 +17,9 @@ public class CreateTokenIT extends BaseIT {
     @Test
     public void shouldCreateTokenAndValidateIt() throws Exception {
 
-        CreateTokenResponse ctresp = userCommands.createToken(new CreateTokenRequest().withEmail(testEmail));
+        CreateTokenRequest createTokenRequest = new CreateTokenRequest();
+        createTokenRequest.setEmail(testEmail);
+        CreateTokenResponse ctresp = userCommands.createToken(createTokenRequest);
 
         Assert.notNull(ctresp.getSessionid());
         Assert.notNull(ctresp.getToken());
@@ -25,7 +27,9 @@ public class CreateTokenIT extends BaseIT {
         String url = getUrlFromEmail();
         verifyUrl(url);
 
-        GetInfoResponse responseInfo = userCommands.getInfo(new GetInfoRequest().withSessionid(ctresp.getSessionid().getSessionid()));
+        GetInfoRequest getInfoRequest = new GetInfoRequest();
+        getInfoRequest.setSessionid(ctresp.getSessionid().getSessionid());
+        GetInfoResponse responseInfo = userCommands.getInfo(getInfoRequest);
 
         Assert.notNull(responseInfo);
         Assert.isTrue(responseInfo.getStatus() == Status.UNVERIFIED);
