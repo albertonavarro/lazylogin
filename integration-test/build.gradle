@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+
+dependencies {
+    compile project (':common-context')
+    //compile group: 'com.navid.lazylogin', name: 'common-context', version:'1.4-SNAPSHOT'
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.7.8'
+    compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version:'3.0.0'
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-client', version:'2.10.1'
+    runtime group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version:'3.0.0'
+    testCompile group: 'org.testng', name: 'testng', version:'6.8.7'
+    testCompile group: 'org.springframework', name: 'spring-test', version:'4.1.4.RELEASE'
+    testCompile group: 'javax.mail', name: 'mail', version:'1.4.7'
+    testCompile group: 'org.eclipse.jetty', name: 'jetty-http', version:'9.2.0.RC0'
+}
+
+test {
+    // enable TestNG support (default is JUnit)
+    useTestNG()
+
+    systemProperties = System.properties
+}
