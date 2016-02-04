@@ -7,3 +7,4 @@ before-install:
 script: ./gradlew clean build distDocker
 services:
   - docker
+
