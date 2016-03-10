@@ -11,7 +11,7 @@ include ':springboot'
 
 println("integrationTests:"+hasProperty('integrationTests'))
 
-if(!hasProperty('integrationTests')) {
+if(hasProperty('integrationTests')) {
     include ':integration-test'
     project(':integration-test').projectDir = "$rootDir/integration-test" as File
 }
