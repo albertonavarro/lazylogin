@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
  *
  * @author alberto
  */
-public class LoginWithTokenIT extends BaseIT {
+public class LoginWithTokenCT extends BaseCT {
 
     @Test
     public void shouldLoginWithUnverifiedToken() throws Exception {

@@ -25,7 +25,7 @@ import static org.testng.AssertJUnit.assertTrue;
  *
  * @author alberto
  */
-public class CreateTokenIT extends BaseIT {
+public class CreateTokenCT extends BaseCT {
 
     @Test
     public void shouldCreateToken() throws Exception {

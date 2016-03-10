@@ -27,9 +27,9 @@ import org.testng.annotations.Test;
  */
 @Test
 @ContextConfiguration(locations = {"classpath:conf/test-lazylogin-client.xml"})
-public class BaseIT extends AbstractTestNGSpringContextTests {
+public class BaseCT extends AbstractTestNGSpringContextTests {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BaseIT.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseCT.class);
 
     @Value("${test.smtp.port}")
     private int smtpPort;

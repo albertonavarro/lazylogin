@@ -83,6 +83,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
     private void initGmail() {
         Properties props = System.getProperties();
         props.setProperty("mail.store.protocol", "imaps");
+        props.setProperty("mail.imap.ssl.enable", "true");
         try {
             Session session = Session.getDefaultInstance(props, null);
             Store store = session.getStore("imaps");
