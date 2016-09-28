@@ -4,7 +4,7 @@ jdk:
   - oraclejdk8
 script:
     - ./gradlew clean build
-before-deploy:
+before_deploy:
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 deploy:
     - ./gradlew distDocker
