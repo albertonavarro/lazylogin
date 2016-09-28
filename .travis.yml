@@ -2,9 +2,12 @@ sudo: required
 language: java
 jdk:
   - oraclejdk8
-before-install:
+script:
+    - ./gradlew clean build
+before-deploy:
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-script: ./gradlew clean build distDocker
+deploy:
+    - ./gradlew distDocker
 services:
   - docker
 
