@@ -16,17 +16,33 @@ jar {
 }
 
 description = 'LazyLogin-springboot-endpoint'
-version
+
+
+def ci_branch = "UNSET"
+dev ci_commit = "UNSET"
+dev ci_system = "LOCAL"
+dev ci_commit_short = "UNSET"
+dev ci_build_number = 0
+if (System.getenv("TRAVIS")) {
+    ci_branch = System.getenv("TRAVIS_BRANCH")
+    ci_commit = System.getenv("TRAVIS_COMMIT")
+    ci_system = "travis"
+    ci_commit_short = System.getenv("TRAVIS_COMMIT")
+    ci_build_number = System.getenv("TRAVIS_BUILD_NUMBER")
+} else {
+
+}
+
+version = "${ci_system}_${ci_build_number}"
 
 processResources {
     filesMatching('**/application.properties') {
-        expand( COMMIT: System.getenv("SNAP_COMMIT") ?: "UNSET",
-                BRANCH: System.getenv("SNAP_BRANCH") ?: "UNSET",
-                COMMIT_SHORT: System.getenv("SNAP_COMMIT_SHORT") ?: "UNSET",
-                PIPELINE_COUNTER: System.getenv("SNAP_PIPELINE_COUNTER") ?: "UNSET",
+        expand( COMMIT: ci_commit,
+                BRANCH: ci_branch,
+                COMMIT_SHORT: ci_commit_short,
+                PIPELINE_COUNTER: ci_build_number,
                 VERSION: project.version
                 )
-
     }
 
 }
