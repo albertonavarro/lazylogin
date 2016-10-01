@@ -32,6 +32,20 @@
         </encoder>
     </appender>
 
+    <appender name="Sentry" class="com.getsentry.raven.logback.SentryAppender">
+        <dsn>https://373c4d4fe14340148608bf4aed604113:0ebacd60795a446791f48f6dd175bf82@sentry.io/101361?options</dsn>
+        <tags>tag1:value1,tag2:value2</tags>
+        <!-- Optional, allows to select the ravenFactory -->
+        <!--<ravenFactory>com.getsentry.raven.DefaultRavenFactory</ravenFactory>-->
+    </appender>
+
+    <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+        <syslogHost>logsene-receiver-syslog.sematext.com</syslogHost>
+        <port>514</port>
+        <facility>LOCAL0</facility>
+        <suffixPattern>6b00b5d2-4413-43d8-9526-d898a2c197dc:%thread - %message</suffixPattern>
+    </appender>
+
     <appender name="STDOUT_METRICS" class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
@@ -56,6 +70,7 @@
     <logger name="com.navid" level="DEBUG"/>
 
     <root level="INFO">
+        <appender-ref ref="SYSLOG"/>
         <appender-ref ref="FILE_BUSINESS" />
         <appender-ref ref="STDOUT_BUSINESS" />
     </root>
