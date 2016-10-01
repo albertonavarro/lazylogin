@@ -19,10 +19,10 @@ description = 'LazyLogin-springboot-endpoint'
 
 
 def ci_branch = "UNSET"
-dev ci_commit = "UNSET"
-dev ci_system = "LOCAL"
-dev ci_commit_short = "UNSET"
-dev ci_build_number = 0
+def ci_commit = "UNSET"
+def ci_system = "LOCAL"
+def ci_commit_short = "UNSET"
+def ci_build_number = 0
 if (System.getenv("TRAVIS")) {
     ci_branch = System.getenv("TRAVIS_BRANCH")
     ci_commit = System.getenv("TRAVIS_COMMIT")
