@@ -6,5 +6,8 @@ script:
     - ./gradlew clean build
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
     - ./gradlew distDocker
+    - docker tag albertonavarro/lazylogin:$TRAVIS_BRANCH_$TRAVIS_BUILD_NUMBER albertonavarro/lazylogin:readytotest
+    - docker push albertonavarro/lazylogin:readytotest
+    - ./gradlew deploy_tools:waitUntilDeployed -P $TRAVIS_BRANCH_$TRAVIS_BUILD_NUMBER
 services:
   - docker
