@@ -27,7 +27,7 @@ task waitUntilDeployed << {
         try{
             http.request(GET, JSON) {
                 response.success = { resp, reader ->
-                    println "found version $reader.app.version"
+                    println "found version $reader.app.version, expected $deploy_expected_version"
                     if(reader.app.version.equals(deploy_expected_version)){
                         found = true
                     }
