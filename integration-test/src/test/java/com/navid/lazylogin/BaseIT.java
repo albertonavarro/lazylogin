@@ -116,8 +116,10 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
     }
 
     protected void verifyUrl(String url) {
+        System.out.println("Verifying url " + url);
         Client client = ClientBuilder.newBuilder().build();
         Response response = client.target(url).request().get();
+        System.out.println("Response from verification: " + response.getStatus());
         Assert.isTrue(HttpStatus.isSuccess(response.getStatus()));
     }
 }

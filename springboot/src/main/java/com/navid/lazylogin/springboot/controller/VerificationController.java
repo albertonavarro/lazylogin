@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class VerificationController {
+
+    @Value("server.address")
+    private String serverAddress;
 
     private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
 
@@ -43,7 +47,7 @@ public class VerificationController {
         try {
             token = userServices.verify(verificationKey);
         } catch (UsernameNotFoundException ex) {
-            return "redirect:/addUsername?verificationKey=" + verificationKey;
+            return "redirect:"+serverAddress+"/addUsername?verificationKey=" + verificationKey;
         }
 
         return "verified";
