@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class VerificationController {
 
-    @Value("server.address")
+    @Value("lazylogin.server.address")
     private String serverAddress;
 
     private final static Logger LOGGER = LoggerFactory.getLogger(VerificationController.class);
