@@ -32,6 +32,7 @@ public class CreateTokenIT extends BaseIT {
         GetInfoResponse responseInfo = userCommands.getInfo(getInfoRequest);
 
         Assert.notNull(responseInfo);
+        System.out.println("responseInfo: " + responseInfo.getStatus().value());
         Assert.isTrue(responseInfo.getStatus() == Status.VERIFIED);
     }
 

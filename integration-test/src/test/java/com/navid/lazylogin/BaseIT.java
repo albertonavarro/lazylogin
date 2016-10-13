@@ -4,6 +4,8 @@ import com.lazylogin.client.system.v0.SystemCommands;
 import com.lazylogin.client.user.v0.UserCommands;
 import com.navid.lazylogin.context.RequestContextContainer;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import javax.annotation.Resource;
 import javax.mail.Folder;
@@ -54,6 +56,9 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
 
     @Value("${test.imap.host}")
     private String imapHost;
+
+    @Value("${lazylogin.url}")
+    private String lazyloginUrl;
 
     private final int maxRetries = 10;
 
@@ -121,5 +126,19 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         Response response = client.target(url).request().get();
         System.out.println("Response from verification: " + response.getStatus());
         Assert.isTrue(HttpStatus.isSuccess(response.getStatus()));
+
+
+        //if(response.getLocation().getPath().contains("addUsername")) {
+            try {
+                URL url2 = new URL(url);
+                System.out.println("Generated url: " + lazyloginUrl+"/verifyWithUsername?" + url2.getQuery()+"&username=usernameTest");
+                Response response2 = client.target(lazyloginUrl+"/verifyWithUsername?" + url2.getQuery()+"&username=usernameTest").request().get();
+                System.out.println("Response from verification: " + response2.getStatus());
+                Assert.isTrue(HttpStatus.isSuccess(response2.getStatus()));
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+
+        //}
     }
 }

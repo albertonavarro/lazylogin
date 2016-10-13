@@ -10,6 +10,7 @@ script:
     - docker tag albertonavarro/lazylogin:travis_"$TRAVIS_BUILD_NUMBER" albertonavarro/lazylogin:readytotest
     - docker push albertonavarro/lazylogin:readytotest
     - ./gradlew deploy_tools:waitUntilDeployed -P deploy_endpoint="$TEST_SERVER"/info -P deploy_expected_version=travis_"$TRAVIS_BUILD_NUMBER"
-    -
+    - docker tag albertonavarro/lazylogin:travis_"$TRAVIS_BUILD_NUMBER" albertonavarro/lazylogin:readyforprod
+    - ./gradlew deploy_tools:waitUntilDeployed -P deploy_endpoint="$PROD_SERVER"/info -P deploy_expected_version=travis_"$TRAVIS_BUILD_NUMBER"
 services:
   - docker
