@@ -128,7 +128,7 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
         Assert.isTrue(HttpStatus.isSuccess(response.getStatus()));
 
 
-        //if(response.getLocation().getPath().contains("addUsername")) {
+        /*if(response.getLocation().getPath().contains("addUsername")) {
             try {
                 URL url2 = new URL(url);
                 System.out.println("Generated url: " + lazyloginUrl+"/verifyWithUsername?" + url2.getQuery()+"&username=usernameTest");
@@ -138,7 +138,6 @@ public class BaseIT extends AbstractTestNGSpringContextTests {
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
-
-        //}
+        }*/
     }
 }
