@@ -3,10 +3,8 @@ language: java
 jdk:
   - oraclejdk8
 script:
-    - ./gradlew clean build
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - ./gradlew distDocker
-    - docker images
+    - ./gradlew clean build distDocker
     - docker tag albertonavarro/lazylogin:travis_"$TRAVIS_BUILD_NUMBER" albertonavarro/lazylogin:readytotest
     - docker push albertonavarro/lazylogin:readytotest
     - ./gradlew deploy_tools:waitUntilDeployed -P deploy_endpoint="$TEST_SERVER"/info -P deploy_expected_version=travis_"$TRAVIS_BUILD_NUMBER"
@@ -14,5 +12,6 @@ script:
     - docker tag albertonavarro/lazylogin:travis_"$TRAVIS_BUILD_NUMBER" albertonavarro/lazylogin:readyforprod
     - docker push albertonavarro/lazylogin:readyforprod
     - ./gradlew deploy_tools:waitUntilDeployed -P deploy_endpoint="$PROD_SERVER"/info -P deploy_expected_version=travis_"$TRAVIS_BUILD_NUMBER"
+    - ./gradlew integration-test:test -Dlazylogin.url=$PROD_SERVER -Dtest.imap.username=$PROD_EMAIL_ACCOUNT -Dtest.imap.password=$PROD_EMAIL_PASSWORD -Dtest.imap.host=imap.gmail.com -PintegrationTests
 services:
   - docker
