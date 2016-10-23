@@ -23,7 +23,7 @@ public class UserHb implements Serializable {
     @Column(name = "USER_NAME", unique = true, nullable = true)
     private String username;
 
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL", unique = true)
     private String email;
 
     @Id
