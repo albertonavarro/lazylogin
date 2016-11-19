@@ -29,8 +29,6 @@ if (System.getenv("TRAVIS")) {
     ci_system = "travis"
     ci_commit_short = System.getenv("TRAVIS_COMMIT")
     ci_build_number = System.getenv("TRAVIS_BUILD_NUMBER")
-} else {
-
 }
 
 version = "${ci_system}_${ci_build_number}"
