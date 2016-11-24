@@ -18,7 +18,7 @@ dependencies {
 }
 
 test {
-    // enable TestNG support (default is JUnit)
+    // enable TestNG support (default is JUnit)-
     useTestNG()
     testLogging.showStandardStreams = true
     systemProperties = System.properties

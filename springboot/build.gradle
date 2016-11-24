@@ -68,7 +68,8 @@ dependencies {
     runtime project(':persistence-jpa')
     runtime project(':eventproducer-nojms')
     runtime group: 'com.navid.spring', name: 'addon-jms-performance', version: '1.2.2'
-    runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.2'
+    compile 'ch.qos.logback:logback-classic:1.1.6'
+    runtime 'net.logstash.logback:logstash-logback-encoder:4.8'
     runtime group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '3.0.0'
     runtime group: 'commons-lang', name: 'commons-lang', version: '2.4'
     runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.34'

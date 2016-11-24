@@ -1,77 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <jmxConfigurator />
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>192.168.1.150:5000</destination>
 
-    <appender name="FILE_METRICS" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>metrics.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- daily rollover -->
-            <fileNamePattern>metrics.%d{yyyy-MM-dd}.log</fileNamePattern>
+        <!-- encoder is required -->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
 
-            <!-- keep 30 days' worth of history -->
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
-
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] [%X{correlationId}][%X{sessionId}] - %msg%n</pattern>
+            <pattern>%-5relative %-5level %logger{35} - %msg%n</pattern>
         </encoder>
     </appender>
-
-    <appender name="FILE_BUSINESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logFile.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- daily rollover -->
-            <fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
-
-            <!-- keep 30 days' worth of history -->
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
-
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%X{correlationId}][%X{sessionId}] - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="Sentry" class="com.getsentry.raven.logback.SentryAppender">
-        <dsn>https://373c4d4fe14340148608bf4aed604113:0ebacd60795a446791f48f6dd175bf82@sentry.io/101361?options</dsn>
-        <tags>tag1:value1,tag2:value2</tags>
-        <!-- Optional, allows to select the ravenFactory -->
-        <!--<ravenFactory>com.getsentry.raven.DefaultRavenFactory</ravenFactory>-->
-    </appender>
-
-    <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
-        <syslogHost>logsene-receiver-syslog.sematext.com</syslogHost>
-        <port>514</port>
-        <facility>LOCAL0</facility>
-        <suffixPattern>6b00b5d2-4413-43d8-9526-d898a2c197dc:%thread - %message</suffixPattern>
-    </appender>
-
-    <appender name="STDOUT_METRICS" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] [%X{correlationId}][%X{sessionId}] - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <appender name="STDOUT_BUSINESS" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoders are assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%X{correlationId}][%X{sessionId}] - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <logger name="com.navid.aop.performance" level="DEBUG" additivity="false">
-        <appender-ref ref="STDOUT_METRICS" />
-        <appender-ref ref="QUEUE_METRICS" />
-    </logger>
 
     <logger name="com.navid" level="DEBUG"/>
 
     <root level="INFO">
-        <appender-ref ref="SYSLOG"/>
-        <appender-ref ref="FILE_BUSINESS" />
-        <appender-ref ref="STDOUT_BUSINESS" />
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="stash" />
     </root>
 </configuration>
