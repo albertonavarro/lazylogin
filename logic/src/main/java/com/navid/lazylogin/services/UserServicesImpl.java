@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
  * @author alberto
  */
 @Service
-@Transactional
 public class UserServicesImpl implements UserServices {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServicesImpl.class);
@@ -29,6 +28,7 @@ public class UserServicesImpl implements UserServices {
     private EventProducer eventProducer;
 
     @Override
+    @Transactional
     public SessionId createToken(String email) {
 
         LOGGER.info("Creating token for {}", email);
@@ -59,6 +59,7 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    @Transactional
     public SessionId loginWithToken(String tokenId) {
         LOGGER.info("Logging with token: {}", tokenId);
 
@@ -76,6 +77,7 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    @Transactional
     public Token verify(String verificationKey) throws UsernameNotFoundException {
         LOGGER.info("Verifying key: {}", verificationKey);
 
@@ -99,6 +101,7 @@ public class UserServicesImpl implements UserServices {
     }
 
     @Override
+    @Transactional
     public Token verify(String verificationKey, String username) {
         LOGGER.info("Verifying key: {} and username: {}", verificationKey, username);
 
