@@ -18,7 +18,7 @@
     <appender name="STACKIFY" class="com.stackify.log.logback.StackifyLogAppender">
         <apiKey>8Xv2Cl4Fg1Xi8Iq7Nz9Ov1Je4Iu9Jj1Ky9Ak8Mh</apiKey>
         <application>lazylogin</application>
-        <environment>dev-prod</environment>
+        <environment>${ENVIRONMENT}</environment>
     </appender>
 
     <logger name="com.navid" level="DEBUG"/>
