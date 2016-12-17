@@ -40,11 +40,11 @@ public class SystemCommandsImpl implements SystemCommands {
         LOG.info("Session found: {}", ssoId);
         UserInfo userInfo = new UserInfo();
         userInfo.setVerified(ssoId.getToken().getValidated());
+        userInfo.setTokenHash(Integer.toString(ssoId.getToken().getValue().hashCode()));
 
         if (ssoId.getToken().getValidated()) {
             userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());
             userInfo.setUsername(ssoId.getToken().getUser().getName());
-            userInfo.setTokenHash(Integer.toString(ssoId.getToken().getValue().hashCode()));
         }
 
         return userInfo;
