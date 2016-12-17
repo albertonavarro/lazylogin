@@ -15,6 +15,8 @@ public class RequestContext {
 
     private String sessionId;
 
+    private String tokenHash;
+
     RequestContext() {
 
     }
@@ -77,6 +79,14 @@ public class RequestContext {
         MDC.put("sessionId", sessionId);
     }
 
+    public String getTokenHash() {
+        return tokenHash;
+    }
+
+    public void setTokenHash(String tokenHash) {
+        this.tokenHash = tokenHash;
+    }
+
     @Override
     public String toString() {
         return Objects.toStringHelper(this)
@@ -84,6 +94,7 @@ public class RequestContext {
                 .add("userId", userId)
                 .add("sessionId", sessionId)
                 .add("correlationId", correlationId)
+                .add("tokenHash", tokenHash)
                 .toString();
     }
 }
