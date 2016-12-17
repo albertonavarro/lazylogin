@@ -44,6 +44,7 @@ public class SystemCommandsImpl implements SystemCommands {
         if (ssoId.getToken().getValidated()) {
             userInfo.setUserid(ssoId.getToken().getUser().getUserId().getValue());
             userInfo.setUsername(ssoId.getToken().getUser().getName());
+            userInfo.setTokenHash(Integer.toString(ssoId.getToken().getValue().hashCode()));
         }
 
         return userInfo;

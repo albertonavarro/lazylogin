@@ -1,3 +1,14 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    }
+}
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+version = '1.4'
 
 description = 'LazyLogin-common-context'
 
@@ -5,7 +16,7 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version:'14.0.1'
     compile group: 'org.slf4j', name: 'slf4j-api', version:'1.7.8'
     compile group: 'org.springframework', name: 'spring-context', version:'4.1.4.RELEASE'
-  compile project(':client')
+    compile project(':client')
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version:'2.0'
     compile group: 'org.apache.cxf', name: 'cxf-core', version:'3.0.0'
     compile(group: 'com.navid.spring', name: 'addon-jms-performance', version:'1.2.2') {
@@ -13,4 +24,36 @@ dependencies {
        This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
        Please review and delete this closure when resolved. */
     }
+}
+
+bintray {
+    user = repositoryUser
+    key = repositoryPass
+    publications = ['swagger']
+
+    publish = true
+
+    pkg {
+        repo = 'maven'
+        name = "lazylogin"
+        desc = project.description
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/albertonavarro/lazylogin'
+        labels = ["api"]
+    }
+}
+
+publish.dependsOn bintrayUpload
+
+publishing {
+    publications {
+        swagger(MavenPublication) {
+            from components.java
+
+            artifactId "common-context"
+            groupId project.group
+            version project.version
+        }
+    }
+
 }

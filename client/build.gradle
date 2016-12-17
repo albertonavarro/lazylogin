@@ -1,10 +1,19 @@
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    }
+}
 
 plugins {
     id "no.nils.wsdl2java" version "0.6"
 }
 
-description = 'LazyLogin-client'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
+description = 'LazyLogin-client'
+version = '1.4'
 
 configurations {
     provided
@@ -35,4 +44,35 @@ wsdl2java {
     ]
     wsdlDir = file("$projectDir/src/main/resources/wsdl")
     cxfVersion = "3.0.0"
+}
+
+bintray {
+    user = repositoryUser
+    key = repositoryPass
+    publications = ['jarBuild']
+
+    publish = true
+
+    pkg {
+        repo = 'maven'
+        name = "lazylogin"
+        desc = project.description
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/albertonavarro/lazylogin'
+        labels = ["api"]
+    }
+}
+
+publish.dependsOn bintrayUpload
+
+publishing {
+    publications {
+        jarBuild(MavenPublication) {
+            from components.java
+
+            artifactId "client"
+            groupId project.group
+            version project.version
+        }
+    }
 }
