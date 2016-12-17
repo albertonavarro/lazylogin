@@ -43,7 +43,7 @@ public class UserCommandsImpl implements UserCommands {
      */
     @Override
     public CreateTokenResponse createToken(CreateTokenRequest parameters) {
-        LOG.info("Executing operation createToken");
+        LOG.info("Executing operation createToken for email {}", parameters.getEmail());
         try {
             CreateTokenResponse _return = new CreateTokenResponse();
 
@@ -54,6 +54,7 @@ public class UserCommandsImpl implements UserCommands {
 
             return _return;
         } catch (java.lang.Exception ex) {
+            LOG.error("Error creating token for {}: {}", parameters.getEmail(), ex.getMessage());
             throw new RuntimeException(ex);
         }
     }
@@ -63,7 +64,7 @@ public class UserCommandsImpl implements UserCommands {
      */
     @Override
     public LoginWithTokenResponse loginWithToken(LoginWithTokenRequest parameters) {
-        LOG.info("Executing operation loginWithToken with parameters");
+        LOG.info("Executing operation loginWithToken with parameters", parameters);
         try {
             LoginWithTokenResponse _return = new LoginWithTokenResponse();
 
@@ -73,13 +74,14 @@ public class UserCommandsImpl implements UserCommands {
 
             return _return;
         } catch (java.lang.Exception ex) {
+            LOG.error("Error in loginWithToken with parameters {}: {}", parameters, ex.getMessage());
             throw new RuntimeException(ex);
         }
     }
 
     @Override
     public GetInfoResponse getInfo(GetInfoRequest parameters) {
-        LOG.info("Executing operation getInfo with sessionId {}", parameters.getSessionid());
+        LOG.info("Executing operation getInfo with parameters {}", parameters);
 
         SessionId ssoId = systemServices.getUserInfo(parameters.getSessionid());
 

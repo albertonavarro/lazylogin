@@ -57,7 +57,7 @@ public class Token implements Serializable {
 
     @Override
     public String toString() {
-        return Objects.toStringHelper(this).add("value", value).toString();
+        return Objects.toStringHelper(this).add("value", value).add("user", user).toString();
     }
 
 }

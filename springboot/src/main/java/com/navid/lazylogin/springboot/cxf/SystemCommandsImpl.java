@@ -28,6 +28,8 @@ public class SystemCommandsImpl implements SystemCommands {
 
     @Override
     public UserInfo getUserInfo(String sessionId) throws GetUserInfoError_Exception {
+        LOG.info("Executing operation System.getUserInfo with session {}", sessionId);
+
         SessionId ssoId = systemServices.getUserInfo(sessionId);
 
         if(ssoId == null) {
@@ -35,6 +37,7 @@ public class SystemCommandsImpl implements SystemCommands {
             throw new GetUserInfoError_Exception("Session " + sessionId + "not found");
         }
 
+        LOG.info("Session found: {}", ssoId);
         UserInfo userInfo = new UserInfo();
         userInfo.setVerified(ssoId.getToken().getValidated());
 
