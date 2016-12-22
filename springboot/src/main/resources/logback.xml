@@ -37,10 +37,11 @@
     <appender name="LogzioLogbackAppender" class="io.logz.logback.LogzioLogbackAppender">
         <token>tJKAVFqvufYsSZDYSTxCjrWhKgOOpoRF</token>
         <logzioUrl>https://listener.logz.io:8071</logzioUrl>
-        <logzioType>myType</logzioType>
+        <logzioType>java</logzioType>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
+        <additionalFields>{"appName":"lazylogin", "environment":"${ENVIRONMENT}"}</additionalFields>
     </appender>
 
     <root level="INFO">
