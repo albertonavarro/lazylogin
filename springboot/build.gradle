@@ -80,8 +80,6 @@ dependencies {
     testCompile group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '2.10.1'
     testCompile group: 'org.testng', name: 'testng', version: '6.8.7'
 
-    compile 'com.stackify:stackify-log-logback:1.1.7'
-
     compile 'io.logz.logback:logzio-logback-appender:1.0.11'
 }
 
