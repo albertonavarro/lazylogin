@@ -12,7 +12,7 @@ distDocker {
     addFile("src/main/appdynamics/conf/controller-info.xml", "/opt/appdynamics/")
     addFile("src/main/appdynamics/jackson-core-asl-1.9.13.jar", "/opt/appdynamics/")
     addFile("src/main/appdynamics/jackson-mapper-asl-1.9.13.jar", "/opt/appdynamics/")
-    addFile("src/main/appdynamics/javaagent/jar", "/opt/appdynamics/")
+    addFile("src/main/appdynamics/javaagent.jar", "/opt/appdynamics/")
     addFile("src/main/appdynamics/uaruleanalyzer.jar", "/opt/appdynamics/")
 }
 
