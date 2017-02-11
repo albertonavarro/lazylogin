@@ -12,7 +12,6 @@ import javax.security.sasl.AuthenticationException;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 
-import com.navid.spring.addons.metrics.PerformanceMetric;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -22,7 +21,6 @@ import org.springframework.context.annotation.ScopedProxyMode;
  * Built in class for calling Lazylogin system endpoint and retrieve user info
  */
 @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-@PerformanceMetric
 public class AuthorisationFilter implements ContainerRequestFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthorisationFilter.class);

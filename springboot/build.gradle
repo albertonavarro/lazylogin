@@ -67,7 +67,6 @@ dependencies {
     compile group: 'org.hsqldb', name: 'hsqldb', version: '2.3.2'
     runtime project(':persistence-jpa')
     runtime project(':eventproducer-nojms')
-    runtime group: 'com.navid.spring', name: 'addon-jms-performance', version: '1.2.2'
     compile 'ch.qos.logback:logback-classic:1.1.6'
     runtime 'net.logstash.logback:logstash-logback-encoder:4.8'
     runtime group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '3.0.0'

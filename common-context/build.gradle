@@ -8,7 +8,7 @@ buildscript {
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
-version = '1.4.1'
+version = '1.4.2'
 
 description = 'LazyLogin-common-context'
 
@@ -19,11 +19,7 @@ dependencies {
     compile project(':client')
     compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version:'2.0'
     compile group: 'org.apache.cxf', name: 'cxf-core', version:'3.0.0'
-    compile(group: 'com.navid.spring', name: 'addon-jms-performance', version:'1.2.2') {
-       /* This dependency was originally in the Maven provided scope, but the project was not of type war.
-       This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
-       Please review and delete this closure when resolved. */
-    }
+
 }
 
 bintray {
